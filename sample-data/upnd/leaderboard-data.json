@@ -1,0 +1,10 @@
+[
+  { "name": "Jamie Turner", "role": "Leader Manager", "initials": "JT", "avatarColor": "#10b981", "hours": 149, "attempts": 3032, "answers": 1466, "conversionRate": 48 },
+  { "name": "Chris Reid", "role": "Staffer", "initials": "CR", "avatarColor": "#3b82f6", "hours": 130, "attempts": 2455, "answers": 986, "conversionRate": 40 },
+  { "name": "Lisa Anderson", "role": "Lead Organizer", "initials": "LA", "avatarColor": "#f59e0b", "hours": 101, "attempts": 2201, "answers": 855, "conversionRate": 38 },
+  { "name": "Layla Wilson", "role": "Account Manager", "initials": "LW", "avatarColor": "#8b5cf6", "hours": 86, "attempts": 1746, "answers": 680, "conversionRate": 39 },
+  { "name": "Keely Matthews", "role": "Leader Manager", "initials": "KM", "avatarColor": "#ef4444", "hours": 86, "attempts": 1563, "answers": 610, "conversionRate": 39 },
+  { "name": "Noah Morris", "role": "Staffer", "initials": "NM", "avatarColor": "#06b6d4", "hours": 45, "attempts": 765, "answers": 298, "conversionRate": 38 },
+  { "name": "Reece Modal", "role": "Lead Organizer", "initials": "RM", "avatarColor": "#ec4899", "hours": 43, "attempts": 795, "answers": 310, "conversionRate": 39 },
+  { "name": "Sarah Turnbuck", "role": "Leader Manager", "initials": "ST", "avatarColor": "#84cc16", "hours": 35, "attempts": 588, "answers": 229, "conversionRate": 38 }
+]

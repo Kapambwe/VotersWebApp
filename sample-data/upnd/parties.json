@@ -1,0 +1,42 @@
+[
+  {
+    "Id": 1,
+    "PartyAffiliationId": 1,
+    "PartyName": "United Party for National Development",
+    "Name": "United Party for National Development",
+    "ShortCode": "UPND",
+    "Color": "#FF0000"
+  },
+  {
+    "Id": 2,
+    "PartyAffiliationId": 2,
+    "PartyName": "Patriotic Front",
+    "Name": "Patriotic Front",
+    "ShortCode": "PF",
+    "Color": "#0000FF"
+  },
+  {
+    "Id": 3,
+    "PartyAffiliationId": 3,
+    "PartyName": "United Prosperous and Peaceful Zambia",
+    "Name": "United Prosperous and Peaceful Zambia",
+    "ShortCode": "UPP",
+    "Color": "#00FF00"
+  },
+  {
+    "Id": 4,
+    "PartyAffiliationId": 4,
+    "PartyName": "Independent",
+    "Name": "Independent",
+    "ShortCode": "IND",
+    "Color": "#808080"
+  },
+  {
+    "Id": 5,
+    "PartyAffiliationId": 5,
+    "PartyName": "National Democratic Congress",
+    "Name": "National Democratic Congress",
+    "ShortCode": "NDC",
+    "Color": "#FFA500"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "Id": 5001,
+    "PersonId": 5001,
+    "FirstName": "Inonge",
+    "LastName": "Muyunda",
+    "VoterNumber": "ZM2026051234",
+    "NRC": "523456/78/1",
+    "PersonMobile": "+260977523456",
+    "PhoneNumber": "+260977523456",
+    "Email": "inonge.muyunda@email.zm",
+    "Ward": "Inyambo Ward 1",
+    "Constituency": "Mongu Central",
+    "PollingStationName": "Mongu Trades School",
+    "Province": "Western",
+    "Address": "Mongu District, Inyambo",
+    "PartyAffiliation": "MMD",
+    "VoterStatus": "Active",
+    "RegistrationDate": "2024-01-15T00:00:00",
+    "LastContactDate": "2024-12-15T00:00:00",
+    "IsCanvassed": true,
+    "CanvassResult": "Strong Support",
+    "Notes": "Strong Support - MMD supporter",
+    "Latitude": -15.2636,
+    "Longitude": 23.1264
+  }
+]

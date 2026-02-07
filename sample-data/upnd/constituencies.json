@@ -1,0 +1,62 @@
+[
+  {
+    "Id": 1,
+    "Name": "Lusaka Central",
+    "Province": "Lusaka",
+    "RegisteredVoters": 50000
+  },
+  {
+    "Id": 2,
+    "Name": "Kabwata",
+    "Province": "Lusaka",
+    "RegisteredVoters": 45000
+  },
+  {
+    "Id": 3,
+    "Name": "Matero",
+    "Province": "Lusaka",
+    "RegisteredVoters": 38000
+  },
+  {
+    "Id": 4,
+    "Name": "Livingstone Central",
+    "Province": "Southern",
+    "RegisteredVoters": 32000
+  },
+  {
+    "Id": 5,
+    "Name": "Choma Central",
+    "Province": "Southern",
+    "RegisteredVoters": 28000
+  },
+  {
+    "Id": 6,
+    "Name": "Ndola Central",
+    "Province": "Copperbelt",
+    "RegisteredVoters": 42000
+  },
+  {
+    "Id": 7,
+    "Name": "Kitwe District",
+    "Province": "Copperbelt",
+    "RegisteredVoters": 48000
+  },
+  {
+    "Id": 8,
+    "Name": "Chipata Central",
+    "Province": "Eastern",
+    "RegisteredVoters": 35000
+  },
+  {
+    "Id": 9,
+    "Name": "Kasama Central",
+    "Province": "Northern",
+    "RegisteredVoters": 25000
+  },
+  {
+    "Id": 10,
+    "Name": "Mongu Central",
+    "Province": "Western",
+    "RegisteredVoters": 22000
+  }
+]

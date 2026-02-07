@@ -1,0 +1,6 @@
+[
+  { "name": "Initial Contact", "count": 15247, "percentage": 100 },
+  { "name": "Engaged Response", "count": 10873, "percentage": 71 },
+  { "name": "Follow-up Scheduled", "count": 7621, "percentage": 50 },
+  { "name": "Converted", "count": 4421, "percentage": 29 }
+]

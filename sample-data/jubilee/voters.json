@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1",
+    "FirstName": "John",
+    "LastName": "Doe",
+    "Email": "john.doe@example.com",
+    "PhoneNumber": "+254712345678",
+    "NationalId": "12345678",
+    "DateOfBirth": "1985-05-15",
+    "Gender": "Male",
+    "Address": "123 Main Street",
+    "City": "Capital City",
+    "Region": "Central",
+    "RegistrationDate": "2023-01-15",
+    "VoterStatus": "Active",
+    "PartyAffiliation": "Jubilee Party"
+  },
+  {
+    "Id": "2",
+    "FirstName": "Jane",
+    "LastName": "Smith",
+    "Email": "jane.smith@example.com",
+    "PhoneNumber": "+254787654321",
+    "NationalId": "87654321",
+    "DateOfBirth": "1990-08-22",
+    "Gender": "Female",
+    "Address": "456 Park Avenue",
+    "City": "Capital City",
+    "Region": "Central",
+    "RegistrationDate": "2023-02-10",
+    "VoterStatus": "Active",
+    "PartyAffiliation": "Jubilee Party"
+  }
+]

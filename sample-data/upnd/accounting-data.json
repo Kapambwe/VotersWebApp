@@ -1,0 +1,24 @@
+{
+  "financialMetrics": {
+    "currentBalance": 2450000,
+    "monthlyIncome": 450000,
+    "monthlyIncomeGrowth": 0.125,
+    "campaignSpending": 1250000,
+    "campaignSpendingLimit": 2000000,
+    "activeDonors": 342
+  },
+  "recentTransactions": [
+    { "date": "2024-12-21", "description": "Campaign Rally - Lusaka", "category": "Events & Rallies", "amount": -125000, "balance": 2450000 },
+    { "date": "2024-12-20", "description": "Individual Donation - Sarah Mwansa", "category": "Donations", "amount": 50000, "balance": 2575000 },
+    { "date": "2024-12-19", "description": "Campaign Posters Printing", "category": "Campaign Materials", "amount": -85000, "balance": 2525000 },
+    { "date": "2024-12-18", "description": "Membership Fees - Monthly", "category": "Membership Revenue", "amount": 125000, "balance": 2610000 },
+    { "date": "2024-12-17", "description": "Office Rent - National HQ", "category": "Office Operations", "amount": -75000, "balance": 2485000 }
+  ],
+  "budgetData": [
+    { "category": "Campaign Advertising", "amount": 450000 },
+    { "category": "Campaign Materials", "amount": 280000 },
+    { "category": "Events & Rallies", "amount": 220000 },
+    { "category": "Transportation", "amount": 180000 },
+    { "category": "Staff Salaries", "amount": 120000 }
+  ]
+}

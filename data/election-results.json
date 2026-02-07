@@ -1,0 +1,146 @@
+[
+  {
+    "Id": 1,
+    "Name": "Kalingalinga Primary School",
+    "PartyName": "UPND",
+    "AgentName": "John Banda",
+    "VotesForCandidate": 1850,
+    "ValidVotes": 2300,
+    "RegisteredVoters": 2500,
+    "registeredVoters": 2500,
+    "RejectedVotes": 45,
+    "PollingStationId": 1,
+    "ConstituencyId": 1,
+    "WonCandidate": "UPND Candidate",
+    "SignedFormUrl": "/assets/forms/LU-KAL-001.pdf",
+    "signedFormUrl": "/assets/forms/LU-KAL-001.pdf",
+    "CountingVideoUrl": "/assets/videos/LU-KAL-001.mp4",
+    "SubmittedAt": "2024-12-15T10:30:00Z",
+    "GpsLocation": "-15.4167,28.2833",
+    "TotalingCentreId": 1,
+    "PersonId": 1,
+    "PollingCentreTypeId": 1,
+    "CountingAudioUrl": "/assets/audio/LU-KAL-001.mp3",
+    "CountingTrascribedText": "Counting completed at 22:30. Total valid votes: 2300. UPND: 1850, PF: 380, Independent: 70.",
+    "OtherPartiesResultViewModel": [
+      {
+        "PartyName": "PF",
+        "VotesForCandidate": 380,
+        "Percentage": 16.52
+      },
+      {
+        "PartyName": "Independent",
+        "VotesForCandidate": 70,
+        "Percentage": 3.04
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "Name": "Chilenje Secondary School",
+    "PartyName": "PF",
+    "AgentName": "Mary Mwape",
+    "VotesForCandidate": 1200,
+    "ValidVotes": 2800,
+    "RegisteredVoters": 3200,
+    "registeredVoters": 3200,
+    "RejectedVotes": 52,
+    "PollingStationId": 2,
+    "ConstituencyId": 2,
+    "WonCandidate": "PF Candidate",
+    "SignedFormUrl": "/assets/forms/LU-CHI-002.pdf",
+    "signedFormUrl": "/assets/forms/LU-CHI-002.pdf",
+    "CountingVideoUrl": "/assets/videos/LU-CHI-002.mp4",
+    "SubmittedAt": "2024-12-15T11:15:00Z",
+    "GpsLocation": "-15.4333,28.3000",
+    "TotalingCentreId": 1,
+    "PersonId": 2,
+    "PollingCentreTypeId": 1,
+    "CountingAudioUrl": "/assets/audio/LU-CHI-002.mp3",
+    "CountingTrascribedText": "Counting completed at 23:15. Total valid votes: 2800. PF: 1200, UPND: 1050, UPP: 550.",
+    "OtherPartiesResultViewModel": [
+      {
+        "PartyName": "UPND",
+        "VotesForCandidate": 1050,
+        "Percentage": 37.5
+      },
+      {
+        "PartyName": "UPP",
+        "VotesForCandidate": 550,
+        "Percentage": 19.64
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "Name": "Nkana High School",
+    "PartyName": "PF",
+    "AgentName": "Bwalya Musonda",
+    "VotesForCandidate": 2100,
+    "ValidVotes": 2650,
+    "RegisteredVoters": 2800,
+    "registeredVoters": 2800,
+    "RejectedVotes": 38,
+    "PollingStationId": 3,
+    "ConstituencyId": 3,
+    "WonCandidate": "PF Candidate",
+    "SignedFormUrl": "/assets/forms/CB-NKA-001.pdf",
+    "signedFormUrl": "/assets/forms/CB-NKA-001.pdf",
+    "CountingVideoUrl": "/assets/videos/CB-NKA-001.mp4",
+    "SubmittedAt": "2024-12-15T12:00:00Z",
+    "GpsLocation": "-12.8022,28.2164",
+    "TotalingCentreId": 2,
+    "PersonId": 3,
+    "PollingCentreTypeId": 1,
+    "CountingAudioUrl": "/assets/audio/CB-NKA-001.mp3",
+    "CountingTrascribedText": "Counting completed at 23:45. Total valid votes: 2650. PF: 2100, UPND: 480, Independent: 70.",
+    "OtherPartiesResultViewModel": [
+      {
+        "PartyName": "UPND",
+        "VotesForCandidate": 480,
+        "Percentage": 18.11
+      },
+      {
+        "PartyName": "Independent",
+        "VotesForCandidate": 70,
+        "Percentage": 2.64
+      }
+    ]
+  },
+  {
+    "Id": 4,
+    "Name": "Maramba Primary School",
+    "PartyName": "UPND",
+    "AgentName": "Simuunza Hamusonde",
+    "VotesForCandidate": 2350,
+    "ValidVotes": 2900,
+    "RegisteredVoters": 3100,
+    "registeredVoters": 3100,
+    "RejectedVotes": 42,
+    "PollingStationId": 4,
+    "ConstituencyId": 4,
+    "WonCandidate": "UPND Candidate",
+    "SignedFormUrl": "/assets/forms/SO-LIV-001.pdf",
+    "signedFormUrl": "/assets/forms/SO-LIV-001.pdf",
+    "CountingVideoUrl": "/assets/videos/SO-LIV-001.mp4",
+    "SubmittedAt": "2024-12-15T09:45:00Z",
+    "GpsLocation": "-17.8419,25.8544",
+    "TotalingCentreId": 3,
+    "PersonId": 4,
+    "PollingCentreTypeId": 1,
+    "CountingAudioUrl": "/assets/audio/SO-LIV-001.mp3",
+    "CountingTrascribedText": "Counting completed at 22:00. Total valid votes: 2900. UPND: 2350, PF: 450, UPP: 100.",
+    "OtherPartiesResultViewModel": [
+      {
+        "PartyName": "PF",
+        "VotesForCandidate": 450,
+        "Percentage": 15.52
+      },
+      {
+        "PartyName": "UPP",
+        "VotesForCandidate": 100,
+        "Percentage": 3.45
+      }
+    ]
+  }
+]

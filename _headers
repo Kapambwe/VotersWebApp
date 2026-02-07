@@ -1,0 +1,27 @@
+/*
+  Content-Encoding: br
+  Cache-Control: public, max-age=31536000, immutable
+
+*.wasm
+  Content-Type: application/wasm
+  Content-Encoding: br
+
+*.dll
+  Content-Type: application/octet-stream
+  Content-Encoding: br
+
+*.js
+  Content-Type: application/javascript
+  Content-Encoding: br
+
+*.css
+  Content-Type: text/css
+  Content-Encoding: br
+
+*.json
+  Content-Type: application/json
+  Content-Encoding: br
+
+*.html
+  Content-Type: text/html
+  Content-Encoding: br
