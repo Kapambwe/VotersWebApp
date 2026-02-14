@@ -1,0 +1,22 @@
+[
+  {
+    "Id": "1",
+    "Name": "Central Branch",
+    "Region": "Central",
+    "Address": "123 Party HQ Street",
+    "Chairman": "Alice Johnson",
+    "Secretary": "John Smith",
+    "MemberCount": 250,
+    "EstablishedDate": "2015-01-01"
+  },
+  {
+    "Id": "2",
+    "Name": "East Branch",
+    "Region": "Eastern",
+    "Address": "456 East Avenue",
+    "Chairman": "Bob Williams",
+    "Secretary": "Mary Brown",
+    "MemberCount": 180,
+    "EstablishedDate": "2016-03-15"
+  }
+]

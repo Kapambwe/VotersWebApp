@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1",
+    "FirstName": "Alice",
+    "LastName": "Johnson",
+    "Email": "alice.johnson@npp.org",
+    "PhoneNumber": "+254700111222",
+    "MembershipNumber": "MEM001",
+    "JoinDate": "2020-01-01",
+    "MembershipStatus": "Active",
+    "Branch": "Central Branch",
+    "Position": "Branch Secretary"
+  },
+  {
+    "Id": "2",
+    "FirstName": "Bob",
+    "LastName": "Williams",
+    "Email": "bob.williams@npp.org",
+    "PhoneNumber": "+254700222333",
+    "MembershipNumber": "MEM002",
+    "JoinDate": "2020-03-15",
+    "MembershipStatus": "Active",
+    "Branch": "East Branch",
+    "Position": "Treasurer"
+  }
+]

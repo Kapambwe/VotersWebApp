@@ -1,0 +1,92 @@
+[
+  {
+    "PollingStationId": 1,
+    "Name": "Kalingalinga Primary School",
+    "Province": "Lusaka",
+    "District": "Lusaka Central",
+    "RegisteredVoters": 2500,
+    "Latitude": -15.4167,
+    "Longitude": 28.2833
+  },
+  {
+    "PollingStationId": 2,
+    "Name": "Chilenje Secondary School",
+    "Province": "Lusaka",
+    "District": "Kabwata",
+    "RegisteredVoters": 3200,
+    "Latitude": -15.4333,
+    "Longitude": 28.3000
+  },
+  {
+    "PollingStationId": 3,
+    "Name": "Nkana High School",
+    "Province": "Copperbelt",
+    "District": "Kitwe",
+    "RegisteredVoters": 2800,
+    "Latitude": -12.8022,
+    "Longitude": 28.2164
+  },
+  {
+    "PollingStationId": 4,
+    "Name": "Maramba Primary School",
+    "Province": "Southern",
+    "District": "Livingstone",
+    "RegisteredVoters": 3100,
+    "Latitude": -17.8419,
+    "Longitude": 25.8544
+  },
+  {
+    "PollingStationId": 5,
+    "Name": "Chipata Day Secondary",
+    "Province": "Eastern",
+    "District": "Chipata",
+    "RegisteredVoters": 2650,
+    "Latitude": -13.6333,
+    "Longitude": 32.6467
+  },
+  {
+    "PollingStationId": 6,
+    "Name": "Mongu Trades School",
+    "Province": "Western",
+    "District": "Mongu",
+    "RegisteredVoters": 1950,
+    "Latitude": -15.2636,
+    "Longitude": 23.1264
+  },
+  {
+    "PollingStationId": 7,
+    "Name": "Kasama Boys Secondary",
+    "Province": "Northern",
+    "District": "Kasama",
+    "RegisteredVoters": 2200,
+    "Latitude": -10.2128,
+    "Longitude": 31.1808
+  },
+  {
+    "PollingStationId": 8,
+    "Name": "Solwezi Trust School",
+    "Province": "Northwestern",
+    "District": "Solwezi",
+    "RegisteredVoters": 2400,
+    "Latitude": -12.1725,
+    "Longitude": 26.3908
+  },
+  {
+    "PollingStationId": 9,
+    "Name": "Makululu Primary School",
+    "Province": "Central",
+    "District": "Kabwe",
+    "RegisteredVoters": 2750,
+    "Latitude": -14.4469,
+    "Longitude": 28.4469
+  },
+  {
+    "PollingStationId": 10,
+    "Name": "Chinsali Day Secondary",
+    "Province": "Muchinga",
+    "District": "Chinsali",
+    "RegisteredVoters": 1850,
+    "Latitude": -10.5417,
+    "Longitude": 32.0811
+  }
+]

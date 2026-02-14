@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1",
+    "Name": "Central Constituency",
+    "Code": "CC001",
+    "Province": "Central Province",
+    "RegisteredVoters": 45000,
+    "PollingStations": 25
+  },
+  {
+    "Id": "2",
+    "Name": "East Constituency",
+    "Code": "EC001",
+    "Province": "Eastern Province",
+    "RegisteredVoters": 38000,
+    "PollingStations": 20
+  }
+]

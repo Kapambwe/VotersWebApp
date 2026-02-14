@@ -1,0 +1,122 @@
+[
+  {
+    "Id": "prov-001",
+    "Name": "Lusaka Province",
+    "Code": "LS",
+    "Description": "Capital province",
+    "DistrictCount": 7,
+    "ConstituencyCount": 25,
+    "RegisteredVoters": 1500000,
+    "IsActive": true,
+    "CreatedDate": "2022-01-01T00:00:00",
+    "CreatedBy": "System"
+  },
+  {
+    "Id": "prov-002",
+    "Name": "Copperbelt Province",
+    "Code": "CP",
+    "Description": "Mining province",
+    "DistrictCount": 10,
+    "ConstituencyCount": 30,
+    "RegisteredVoters": 1200000,
+    "IsActive": true,
+    "CreatedDate": "2022-01-01T00:00:00",
+    "CreatedBy": "System"
+  },
+  {
+    "Id": "prov-003",
+    "Name": "Central Province",
+    "Code": "CN",
+    "Description": "Central region",
+    "DistrictCount": 11,
+    "ConstituencyCount": 20,
+    "RegisteredVoters": 800000,
+    "IsActive": true,
+    "CreatedDate": "2022-01-01T00:00:00",
+    "CreatedBy": "System"
+  },
+  {
+    "Id": "prov-004",
+    "Name": "Eastern Province",
+    "Code": "EP",
+    "Description": "Eastern region",
+    "DistrictCount": 8,
+    "ConstituencyCount": 18,
+    "RegisteredVoters": 900000,
+    "IsActive": true,
+    "CreatedDate": "2022-01-01T00:00:00",
+    "CreatedBy": "System"
+  },
+  {
+    "Id": "prov-005",
+    "Name": "Southern Province",
+    "Code": "SP",
+    "Description": "Southern region",
+    "DistrictCount": 13,
+    "ConstituencyCount": 22,
+    "RegisteredVoters": 950000,
+    "IsActive": true,
+    "CreatedDate": "2022-01-01T00:00:00",
+    "CreatedBy": "System"
+  },
+  {
+    "Id": "prov-006",
+    "Name": "Western Province",
+    "Code": "WP",
+    "Description": "Western region",
+    "DistrictCount": 8,
+    "ConstituencyCount": 16,
+    "RegisteredVoters": 600000,
+    "IsActive": true,
+    "CreatedDate": "2022-01-01T00:00:00",
+    "CreatedBy": "System"
+  },
+  {
+    "Id": "prov-007",
+    "Name": "Northern Province",
+    "Code": "NP",
+    "Description": "Northern region",
+    "DistrictCount": 12,
+    "ConstituencyCount": 18,
+    "RegisteredVoters": 750000,
+    "IsActive": true,
+    "CreatedDate": "2022-01-01T00:00:00",
+    "CreatedBy": "System"
+  },
+  {
+    "Id": "prov-008",
+    "Name": "Luapula Province",
+    "Code": "LP",
+    "Description": "Luapula region",
+    "DistrictCount": 7,
+    "ConstituencyCount": 14,
+    "RegisteredVoters": 550000,
+    "IsActive": true,
+    "CreatedDate": "2022-01-01T00:00:00",
+    "CreatedBy": "System"
+  },
+  {
+    "Id": "prov-009",
+    "Name": "North-Western Province",
+    "Code": "NW",
+    "Description": "North-Western region",
+    "DistrictCount": 11,
+    "ConstituencyCount": 12,
+    "RegisteredVoters": 450000,
+    "IsActive": true,
+    "CreatedDate": "2022-01-01T00:00:00",
+    "CreatedBy": "System"
+  },
+  {
+    "Id": "prov-010",
+    "Name": "Muchinga Province",
+    "Code": "MP",
+    "Description": "Muchinga region",
+    "DistrictCount": 7,
+    "ConstituencyCount": 10,
+    "RegisteredVoters": 400000,
+    "IsActive": true,
+    "CreatedDate": "2022-01-01T00:00:00",
+    "CreatedBy": "System"
+  }
+]

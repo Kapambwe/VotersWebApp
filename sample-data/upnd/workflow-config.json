@@ -1,0 +1,38 @@
+{
+  "categories": [
+    "Voter Mobilization",
+    "Party Member Engagement",
+    "Voter Management",
+    "GOTV Campaign",
+    "Fundraising",
+    "Event Management",
+    "Volunteer Coordination",
+    "Issue Advocacy"
+  ],
+  "triggerTypes": [
+    "Contact Created",
+    "Contact Tagged",
+    "Form Submitted",
+    "Email Opened",
+    "Link Clicked",
+    "Event Registered",
+    "Donation Made",
+    "Petition Signed",
+    "Volunteer Signed Up",
+    "Manual Enrollment",
+    "Date-based",
+    "Campaign Launched"
+  ],
+  "goalOptions": [
+    "Email Opened",
+    "Link Clicked",
+    "Form Submitted",
+    "Event Attended",
+    "Donation Made",
+    "Voter Registered",
+    "Petition Signed",
+    "Volunteer Recruited",
+    "Survey Completed",
+    "Custom Field Updated"
+  ]
+}

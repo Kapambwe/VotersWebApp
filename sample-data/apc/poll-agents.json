@@ -1,0 +1,20 @@
+[
+  {
+    "Id": "1",
+    "FirstName": "Agent",
+    "LastName": "One",
+    "PhoneNumber": "+254700111222",
+    "PollingStation": "Central Primary School",
+    "Assignment": "Assigned",
+    "TrainingCompleted": true
+  },
+  {
+    "Id": "2",
+    "FirstName": "Agent",
+    "LastName": "Two",
+    "PhoneNumber": "+254700222333",
+    "PollingStation": "East Community Center",
+    "Assignment": "Assigned",
+    "TrainingCompleted": true
+  }
+]
