@@ -2,17 +2,23 @@
   {
     "Id": "rec-001",
     "DonorName": "John Doe",
+    "CampaignName": "Kanyama Member Parliament Campaign",
     "Amount": 1500000.0,
     "Frequency": "Monthly",
+    "PlanLabel": "Monthly supporter plan",
     "Status": "Active",
+    "PaymentMethod": "Mobile Money",
     "NextPaymentDate": "2026-06-01T00:00:00"
   },
   {
     "Id": "rec-002",
     "DonorName": "Alice Smith",
+    "CampaignName": "2026 Presidential Campaign",
     "Amount": 75000.0,
     "Frequency": "Quarterly",
+    "PlanLabel": "Quarterly leadership plan",
     "Status": "Active",
+    "PaymentMethod": "Bank Transfer",
     "NextPaymentDate": "2026-07-01T00:00:00"
   }
 ]
