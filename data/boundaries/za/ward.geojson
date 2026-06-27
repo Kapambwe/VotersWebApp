@@ -1,0 +1,44 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ward 1",
+        "regionKey": "ward:1",
+        "levelKey": "ward",
+        "countryCode": "ZA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[27.82, -26.36], [27.97, -26.36], [27.97, -26.24], [27.82, -26.24], [27.82, -26.36]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ward 2",
+        "regionKey": "ward:2",
+        "levelKey": "ward",
+        "countryCode": "ZA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[18.42, -34.04], [18.58, -34.04], [18.58, -33.92], [18.42, -33.92], [18.42, -34.04]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ward 3",
+        "regionKey": "ward:3",
+        "levelKey": "ward",
+        "countryCode": "ZA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[30.82, -29.88], [30.95, -29.88], [30.95, -29.76], [30.82, -29.76], [30.82, -29.88]]]
+      }
+    }
+  ]
+}

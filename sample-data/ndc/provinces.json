@@ -1,0 +1,23 @@
+[
+  {
+    "Id": "1",
+    "Name": "Central Province",
+    "Code": "CP",
+    "Population": 2500000,
+    "RegisteredVoters": 1500000
+  },
+  {
+    "Id": "2",
+    "Name": "Eastern Province",
+    "Code": "EP",
+    "Population": 1800000,
+    "RegisteredVoters": 1000000
+  },
+  {
+    "Id": "3",
+    "Name": "Western Province",
+    "Code": "WP",
+    "Population": 2000000,
+    "RegisteredVoters": 1200000
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "campaignId": 2,
+    "campaignName": "Kanyama Member Parliament Campaign",
+    "title": "Morning Canvassing Session",
+    "description": "Door-to-door visits in Zone A",
+    "startTime": "2026-05-17T09:00:00",
+    "endTime": "2026-05-17T12:00:00",
+    "location": "Kamwala Area, Ward 5",
+    "status": "Pending",
+    "icon": "home"
+  },
+  {
+    "id": "2",
+    "campaignId": 2,
+    "campaignName": "Kanyama Member Parliament Campaign",
+    "title": "Team Meeting",
+    "description": "Weekly coordination meeting",
+    "startTime": "2026-05-17T14:00:00",
+    "endTime": "2026-05-17T15:00:00",
+    "location": "Party Office",
+    "status": "Pending",
+    "icon": "groups"
+  },
+  {
+    "id": "3",
+    "campaignId": 1,
+    "campaignName": "2026 Presidential Campaign",
+    "title": "Evening Canvassing Session",
+    "description": "Follow-up visits for undecided voters",
+    "startTime": "2026-05-17T17:00:00",
+    "endTime": "2026-05-17T19:00:00",
+    "location": "Kamwala Area, Ward 5",
+    "status": "Pending",
+    "icon": "home"
+  },
+  {
+    "id": "4",
+    "campaignId": 3,
+    "campaignName": "Chipata Central Member Parliament Campaign",
+    "title": "Voter Education Seminar",
+    "description": "Community session on voting rights",
+    "startTime": "2026-05-18T10:00:00",
+    "endTime": "2026-05-18T12:00:00",
+    "location": "Community Center",
+    "status": "Pending",
+    "icon": "school"
+  }
+]

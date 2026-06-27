@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "houseNumber": "15A",
+    "plotNumber": "Plot 15",
+    "propertyNumber": "PROP-001",
+    "streetName": "Independence Avenue",
+    "ward": "Kabwata Ward",
+    "propertyTypeName": "Residential",
+    "residentialAreaName": "Kabwata"
+  },
+  {
+    "id": 2,
+    "houseNumber": "23",
+    "plotNumber": "Plot 23",
+    "propertyNumber": "PROP-002",
+    "streetName": "Independence Avenue",
+    "ward": "Kabwata Ward",
+    "propertyTypeName": "Commercial",
+    "residentialAreaName": "Kabwata"
+  },
+  {
+    "id": 3,
+    "houseNumber": "125",
+    "plotNumber": "Plot 125",
+    "propertyNumber": "PROP-003",
+    "streetName": "Main Road",
+    "ward": "Kanyama Ward",
+    "propertyTypeName": "Residential",
+    "residentialAreaName": "Kanyama"
+  },
+  {
+    "id": 4,
+    "houseNumber": "V-12",
+    "plotNumber": "Village Settlement 12",
+    "propertyNumber": "PROP-R004",
+    "streetName": "Chongwe Rural Road",
+    "ward": "Chongwe Ward",
+    "propertyTypeName": "Rural Residential",
+    "residentialAreaName": "Chongwe Village"
+  },
+  {
+    "id": 5,
+    "houseNumber": "Farm 45",
+    "plotNumber": "Sub-division 45",
+    "propertyNumber": "PROP-R005",
+    "streetName": "Old Mumbwa Road",
+    "ward": "Mumbwa Rural",
+    "propertyTypeName": "Agricultural Residential",
+    "residentialAreaName": "Mumbwa Farming Block"
+  },
+  {
+    "id": 6,
+    "houseNumber": "CH-07",
+    "plotNumber": "Chiefdom Area 07",
+    "propertyNumber": "PROP-R006",
+    "streetName": "North Western Path",
+    "ward": "Rural North",
+    "propertyTypeName": "Traditional Land",
+    "residentialAreaName": "Solwezi Rural"
+  }
+]

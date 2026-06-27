@@ -1,0 +1,35 @@
+[
+  {
+    "Id": "wfver-003",
+    "WorkflowId": "wf-001",
+    "Version": 3,
+    "Description": "Enhanced voter outreach with SMS integration",
+    "ChangeDescription": "Added SMS steps and improved email templates",
+    "CreatedDate": "2026-05-19T10:00:00",
+    "CreatedBy": "Current User",
+    "StepCount": 8,
+    "Status": "Active"
+  },
+  {
+    "Id": "wfver-002",
+    "WorkflowId": "wf-001",
+    "Version": 2,
+    "Description": "Added conditional branching",
+    "ChangeDescription": "Implemented voter response tracking and conditional paths",
+    "CreatedDate": "2026-05-14T10:00:00",
+    "CreatedBy": "Team Lead",
+    "StepCount": 6,
+    "Status": "Archived"
+  },
+  {
+    "Id": "wfver-001",
+    "WorkflowId": "wf-001",
+    "Version": 1,
+    "Description": "Initial workflow setup",
+    "ChangeDescription": "Basic email sequence for voter engagement",
+    "CreatedDate": "2026-05-07T10:00:00",
+    "CreatedBy": "Campaign Manager",
+    "StepCount": 4,
+    "Status": "Archived"
+  }
+]

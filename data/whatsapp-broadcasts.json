@@ -1,0 +1,17 @@
+[
+  {
+    "Id": "broadcast-1",
+    "Name": "Town Hall Reminder",
+    "Message": "Reminder for tonight's town hall meeting.",
+    "TemplateId": "1",
+    "ContactIds": [ "contact-1" ],
+    "Tags": [ "Volunteer" ],
+    "Status": "Sent",
+    "CreatedAt": "2026-05-20T10:00:00",
+    "SentAt": "2026-05-20T10:15:00",
+    "TotalRecipients": 1,
+    "SuccessfulSends": 1,
+    "FailedSends": 0,
+    "CreatedBy": "System"
+  }
+]

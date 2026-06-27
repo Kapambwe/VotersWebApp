@@ -1,0 +1,164 @@
+[
+  {
+    "Id": "tpl-001",
+    "Name": "Voter Registration Drive",
+    "Icon": "how_to_register",
+    "Description": "Guide unregistered voters through ECZ registration process with reminders and deadline alerts",
+    "Nodes": 8,
+    "Duration": "14 days",
+    "Tags": ["Voter Mobilization", "Registration", "GOTV"]
+  },
+  {
+    "Id": "tpl-002",
+    "Name": "Get Out The Vote (GOTV)",
+    "Icon": "campaign",
+    "Description": "Multi-touch GOTV sequence with early vote info, polling location, and election day reminders for Zambian constituents",
+    "Nodes": 12,
+    "Duration": "30 days",
+    "Tags": ["Voter Mobilization", "GOTV", "Turnout"]
+  },
+  {
+    "Id": "tpl-003",
+    "Name": "Early Voting Reminder Campaign",
+    "Icon": "access_time",
+    "Description": "Encourage early voting with polling station locations, hours, and transportation assistance information",
+    "Nodes": 7,
+    "Duration": "10 days",
+    "Tags": ["Voter Mobilization", "Early Voting", "GOTV"]
+  },
+  {
+    "Id": "tpl-004",
+    "Name": "Election Day Turnout Push",
+    "Icon": "event",
+    "Description": "Final push on election day with polling location reminders, transportation offers, and status check-ins",
+    "Nodes": 6,
+    "Duration": "1 day",
+    "Tags": ["Voter Mobilization", "Election Day", "GOTV"]
+  },
+  {
+    "Id": "tpl-005",
+    "Name": "New Party Member Onboarding",
+    "Icon": "handshake",
+    "Description": "Welcome new party members with orientation materials, local chapter info, and first meeting invitations",
+    "Nodes": 9,
+    "Duration": "21 days",
+    "Tags": ["Party Members", "Onboarding", "Engagement"]
+  },
+  {
+    "Id": "tpl-006",
+    "Name": "Member Re-engagement Campaign",
+    "Icon": "refresh",
+    "Description": "Re-activate dormant party members with recent achievements, upcoming events, and ways to get involved",
+    "Nodes": 8,
+    "Duration": "14 days",
+    "Tags": ["Party Members", "Re-engagement", "Retention"]
+  },
+  {
+    "Id": "tpl-007",
+    "Name": "Volunteer Recruitment Workflow",
+    "Icon": "volunteer_activism",
+    "Description": "Convert party members to active volunteers with training opportunities, shift scheduling, and incentives",
+    "Nodes": 10,
+    "Duration": "21 days",
+    "Tags": ["Party Members", "Volunteers", "Recruitment"]
+  },
+  {
+    "Id": "tpl-008",
+    "Name": "Party Agent Training & Deployment",
+    "Icon": "school",
+    "Description": "Train and deploy party agents with ECZ compliance training, polling station assignments, and day-of support",
+    "Nodes": 12,
+    "Duration": "28 days",
+    "Tags": ["Party Members", "Agents", "Training"]
+  },
+  {
+    "Id": "tpl-009",
+    "Name": "Monthly Member Engagement",
+    "Icon": "groups",
+    "Description": "Keep members engaged with monthly newsletters, event invitations, policy updates, and feedback surveys",
+    "Nodes": 6,
+    "Duration": "30 days",
+    "Tags": ["Party Members", "Engagement", "Retention"]
+  },
+  {
+    "Id": "tpl-010",
+    "Name": "Voter Nurture Sequence",
+    "Icon": "favorite",
+    "Description": "Build relationships with undecided voters through educational content, candidate info, and personal touchpoints",
+    "Nodes": 11,
+    "Duration": "45 days",
+    "Tags": ["Voter Management", "Nurture", "Persuasion"]
+  },
+  {
+    "Id": "tpl-011",
+    "Name": "Issue-Based Engagement",
+    "Icon": "gavel",
+    "Description": "Engage voters around specific issues (healthcare, education, economy) with targeted messaging and action calls",
+    "Nodes": 8,
+    "Duration": "21 days",
+    "Tags": ["Voter Management", "Issues", "Advocacy"]
+  },
+  {
+    "Id": "tpl-012",
+    "Name": "Town Hall Follow-up",
+    "Icon": "forum",
+    "Description": "Follow up after town halls with event recap, answered questions, pledge summaries, and feedback collection",
+    "Nodes": 7,
+    "Duration": "10 days",
+    "Tags": ["Voter Management", "Events", "Engagement"]
+  },
+  {
+    "Id": "tpl-013",
+    "Name": "Petition Signature Campaign",
+    "Icon": "draw",
+    "Description": "Drive petition signatures with issue awareness, signing locations, and progress updates",
+    "Nodes": 9,
+    "Duration": "14 days",
+    "Tags": ["Voter Management", "Petitions", "Advocacy"]
+  },
+  {
+    "Id": "tpl-014",
+    "Name": "Supporter Identification & Classification",
+    "Icon": "badge",
+    "Description": "Identify and classify voter support levels through surveys, canvassing, and engagement tracking",
+    "Nodes": 10,
+    "Duration": "30 days",
+    "Tags": ["Voter Management", "Data", "Targeting"]
+  },
+  {
+    "Id": "tpl-015",
+    "Name": "Constituency Service Follow-up",
+    "Icon": "support_agent",
+    "Description": "Follow up on constituency service requests with status updates, resolution confirmations, and satisfaction surveys",
+    "Nodes": 8,
+    "Duration": "21 days",
+    "Tags": ["Voter Management", "Service", "Retention"]
+  },
+  {
+    "Id": "tpl-016",
+    "Name": "Fundraising Event Promotion",
+    "Icon": "celebration",
+    "Description": "Promote fundraising events with save-the-dates, RSVPs, reminders, and thank-you follow-ups",
+    "Nodes": 9,
+    "Duration": "21 days",
+    "Tags": ["Fundraising", "Events", "Engagement"]
+  },
+  {
+    "Id": "tpl-017",
+    "Name": "Recurring Donor Stewardship",
+    "Icon": "autorenew",
+    "Description": "Nurture recurring donors with impact updates, special recognition, and renewal reminders",
+    "Nodes": 7,
+    "Duration": "90 days",
+    "Tags": ["Fundraising", "Donors", "Retention"]
+  },
+  {
+    "Id": "tpl-018",
+    "Name": "Campaign Rally Mobilization",
+    "Icon": "mic",
+    "Description": "Mobilize supporters for campaign rallies with logistics, transportation, and attendance confirmations",
+    "Nodes": 8,
+    "Duration": "7 days",
+    "Tags": ["Events", "Rallies", "Mobilization"]
+  }
+]

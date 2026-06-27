@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Secure Payment</title>
+
+  <!--
+    ═══════════════════════════════════════════════════════════════════
+    ACCOUNTING-AS-A-SERVICE  ·  White-Label Payment Page
+    ═══════════════════════════════════════════════════════════════════
+    USAGE
+    ─────
+    1. Static embed (pure HTML, no server required):
+       Host this file anywhere (CDN, S3, GitHub Pages).
+       Customise via URL hash / query-string parameters:
+
+         ?amount=99.00
+         &currency=USD
+         &description=Premium+Plan
+         &logo=https://yourbrand.com/logo.png
+         &primaryColor=%230f766e
+         &successUrl=https://yourdomain.com/thank-you
+         &cancelUrl=https://yourdomain.com/checkout
+
+    2. Embedded widget:
+       <iframe src="https://pay.yourapp.com/payment-page.html?amount=49&currency=ZMW"
+               width="480" height="620" frameborder="0"></iframe>
+
+    3. Payment link backend:
+       Serve the page from your own domain under /pay/{slug}.
+       The server pre-populates query parameters from the PaymentLinkModel.
+
+    PROVIDER INTEGRATION HOOKS
+    ──────────────────────────
+    Replace the #submitPayment handler's TODO sections with real provider
+    SDK calls.  The page ships with a fetch()-based adapter skeleton that
+    maps to IPaymentProvider.ChargeAsync() on the server side.
+
+    BRANDING
+    ────────
+    All colours and copy are CSS variables.  Customise them via:
+      • URL query-string  (?primaryColor=...)
+      • postMessage from parent frame
+      • Direct CSS variable override in your host page
+    ═══════════════════════════════════════════════════════════════════
+  -->
+
+  <style>
+    /* ── Design tokens (override via JS or CSS) ───────────────────── */
+    :root {
+      --pay-primary:        #0f766e;  /* teal */
+      --pay-primary-dark:   #0d6460;
+      --pay-primary-light:  #ccfbf1;
+      --pay-danger:         #dc2626;
+      --pay-success:        #16a34a;
+      --pay-warning:        #d97706;
+      --pay-text:           #111827;
+      --pay-text-muted:     #6b7280;
+      --pay-border:         #e5e7eb;
+      --pay-bg:             #f9fafb;
+      --pay-card-bg:        #ffffff;
+      --pay-radius:         12px;
+      --pay-shadow:         0 4px 24px rgba(0,0,0,.08);
+      --pay-font:           'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    /* ── Reset ────────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--pay-font);
+      background: var(--pay-bg);
+      color: var(--pay-text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 2rem 1rem;
+    }
+
+    /* ── Card ─────────────────────────────────────────────────────── */
+    .pay-card {
+      background: var(--pay-card-bg);
+      border-radius: var(--pay-radius);
+      box-shadow: var(--pay-shadow);
+      width: 100%;
+      max-width: 460px;
+      overflow: hidden;
+    }
+
+    /* ── Header ───────────────────────────────────────────────────── */
+    .pay-header {
+      background: var(--pay-primary);
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: #fff;
+    }
+    .pay-logo {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: rgba(255,255,255,.15);
+      padding: 4px;
+    }
+    .pay-logo-placeholder {
+      width: 48px; height: 48px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+    }
+    .pay-header-info h1 { font-size: 1.1rem; font-weight: 700; }
+    .pay-header-info p  { font-size: .82rem; opacity: .85; margin-top: 2px; }
+
+    /* ── Amount summary ───────────────────────────────────────────── */
+    .pay-summary {
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--pay-border);
+    }
+    .pay-amount {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--pay-primary);
+      letter-spacing: -.5px;
+    }
+    .pay-description {
+      font-size: .88rem;
+      color: var(--pay-text-muted);
+      margin-top: .25rem;
+    }
+
+    /* ── Tabs ─────────────────────────────────────────────────────── */
+    .pay-tabs {
+      display: flex;
+      border-bottom: 2px solid var(--pay-border);
+      padding: 0 1rem;
+      overflow-x: auto;
+      gap: .25rem;
+    }
+    .pay-tab {
+      padding: .75rem 1rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-size: .88rem;
+      font-weight: 500;
+      color: var(--pay-text-muted);
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      white-space: nowrap;
+      transition: color .15s, border-color .15s;
+    }
+    .pay-tab.active {
+      color: var(--pay-primary);
+      border-bottom-color: var(--pay-primary);
+    }
+    .pay-tab:hover { color: var(--pay-primary); }
+
+    /* ── Tab panels ───────────────────────────────────────────────── */
+    .pay-panel { display: none; padding: 1.5rem 2rem; }
+    .pay-panel.active { display: block; }
+
+    /* ── Form elements ────────────────────────────────────────────── */
+    .pay-field { margin-bottom: 1rem; }
+    .pay-field label {
+      display: block;
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--pay-text-muted);
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      margin-bottom: .4rem;
+    }
+    .pay-input, .pay-select {
+      width: 100%;
+      padding: .65rem .85rem;
+      border: 1.5px solid var(--pay-border);
+      border-radius: 8px;
+      font-size: .95rem;
+      font-family: var(--pay-font);
+      color: var(--pay-text);
+      background: var(--pay-bg);
+      transition: border-color .15s, box-shadow .15s;
+      outline: none;
+    }
+    .pay-input:focus, .pay-select:focus {
+      border-color: var(--pay-primary);
+      box-shadow: 0 0 0 3px var(--pay-primary-light);
+    }
+    .pay-input.invalid { border-color: var(--pay-danger); }
+
+    .pay-row { display: flex; gap: .75rem; }
+    .pay-row .pay-field { flex: 1; }
+
+    /* ── Monospace reference box ──────────────────────────────────── */
+    .pay-reference-box {
+      background: var(--pay-bg);
+      border: 1.5px dashed var(--pay-warning);
+      border-radius: 8px;
+      padding: .85rem 1rem;
+      margin-bottom: 1rem;
+    }
+    .pay-reference-box .label {
+      font-size: .75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .05em;
+      color: var(--pay-warning); margin-bottom: .3rem;
+    }
+    .pay-reference-box .value {
+      font-family: 'Courier New', monospace;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      user-select: all;
+    }
+
+    /* ── Info / instruction boxes ─────────────────────────────────── */
+    .pay-info-box {
+      background: var(--pay-primary-light);
+      border-left: 4px solid var(--pay-primary);
+      border-radius: 0 8px 8px 0;
+      padding: .85rem 1rem;
+      font-size: .88rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .pay-bank-details {
+      background: var(--pay-bg);
+      border: 1.5px solid var(--pay-border);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+    .pay-bank-row {
+      display: flex;
+      justify-content: space-between;
+      padding: .35rem 0;
+      border-bottom: 1px solid var(--pay-border);
+      font-size: .9rem;
+    }
+    .pay-bank-row:last-child { border-bottom: none; }
+    .pay-bank-row .key { color: var(--pay-text-muted); }
+    .pay-bank-row .val { font-weight: 600; text-align: right; }
+
+    /* ── Submit button ────────────────────────────────────────────── */
+    .pay-btn {
+      width: 100%;
+      padding: .85rem 1rem;
+      border: none;
+      border-radius: 8px;
+      background: var(--pay-primary);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      transition: background .15s, opacity .15s;
+      margin-top: .5rem;
+    }
+    .pay-btn:hover:not(:disabled) { background: var(--pay-primary-dark); }
+    .pay-btn:disabled { opacity: .65; cursor: not-allowed; }
+    .pay-btn.loading::after {
+      content: '';
+      width: 18px; height: 18px;
+      border: 2.5px solid rgba(255,255,255,.4);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Status messages ──────────────────────────────────────────── */
+    .pay-alert {
+      padding: .85rem 1rem;
+      border-radius: 8px;
+      font-size: .9rem;
+      margin-bottom: 1rem;
+      display: none;
+    }
+    .pay-alert.show { display: flex; align-items: flex-start; gap: .5rem; }
+    .pay-alert.success { background: #dcfce7; color: #166534; }
+    .pay-alert.error   { background: #fee2e2; color: #991b1b; }
+    .pay-alert.info    { background: var(--pay-primary-light); color: #134e4a; }
+
+    /* ── Footer ───────────────────────────────────────────────────── */
+    .pay-footer {
+      padding: 1rem 2rem 1.5rem;
+      border-top: 1px solid var(--pay-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      font-size: .78rem;
+      color: var(--pay-text-muted);
+    }
+    .pay-footer svg { opacity: .5; }
+
+    /* ── Success / cancelled state overlays ───────────────────────── */
+    .pay-state-overlay {
+      display: none;
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+    .pay-state-overlay.show { display: block; }
+    .pay-state-overlay .icon { font-size: 3.5rem; margin-bottom: 1rem; }
+    .pay-state-overlay h2 { font-size: 1.4rem; margin-bottom: .5rem; }
+    .pay-state-overlay p { color: var(--pay-text-muted); font-size: .9rem; }
+    .pay-state-overlay .redirect-msg { font-size: .8rem; margin-top: 1rem; color: var(--pay-text-muted); }
+
+    /* ── Responsive ───────────────────────────────────────────────── */
+    @media (max-width: 500px) {
+      body { padding: 0; }
+      .pay-card { border-radius: 0; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="pay-card" id="payCard">
+
+  <!-- ── Header ─────────────────────────────────────────────────── -->
+  <div class="pay-header">
+    <span id="logoWrap">
+      <span class="pay-logo-placeholder">💳</span>
+    </span>
+    <div class="pay-header-info">
+      <h1 id="brandName">Secure Payment</h1>
+      <p id="brandTagline">Powered by Accounting-as-a-Service</p>
+    </div>
+  </div>
+
+  <!-- ── Amount summary ─────────────────────────────────────────── -->
+  <div class="pay-summary">
+    <div class="pay-amount" id="displayAmount">--</div>
+    <div class="pay-description" id="displayDesc">Loading payment details…</div>
+  </div>
+
+  <!-- ── Success overlay ────────────────────────────────────────── -->
+  <div class="pay-state-overlay" id="successState">
+    <div class="icon">✅</div>
+    <h2>Payment Successful!</h2>
+    <p id="successMsg">Your payment has been processed. A receipt has been sent to your email.</p>
+    <p class="redirect-msg" id="redirectMsg" style="display:none"></p>
+  </div>
+
+  <!-- ── Pending overlay ────────────────────────────────────────── -->
+  <div class="pay-state-overlay" id="pendingState">
+    <div class="icon">⏳</div>
+    <h2>Payment Pending</h2>
+    <p>We are waiting for confirmation. Please check your phone / email.</p>
+    <p class="redirect-msg" id="pendingRef"></p>
+  </div>
+
+  <!-- ── Error overlay ──────────────────────────────────────────── -->
+  <div class="pay-state-overlay" id="failedState">
+    <div class="icon">❌</div>
+    <h2>Payment Failed</h2>
+    <p id="failedMsg">Something went wrong. Please try again or use a different payment method.</p>
+    <button class="pay-btn" style="margin-top:1.5rem;max-width:200px;margin-left:auto;margin-right:auto"
+            onclick="resetToForm()">Try Again</button>
+  </div>
+
+  <!-- ── Main form (hidden when overlay shown) ──────────────────── -->
+  <div id="formArea">
+
+    <!-- Alerts -->
+    <div style="padding:.75rem 2rem 0">
+      <div class="pay-alert" id="alertBox"></div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="pay-tabs" id="tabBar">
+      <button class="pay-tab active" data-tab="card"    onclick="switchTab('card')">💳 Card</button>
+      <button class="pay-tab"        data-tab="mobile"  onclick="switchTab('mobile')">📱 Mobile Money</button>
+      <button class="pay-tab"        data-tab="bank"    onclick="switchTab('bank')">🏦 Bank Transfer</button>
+      <button class="pay-tab"        data-tab="deposit" onclick="switchTab('deposit')">🏧 Bank Deposit</button>
+    </div>
+
+    <!-- ── Card panel ─────────────────────────────────────────── -->
+    <div class="pay-panel active" id="panel-card">
+      <!--
+        IMPORTANT (PCI DSS):
+        In production, replace this form with your provider's hosted JS widget
+        (e.g., Stripe Elements, Flutterwave Inline, Paystack Inline) so that raw
+        card details never touch your server.  The fields below are provided for
+        layout reference only — the submitCard() function must tokenize card data
+        client-side before sending anything to your API.
+      -->
+      <div class="pay-field">
+        <label>Cardholder Name</label>
+        <input class="pay-input" id="cardName" type="text" placeholder="As on the card"
+               autocomplete="cc-name" />
+      </div>
+      <div class="pay-field">
+        <label>Card Number</label>
+        <input class="pay-input" id="cardNumber" type="tel" placeholder="1234 5678 9012 3456"
+               maxlength="19" autocomplete="cc-number" oninput="formatCard(this)" />
+      </div>
+      <div class="pay-row">
+        <div class="pay-field">
+          <label>Expiry</label>
+          <input class="pay-input" id="cardExpiry" type="tel" placeholder="MM / YY"
+                 maxlength="7" autocomplete="cc-exp" oninput="formatExpiry(this)" />
+        </div>
+        <div class="pay-field">
+          <label>CVV / CVC</label>
+          <input class="pay-input" id="cardCvv" type="tel" placeholder="123"
+                 maxlength="4" autocomplete="cc-csc" />
+        </div>
+      </div>
+      <div class="pay-field">
+        <label>Email (for receipt)</label>
+        <input class="pay-input" id="cardEmail" type="email" placeholder="you@example.com"
+               autocomplete="email" />
+      </div>
+      <button class="pay-btn" id="btnCard" onclick="submitCard()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2.5"><rect x="1" y="4" width="22"
+             height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        Pay Now
+      </button>
+    </div>
+
+    <!-- ── Mobile Money panel ──────────────────────────────────── -->
+    <div class="pay-panel" id="panel-mobile">
+      <div class="pay-info-box">
+        You will receive a payment prompt (STK push / USSD) on your phone.
+        Please have your phone nearby and approve the request.
+      </div>
+      <div class="pay-field">
+        <label>Mobile Network</label>
+        <select class="pay-select" id="mobileNetwork">
+          <option value="mtn">MTN Mobile Money</option>
+          <option value="airtel">Airtel Money</option>
+          <option value="zamtel">Zamtel Kwacha</option>
+          <option value="mpesa">M-Pesa</option>
+          <option value="orange">Orange Money</option>
+          <option value="moov">Moov Money</option>
+        </select>
+      </div>
+      <div class="pay-field">
+        <label>Phone Number</label>
+        <input class="pay-input" id="mobilePhone" type="tel"
+               placeholder="+260 9X XXX XXXX" autocomplete="tel" />
+      </div>
+      <div class="pay-field">
+        <label>Email (for receipt)</label>
+        <input class="pay-input" id="mobileEmail" type="email"
+               placeholder="you@example.com" autocomplete="email" />
+      </div>
+      <button class="pay-btn" id="btnMobile" onclick="submitMobileMoney()">
+        📱 Send Payment Request
+      </button>
+    </div>
+
+    <!-- ── Bank Transfer panel ─────────────────────────────────── -->
+    <div class="pay-panel" id="panel-bank">
+      <div class="pay-info-box">
+        Transfer the exact amount to the account below.
+        Use your <strong>payment reference</strong> as the transfer description so we can match your payment.
+      </div>
+
+      <div class="pay-reference-box">
+        <div class="label">Your Payment Reference</div>
+        <div class="value" id="transferRef">Generating…</div>
+      </div>
+
+      <div class="pay-bank-details" id="bankTransferDetails">
+        <!-- Populated by JS from branding options / config -->
+      </div>
+
+      <div class="pay-field">
+        <label>Your Email (for confirmation)</label>
+        <input class="pay-input" id="bankEmail" type="email"
+               placeholder="you@example.com" autocomplete="email" />
+      </div>
+      <button class="pay-btn" id="btnBank" onclick="submitBankTransfer()">
+        🏦 I Have Made the Transfer
+      </button>
+    </div>
+
+    <!-- ── Bank Deposit panel ──────────────────────────────────── -->
+    <div class="pay-panel" id="panel-deposit">
+      <div class="pay-info-box">
+        Visit any branch or use your bank's internet banking to deposit the amount below.
+        Keep your <strong>deposit slip</strong> — you will need to enter the slip number to confirm.
+      </div>
+
+      <div class="pay-reference-box">
+        <div class="label">Your Payment Reference</div>
+        <div class="value" id="depositRef">Generating…</div>
+      </div>
+
+      <div class="pay-bank-details" id="bankDepositDetails">
+        <!-- Populated by JS -->
+      </div>
+
+      <div class="pay-field">
+        <label>Deposit Slip / Receipt Number</label>
+        <input class="pay-input" id="slipNumber" type="text"
+               placeholder="e.g., DEP-2024-0012345" />
+      </div>
+      <div class="pay-field">
+        <label>Your Email (for confirmation)</label>
+        <input class="pay-input" id="depositEmail" type="email"
+               placeholder="you@example.com" autocomplete="email" />
+      </div>
+      <button class="pay-btn" id="btnDeposit" onclick="submitDeposit()">
+        🏧 Confirm Deposit
+      </button>
+    </div>
+
+  </div><!-- /#formArea -->
+
+  <!-- ── Footer ─────────────────────────────────────────────────── -->
+  <div class="pay-footer" id="payFooter">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2.5">
+      <rect x="3" y="11" width="18" height="11" rx="2"/>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+    </svg>
+    Secured by 256-bit TLS encryption
+    &nbsp;·&nbsp;
+    <span id="footerBrand">Accounting-as-a-Service</span>
+  </div>
+
+</div><!-- /.pay-card -->
+
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!--  JavaScript — configuration, tab switching, submission logic  -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<script>
+  /* ── 1. Read configuration from URL query-string ─────────────── */
+  const params = new URLSearchParams(window.location.search);
+
+  const cfg = {
+    amount:       parseFloat(params.get('amount')       || '0'),
+    currency:     (params.get('currency')               || 'USD').toUpperCase(),
+    description:  params.get('description')             || 'Payment',
+    slug:         params.get('slug')                    || '',
+    logo:         params.get('logo')                    || '',
+    brandName:    params.get('brandName')               || 'Secure Payment',
+    tagline:      params.get('tagline')                 || 'Powered by Accounting-as-a-Service',
+    primaryColor: params.get('primaryColor')            || '',
+    successUrl:   params.get('successUrl')              || '',
+    cancelUrl:    params.get('cancelUrl')               || '',
+    // Bank account details (populated by the server / payment link)
+    bankName:     params.get('bankName')                || 'Your Bank Name',
+    accountName:  params.get('accountName')             || 'Merchant Name',
+    accountNo:    params.get('accountNo')               || 'XXXX-XXXX-XXXX',
+    branchCode:   params.get('branchCode')              || '',
+    swiftCode:    params.get('swiftCode')               || '',
+    // API endpoint — set to your gateway's PaymentLinks endpoint
+    apiBase:      params.get('apiBase')                 || '',
+  };
+
+  /* ── 2. Apply branding ────────────────────────────────────────── */
+  document.getElementById('page-title').textContent = cfg.brandName;
+  document.getElementById('brandName').textContent   = cfg.brandName;
+  document.getElementById('brandTagline').textContent = cfg.tagline;
+  document.getElementById('footerBrand').textContent  = cfg.brandName;
+
+  if (cfg.logo) {
+    const img = document.createElement('img');
+    img.src = cfg.logo;
+    img.className = 'pay-logo';
+    img.alt = cfg.brandName;
+    document.getElementById('logoWrap').replaceChildren(img);
+  }
+
+  if (cfg.primaryColor) {
+    const r = document.documentElement;
+    r.style.setProperty('--pay-primary', cfg.primaryColor);
+    r.style.setProperty('--pay-primary-dark',  shadeColor(cfg.primaryColor, -15));
+    r.style.setProperty('--pay-primary-light', shadeColor(cfg.primaryColor, 90));
+  }
+
+  /* ── 3. Display amount ────────────────────────────────────────── */
+  const fmt = new Intl.NumberFormat('en-US', { style:'currency', currency: cfg.currency });
+  document.getElementById('displayAmount').textContent = cfg.amount > 0
+    ? fmt.format(cfg.amount) : '—';
+  document.getElementById('displayDesc').textContent = cfg.description;
+
+  /* ── 4. Generate payment reference ───────────────────────────── */
+  const ref = cfg.slug
+    ? `PAY-${cfg.slug.toUpperCase()}`
+    : `PAY-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).slice(2,6).toUpperCase()}`;
+
+  document.getElementById('transferRef').textContent = ref;
+  document.getElementById('depositRef').textContent  = ref;
+
+  /* ── 5. Populate bank details ─────────────────────────────────── */
+  function buildBankRows(containerId) {
+    const rows = [
+      { key:'Bank',           val: cfg.bankName },
+      { key:'Account Name',   val: cfg.accountName },
+      { key:'Account No.',    val: cfg.accountNo },
+    ];
+    if (cfg.branchCode) rows.push({ key:'Branch Code', val: cfg.branchCode });
+    if (cfg.swiftCode)  rows.push({ key:'SWIFT / BIC', val: cfg.swiftCode });
+    rows.push({ key:'Amount', val: fmt.format(cfg.amount) });
+    rows.push({ key:'Reference', val: ref });
+
+    const el = document.getElementById(containerId);
+    el.innerHTML = rows.map(r =>
+      `<div class="pay-bank-row">
+         <span class="key">${r.key}</span>
+         <span class="val">${r.val}</span>
+       </div>`
+    ).join('');
+  }
+  buildBankRows('bankTransferDetails');
+  buildBankRows('bankDepositDetails');
+
+  /* ── 6. Tab switching ─────────────────────────────────────────── */
+  function switchTab(name) {
+    document.querySelectorAll('.pay-tab').forEach(t =>
+      t.classList.toggle('active', t.dataset.tab === name));
+    document.querySelectorAll('.pay-panel').forEach(p =>
+      p.classList.toggle('active', p.id === `panel-${name}`));
+    hideAlert();
+  }
+
+  /* ── 7. Alert helper ──────────────────────────────────────────── */
+  function showAlert(msg, type = 'info') {
+    const el = document.getElementById('alertBox');
+    el.textContent = msg;
+    el.className = `pay-alert show ${type}`;
+  }
+  function hideAlert() {
+    document.getElementById('alertBox').className = 'pay-alert';
+  }
+
+  /* ── 8. State helpers ─────────────────────────────────────────── */
+  function showState(id) {
+    document.getElementById('formArea').style.display = 'none';
+    document.getElementById('successState').classList.remove('show');
+    document.getElementById('pendingState').classList.remove('show');
+    document.getElementById('failedState').classList.remove('show');
+    document.getElementById(id).classList.add('show');
+  }
+  function resetToForm() {
+    document.getElementById('formArea').style.display = 'block';
+    document.getElementById('failedState').classList.remove('show');
+    hideAlert();
+  }
+
+  /* ── 9. Redirect helpers ──────────────────────────────────────── */
+  function scheduleRedirect(url, delayMs = 3000, msgEl) {
+    if (!url) return;
+    if (msgEl) msgEl.textContent = `Redirecting in ${delayMs / 1000}s…`;
+    if (msgEl) msgEl.style.display = 'block';
+    setTimeout(() => { window.location.href = url; }, delayMs);
+  }
+
+  /* ── 10. API call helper ──────────────────────────────────────── */
+  async function callApi(path, body) {
+    if (!cfg.apiBase) {
+      // No API configured — used for purely static white-label embed
+      return { status: 'mock', reference: ref };
+    }
+    const res = await fetch(`${cfg.apiBase}${path}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    if (!res.ok) throw new Error(`API error ${res.status}`);
+    return res.json();
+  }
+
+  /* ── 11. Card payment ─────────────────────────────────────────── */
+  async function submitCard() {
+    const name    = document.getElementById('cardName').value.trim();
+    const number  = document.getElementById('cardNumber').value.replace(/\s/g, '');
+    const expiry  = document.getElementById('cardExpiry').value.trim();
+    const cvv     = document.getElementById('cardCvv').value.trim();
+    const email   = document.getElementById('cardEmail').value.trim();
+
+    if (!name || number.length < 13 || !expiry || cvv.length < 3) {
+      showAlert('Please fill in all card details correctly.', 'error');
+      return;
+    }
+
+    const btn = document.getElementById('btnCard');
+    btn.disabled = true; btn.classList.add('loading'); btn.textContent = '';
+
+    try {
+      // ── IMPORTANT: tokenize card data client-side before calling your API ──
+      // Replace the block below with your provider's tokenization SDK call.
+      // Example (Stripe.js):
+      //   const { token, error } = await stripe.createToken(cardElement);
+      //   if (error) throw new Error(error.message);
+      //   const paymentToken = token.id;
+      //
+      // Never send raw card numbers or CVV to your own server.
+      const paymentToken = cfg.apiBase ? null : 'tok_mock'; // placeholder for static mode
+      if (cfg.apiBase && !paymentToken) {
+        showAlert('Card tokenization not configured. Integrate your provider SDK.', 'error');
+        return;
+      }
+
+      const result = await callApi('/api/payments/charge', {
+        amount: cfg.amount, currency: cfg.currency, option: 'FastPaymentGateway',
+        // Only the provider token and last-four digits are sent — never the raw PAN or CVV.
+        metadata: { cardName: name, email, lastFour: number.slice(-4), paymentToken: paymentToken || 'tok_mock' },
+        idempotencyKey: ref
+      });
+
+      if (result.status === 'Success' || result.status === 'mock') {
+        document.getElementById('successMsg').textContent =
+          `Payment of ${fmt.format(cfg.amount)} confirmed. Reference: ${result.reference || ref}`;
+        showState('successState');
+        scheduleRedirect(cfg.successUrl, 4000, document.getElementById('redirectMsg'));
+      } else if (result.status === 'Pending') {
+        showState('pendingState');
+      } else {
+        document.getElementById('failedMsg').textContent = result.message || 'Payment declined.';
+        showState('failedState');
+      }
+    } catch (e) {
+      showAlert(`Payment failed: ${e.message}`, 'error');
+    } finally {
+      btn.disabled = false; btn.classList.remove('loading'); btn.textContent = '💳 Pay Now';
+    }
+  }
+
+  /* ── 12. Mobile Money ─────────────────────────────────────────── */
+  async function submitMobileMoney() {
+    const phone   = document.getElementById('mobilePhone').value.trim();
+    const network = document.getElementById('mobileNetwork').value;
+    const email   = document.getElementById('mobileEmail').value.trim();
+
+    if (!phone) { showAlert('Please enter your phone number.', 'error'); return; }
+
+    const btn = document.getElementById('btnMobile');
+    btn.disabled = true; btn.classList.add('loading'); btn.textContent = '';
+
+    try {
+      const result = await callApi('/api/payments/charge', {
+        amount: cfg.amount, currency: cfg.currency, option: 'MobileMoney',
+        metadata: { phoneNumber: phone, network, email },
+        idempotencyKey: ref
+      });
+
+      if (result.status === 'Pending' || result.status === 'mock') {
+        document.getElementById('pendingRef').textContent = `Reference: ${result.reference || ref}`;
+        showState('pendingState');
+      } else if (result.status === 'Success') {
+        showState('successState');
+        scheduleRedirect(cfg.successUrl, 4000, document.getElementById('redirectMsg'));
+      } else {
+        document.getElementById('failedMsg').textContent = result.message || 'Payment request failed.';
+        showState('failedState');
+      }
+    } catch (e) {
+      showAlert(`Request failed: ${e.message}`, 'error');
+    } finally {
+      btn.disabled = false; btn.classList.remove('loading'); btn.textContent = '📱 Send Payment Request';
+    }
+  }
+
+  /* ── 13. Bank Transfer ────────────────────────────────────────── */
+  async function submitBankTransfer() {
+    const email = document.getElementById('bankEmail').value.trim();
+    if (!email) { showAlert('Please enter your email for confirmation.', 'error'); return; }
+
+    const btn = document.getElementById('btnBank');
+    btn.disabled = true; btn.classList.add('loading'); btn.textContent = '';
+
+    try {
+      await callApi('/api/payments/charge', {
+        amount: cfg.amount, currency: cfg.currency, option: 'BankTransfer',
+        metadata: { email, reference: ref },
+        idempotencyKey: ref
+      });
+      document.getElementById('pendingRef').textContent = `Reference: ${ref}`;
+      showState('pendingState');
+    } catch (e) {
+      showAlert(`Submission failed: ${e.message}`, 'error');
+    } finally {
+      btn.disabled = false; btn.classList.remove('loading'); btn.textContent = '🏦 I Have Made the Transfer';
+    }
+  }
+
+  /* ── 14. Bank Deposit ─────────────────────────────────────────── */
+  async function submitDeposit() {
+    const slip  = document.getElementById('slipNumber').value.trim();
+    const email = document.getElementById('depositEmail').value.trim();
+
+    if (!slip)  { showAlert('Please enter your deposit slip number.', 'error'); return; }
+    if (!email) { showAlert('Please enter your email for confirmation.', 'error'); return; }
+
+    const btn = document.getElementById('btnDeposit');
+    btn.disabled = true; btn.classList.add('loading'); btn.textContent = '';
+
+    try {
+      await callApi('/api/payments/charge', {
+        amount: cfg.amount, currency: cfg.currency, option: 'DirectBankDeposit',
+        metadata: { email, reference: ref, slipNumber: slip },
+        idempotencyKey: ref
+      });
+      document.getElementById('pendingRef').textContent = `Reference: ${ref}`;
+      showState('pendingState');
+    } catch (e) {
+      showAlert(`Submission failed: ${e.message}`, 'error');
+    } finally {
+      btn.disabled = false; btn.classList.remove('loading'); btn.textContent = '🏧 Confirm Deposit';
+    }
+  }
+
+  /* ── 15. Input formatters ─────────────────────────────────────── */
+  function formatCard(input) {
+    let v = input.value.replace(/\D/g, '').slice(0, 16);
+    input.value = v.replace(/(.{4})/g, '$1 ').trim();
+  }
+  function formatExpiry(input) {
+    let v = input.value.replace(/\D/g, '').slice(0, 4);
+    if (v.length >= 3) v = v.slice(0,2) + ' / ' + v.slice(2);
+    input.value = v;
+  }
+
+  /* ── 16. postMessage API (for iframe embedding) ───────────────── */
+  window.addEventListener('message', (ev) => {
+    if (typeof ev.data !== 'object') return;
+    const d = ev.data;
+    if (d.type === 'pay:config') {
+      if (d.primaryColor) document.documentElement.style.setProperty('--pay-primary', d.primaryColor);
+      if (d.amount)       { cfg.amount = d.amount; document.getElementById('displayAmount').textContent = fmt.format(d.amount); }
+      if (d.description)  document.getElementById('displayDesc').textContent = d.description;
+      if (d.brandName)    { cfg.brandName = d.brandName; document.getElementById('brandName').textContent = d.brandName; }
+    }
+  });
+
+  /* ── 17. Utility: lighten / darken a hex colour ───────────────── */
+  function shadeColor(hex, pct) {
+    const clean = (hex || '').replace('#', '');
+    if (!/^[0-9a-fA-F]{6}$/.test(clean)) return hex; // invalid hex — return unchanged
+    const n = parseInt(clean, 16);
+    const r = Math.min(255, Math.max(0, (n>>16) + Math.round(2.55*pct)));
+    const g = Math.min(255, Math.max(0, (n>>8&0xff) + Math.round(2.55*pct)));
+    const b = Math.min(255, Math.max(0, (n&0xff)    + Math.round(2.55*pct)));
+    return `#${(r<<16|g<<8|b).toString(16).padStart(6,'0')}`;
+  }
+</script>
+
+</body>
+</html>

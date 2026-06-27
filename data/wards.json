@@ -1,0 +1,7 @@
+[
+  { "Id": 1, "Name": "Ward 1", "ConstituencyId": 1 },
+  { "Id": 2, "Name": "Ward 2", "ConstituencyId": 1 },
+  { "Id": 3, "Name": "Ward 3", "ConstituencyId": 2 },
+  { "Id": 4, "Name": "Ward 4", "ConstituencyId": 2 },
+  { "Id": 5, "Name": "Ward 5", "ConstituencyId": 3 }
+]

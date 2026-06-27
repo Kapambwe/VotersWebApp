@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "campaignId": 1,
+    "campaignName": "Lusaka Ward Mobilization",
+    "approvedMessage": "We are reaching every household with a simple turnout and listening message.",
+    "talkingPoints": "Jobs, roads, clean water, local accountability",
+    "callToAction": "Register your concern and join the campaign list.",
+    "script": "Good day. We are here to listen and note the issues affecting your household.",
+    "territoryVariant": "Urban ward",
+    "territoryName": "Kanyama",
+    "isPublished": true
+  },
+  {
+    "id": 2,
+    "campaignId": 2,
+    "campaignName": "Polling Day Readiness",
+    "approvedMessage": "Election-day teams will support polling, results capture, and verification.",
+    "talkingPoints": "Training, accreditation, station readiness",
+    "callToAction": "Confirm your assignment and station checklist.",
+    "script": "Hello team, this is the approved polling-day instruction set.",
+    "territoryVariant": "Polling station",
+    "territoryName": "Ndola Central",
+    "isPublished": false
+  },
+  {
+    "id": 3,
+    "campaignId": 3,
+    "campaignName": "Village Outreach Sprint",
+    "approvedMessage": "Village teams will share a focused support and issue-listening message.",
+    "talkingPoints": "Listening, follow-up, service delivery, trust",
+    "callToAction": "Capture issues and flag households for follow-up.",
+    "script": "We are here to listen, record, and return with answers.",
+    "territoryVariant": "Village cluster",
+    "territoryName": "Chipata Central",
+    "isPublished": true
+  },
+  {
+    "id": 4,
+    "campaignId": 4,
+    "campaignName": "Route Coverage Review",
+    "approvedMessage": "Route supervisors should verify coverage, workload, and completion status.",
+    "talkingPoints": "Coverage, completion, reassignment, follow-up",
+    "callToAction": "Confirm route completion and flag gaps immediately.",
+    "script": "Please verify the route plan and update status after each section.",
+    "territoryVariant": "Route section",
+    "territoryName": "Matero",
+    "isPublished": true
+  }
+]

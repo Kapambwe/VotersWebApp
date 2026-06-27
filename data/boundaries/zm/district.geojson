@@ -1,0 +1,44 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lusaka",
+        "regionKey": "district:lusaka",
+        "levelKey": "district",
+        "countryCode": "ZM"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[27.90, -15.65], [28.50, -15.65], [28.50, -15.15], [27.90, -15.15], [27.90, -15.65]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ndola",
+        "regionKey": "district:ndola",
+        "levelKey": "district",
+        "countryCode": "ZM"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[28.35, -13.25], [28.95, -13.25], [28.95, -12.65], [28.35, -12.65], [28.35, -13.25]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chipata",
+        "regionKey": "district:chipata",
+        "levelKey": "district",
+        "countryCode": "ZM"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[32.55, -14.10], [33.00, -14.10], [33.00, -13.60], [32.55, -13.60], [32.55, -14.10]]]
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "BankAccountId": "d10e8400-e29b-41d4-a716-446655440008",
+    "AccountName": "National HQ Operating Account",
+    "BankName": "Zanaco Bank",
+    "AccountNumber": "0123456789",
+    "CurrentBalance": 1150000.0,
+    "IsActive": true
+  }
+]

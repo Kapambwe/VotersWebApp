@@ -1,0 +1,9 @@
+[
+  { "date": "Mon", "contacts": 1200, "conversions": 450 },
+  { "date": "Tue", "contacts": 1350, "conversions": 520 },
+  { "date": "Wed", "contacts": 1180, "conversions": 480 },
+  { "date": "Thu", "contacts": 1520, "conversions": 610 },
+  { "date": "Fri", "contacts": 1410, "conversions": 550 },
+  { "date": "Sat", "contacts": 980, "conversions": 390 },
+  { "date": "Sun", "contacts": 750, "conversions": 280 }
+]

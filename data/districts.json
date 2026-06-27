@@ -1,0 +1,16 @@
+[
+  {
+    "Id": "dist-001",
+    "Name": "Lusaka",
+    "Code": "LSK",
+    "ProvinceId": "prov-001",
+    "ProvinceName": "Lusaka Province",
+    "Description": "Central district",
+    "ConstituencyCount": 10,
+    "WardCount": 45,
+    "RegisteredVoters": 800000,
+    "IsActive": true,
+    "CreatedDate": "2024-05-01T00:00:00",
+    "CreatedBy": "System"
+  }
+]

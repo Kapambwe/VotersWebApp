@@ -1,0 +1,30 @@
+[
+  {
+    "Id": 1,
+    "AuditId": 1,
+    "ResultId": 1,
+    "Action": "ResultSubmitted",
+    "UserId": 101,
+    "Username": "John Banda",
+    "Timestamp": "2026-05-17T08:00:00Z",
+    "IpAddress": "196.45.123.45",
+    "GpsLocation": "-15.4167, 28.2833",
+    "PreviousHash": null,
+    "CurrentHash": "abc123def456",
+    "ChangeDetails": "Results submitted for Polling Station 001"
+  },
+  {
+    "Id": 2,
+    "AuditId": 2,
+    "ResultId": 1,
+    "Action": "ResultVerified",
+    "UserId": 102,
+    "Username": "Grace Mwale",
+    "Timestamp": "2026-05-17T09:00:00Z",
+    "IpAddress": "196.45.123.46",
+    "GpsLocation": "-15.4167, 28.2833",
+    "PreviousHash": "abc123def456",
+    "CurrentHash": "def789ghi012",
+    "ChangeDetails": "Results verified by supervisor"
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "Id": "11111111-1111-1111-1111-111111111111",
+    "PlanName": "Gold Supporter",
+    "Price": 1500.00,
+    "BillingPeriod": 1,
+    "Status": 0,
+    "NextBillingDate": "2026-07-01T00:00:00",
+    "LastBillingDate": "2026-05-01T00:00:00",
+    "CustomerName": "Lusaka District UPND",
+    "PreferredPaymentOption": 0
+  }
+]

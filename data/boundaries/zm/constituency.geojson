@@ -1,0 +1,44 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Constituency 1",
+        "regionKey": "constituency:1",
+        "levelKey": "constituency",
+        "countryCode": "ZM"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[28.10, -15.55], [28.30, -15.55], [28.30, -15.35], [28.10, -15.35], [28.10, -15.55]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Constituency 2",
+        "regionKey": "constituency:2",
+        "levelKey": "constituency",
+        "countryCode": "ZM"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[28.20, -15.48], [28.45, -15.48], [28.45, -15.28], [28.20, -15.28], [28.20, -15.48]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Constituency 3",
+        "regionKey": "constituency:3",
+        "levelKey": "constituency",
+        "countryCode": "ZM"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[28.45, -13.20], [28.75, -13.20], [28.75, -12.95], [28.45, -12.95], [28.45, -13.20]]]
+      }
+    }
+  ]
+}

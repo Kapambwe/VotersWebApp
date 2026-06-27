@@ -1,0 +1,13 @@
+{
+  "id": 1,
+  "catalogName": "Official Party Catalog",
+  "defaultPartyCode": "UNK",
+  "publishedVersion": 6,
+  "lastPublishedAt": "2026-05-16T18:00:00",
+  "parties": [
+    { "id": 1, "partyCode": "UPND", "displayName": "United Party for National Development", "shortCode": "UPND", "color": "#16a34a", "isDefault": false, "sortOrder": 1, "isActive": true },
+    { "id": 2, "partyCode": "PF", "displayName": "Patriotic Front", "shortCode": "PF", "color": "#1d4ed8", "isDefault": false, "sortOrder": 2, "isActive": true },
+    { "id": 3, "partyCode": "MMD", "displayName": "Movement for Multi-Party Democracy", "shortCode": "MMD", "color": "#f97316", "isDefault": false, "sortOrder": 3, "isActive": true },
+    { "id": 4, "partyCode": "UNK", "displayName": "Unknown / Blank", "shortCode": "UNK", "color": "#64748b", "isDefault": true, "sortOrder": 4, "isActive": true }
+  ]
+}

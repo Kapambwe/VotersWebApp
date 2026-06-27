@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "username": "upnd.functionary1",
+    "partyCode": "UPND",
+    "electionLevel": "Presidential",
+    "candidateId": "president-upnd-001",
+    "campaignId": 1,
+    "country": "Zambia",
+    "accessLevel": "Manager"
+  },
+  {
+    "id": 2,
+    "username": "upnd.agent1",
+    "partyCode": "UPND",
+    "electionLevel": "Parliamentary",
+    "candidateId": "mp-kanyama-001",
+    "campaignId": 2,
+    "country": "Zambia",
+    "province": "Lusaka",
+    "district": "Lusaka",
+    "constituency": "Kanyama",
+    "accessLevel": "Manager"
+  },
+  {
+    "id": 3,
+    "username": "upnd.chipata.manager",
+    "partyCode": "UPND",
+    "electionLevel": "Parliamentary",
+    "candidateId": "mp-chipata-central-001",
+    "campaignId": 3,
+    "country": "Zambia",
+    "province": "Eastern",
+    "district": "Chipata",
+    "constituency": "Chipata Central",
+    "accessLevel": "Viewer"
+  },
+  {
+    "id": 4,
+    "username": "upnd.agent1",
+    "partyCode": "UPND",
+    "electionLevel": "Ward",
+    "candidateId": "ward-matero-001",
+    "campaignId": 4,
+    "country": "Zambia",
+    "province": "Lusaka",
+    "district": "Lusaka",
+    "constituency": "Matero",
+    "ward": "Matero",
+    "accessLevel": "Viewer"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  { "Id": "branch-001", "Name": "Olympia Branch", "Code": "OLY-BR", "ConstituencyId": "const-003", "WardId": "ward-005", "ResidentialAreaId": "area-001", "BranchChairperson": "Kelvin Musonda", "MemberCount": 450, "IsActive": true },
+  { "Id": "branch-002", "Name": "Silverest Branch", "Code": "SIL-BR", "ConstituencyId": "const-003", "WardId": "ward-005", "ResidentialAreaId": "area-002", "BranchChairperson": "Martha Phiri", "MemberCount": 210, "IsActive": true },
+  { "Id": "branch-003", "Name": "Kabwata Main Branch", "Code": "KBT-BR", "ConstituencyId": "const-002", "WardId": "ward-001", "ResidentialAreaId": "area-003", "BranchChairperson": "Davies Chama", "MemberCount": 850, "IsActive": true },
+  { "Id": "branch-004", "Name": "Chilenje South Branch", "Code": "CHI-BR", "ConstituencyId": "const-002", "WardId": "ward-012", "ResidentialAreaId": "area-004", "BranchChairperson": "Banda Joseph", "MemberCount": 620, "IsActive": true },
+  { "Id": "branch-005", "Name": "Libala Branch", "Code": "LIB-BR", "ConstituencyId": "const-002", "WardId": "ward-003", "ResidentialAreaId": "area-005", "BranchChairperson": "Sitali M. Sitali", "MemberCount": 380, "IsActive": true },
+  { "Id": "branch-006", "Name": "Lubuto Branch", "Code": "LUB-BR", "ConstituencyId": "const-005", "WardId": "ward-007", "ResidentialAreaId": "area-006", "BranchChairperson": "Frank Tayali", "MemberCount": 510, "IsActive": true },
+  { "Id": "branch-007", "Name": "Nkana West Branch", "Code": "NKA-BR", "ConstituencyId": "const-006", "WardId": "ward-008", "ResidentialAreaId": "area-007", "BranchChairperson": "Binwell Mpundu", "MemberCount": 490, "IsActive": true },
+  { "Id": "branch-008", "Name": "Mosi-O-Tunya Branch", "Code": "MOS-BR", "ConstituencyId": "const-007", "WardId": "ward-009", "ResidentialAreaId": "area-008", "BranchChairperson": "Rodney Sikumba", "MemberCount": 550, "IsActive": true },
+  { "Id": "branch-009", "Name": "Kazomba Branch", "Code": "KAZ-BR", "ConstituencyId": "const-010", "WardId": "ward-010", "ResidentialAreaId": "area-009", "BranchChairperson": "Stafford Mulusa", "MemberCount": 320, "IsActive": true },
+  { "Id": "branch-010", "Name": "Mongu Main Branch", "Code": "MON-BR", "ConstituencyId": "const-011", "WardId": "ward-011", "ResidentialAreaId": "area-010", "BranchChairperson": "Oliver Amutike", "MemberCount": 280, "IsActive": true },
+  { "Id": "branch-011", "Name": "Chelston Branch", "Code": "CHE-BR", "ConstituencyId": "const-003", "WardId": "ward-005", "ResidentialAreaId": "area-011", "BranchChairperson": "Mike Mposha", "MemberCount": 740, "IsActive": true },
+  { "Id": "branch-012", "Name": "Kamwala South Branch", "Code": "KAM-BR", "ConstituencyId": "const-002", "WardId": "ward-002", "ResidentialAreaId": "area-012", "BranchChairperson": "Andrew Tayengwa", "MemberCount": 610, "IsActive": true }
+]

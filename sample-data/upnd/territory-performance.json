@@ -1,0 +1,8 @@
+[
+  { "territory": "Downtown", "contacts": 2847, "conversions": 1823, "rate": 64 },
+  { "territory": "East Side", "contacts": 3124, "conversions": 1906, "rate": 61 },
+  { "territory": "South", "contacts": 2654, "conversions": 1594, "rate": 60 },
+  { "territory": "West Hills", "contacts": 1987, "conversions": 1133, "rate": 57 },
+  { "territory": "North", "contacts": 2456, "conversions": 1379, "rate": 56 },
+  { "territory": "Suburban", "contacts": 2179, "conversions": 1008, "rate": 46 }
+]

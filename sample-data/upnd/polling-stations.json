@@ -1,0 +1,14 @@
+[
+  { "Id": "station-001", "Name": "Olympia Primary School", "Code": "OLY-01", "WardId": "ward-005", "ConstituencyId": "const-003", "RegisteredVoters": 1200, "StationManager": "Kelvin Musonda", "IsActive": true },
+  { "Id": "station-002", "Name": "Silverest Secondary", "Code": "SIL-01", "WardId": "ward-005", "ConstituencyId": "const-003", "RegisteredVoters": 950, "StationManager": "Martha Phiri", "IsActive": true },
+  { "Id": "station-003", "Name": "Kabwata Community Hall", "Code": "KBT-01", "WardId": "ward-001", "ConstituencyId": "const-002", "RegisteredVoters": 1500, "StationManager": "Davies Chama", "IsActive": true },
+  { "Id": "station-004", "Name": "Chilenje South Market", "Code": "CHI-01", "WardId": "ward-012", "ConstituencyId": "const-002", "RegisteredVoters": 2100, "StationManager": "Banda Joseph", "IsActive": true },
+  { "Id": "station-005", "Name": "Libala Basic School", "Code": "LIB-01", "WardId": "ward-003", "ConstituencyId": "const-002", "RegisteredVoters": 1800, "StationManager": "Sitali M. Sitali", "IsActive": true },
+  { "Id": "station-006", "Name": "Lubuto Primary", "Code": "LUB-01", "WardId": "ward-007", "ConstituencyId": "const-005", "RegisteredVoters": 1350, "StationManager": "Frank Tayali", "IsActive": true },
+  { "Id": "station-007", "Name": "Nkana West Clinic", "Code": "NKA-01", "WardId": "ward-008", "ConstituencyId": "const-006", "RegisteredVoters": 1100, "StationManager": "Binwell Mpundu", "IsActive": true },
+  { "Id": "station-008", "Name": "Mosi-O-Tunya High", "Code": "MOS-01", "WardId": "ward-009", "ConstituencyId": "const-007", "RegisteredVoters": 1600, "StationManager": "Rodney Sikumba", "IsActive": true },
+  { "Id": "station-009", "Name": "Kazomba Community", "Code": "KAZ-01", "WardId": "ward-010", "ConstituencyId": "const-010", "RegisteredVoters": 850, "StationManager": "Stafford Mulusa", "IsActive": true },
+  { "Id": "station-010", "Name": "Mongu Central School", "Code": "MON-01", "WardId": "ward-011", "ConstituencyId": "const-011", "RegisteredVoters": 1050, "StationManager": "Oliver Amutike", "IsActive": true },
+  { "Id": "station-011", "Name": "Chelston Clinic", "Code": "CHE-01", "WardId": "ward-005", "ConstituencyId": "const-003", "RegisteredVoters": 1400, "StationManager": "Mike Mposha", "IsActive": true },
+  { "Id": "station-012", "Name": "Kamwala South Hall", "Code": "KAM-01", "WardId": "ward-002", "ConstituencyId": "const-002", "RegisteredVoters": 1250, "StationManager": "Andrew Tayengwa", "IsActive": true }
+]

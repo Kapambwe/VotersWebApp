@@ -1,0 +1,22 @@
+[
+  { "Id": "vl-001", "Name": "Lusaka Central Ward", "Latitude": -15.3875, "Longitude": 28.3228, "Voters": 1840, "ConstituencyId": "const-001", "WardId": "ward-001" },
+  { "Id": "vl-002", "Name": "Kabwata Ward", "Latitude": -15.4121, "Longitude": 28.2886, "Voters": 1625, "ConstituencyId": "const-002", "WardId": "ward-002" },
+  { "Id": "vl-003", "Name": "Munali Ward", "Latitude": -15.3552, "Longitude": 28.3492, "Voters": 1982, "ConstituencyId": "const-003", "WardId": "ward-003" },
+  { "Id": "vl-004", "Name": "Matero Ward", "Latitude": -15.3816, "Longitude": 28.2954, "Voters": 2067, "ConstituencyId": "const-004", "WardId": "ward-004" },
+  { "Id": "vl-005", "Name": "Ndola Central Ward", "Latitude": -12.9664, "Longitude": 28.6366, "Voters": 1451, "ConstituencyId": "const-005", "WardId": "ward-005" },
+  { "Id": "vl-006", "Name": "Nkana Ward", "Latitude": -12.8031, "Longitude": 28.2135, "Voters": 1710, "ConstituencyId": "const-006", "WardId": "ward-006" },
+  { "Id": "vl-007", "Name": "Livingstone Central Ward", "Latitude": -17.8505, "Longitude": 25.8572, "Voters": 1324, "ConstituencyId": "const-007", "WardId": "ward-007" },
+  { "Id": "vl-008", "Name": "Choma Central Ward", "Latitude": -16.8094, "Longitude": 26.9835, "Voters": 1268, "ConstituencyId": "const-008", "WardId": "ward-008" },
+  { "Id": "vl-009", "Name": "Chipata Central Ward", "Latitude": -13.6333, "Longitude": 32.6500, "Voters": 1519, "ConstituencyId": "const-009", "WardId": "ward-009" },
+  { "Id": "vl-010", "Name": "Solwezi Central Ward", "Latitude": -12.1683, "Longitude": 26.3867, "Voters": 1188, "ConstituencyId": "const-010", "WardId": "ward-010" },
+  { "Id": "vl-011", "Name": "Mongu Central Ward", "Latitude": -15.2540, "Longitude": 23.1329, "Voters": 1097, "ConstituencyId": "const-011", "WardId": "ward-011" },
+  { "Id": "vl-012", "Name": "Kabwe Central Ward", "Latitude": -14.4440, "Longitude": 28.4464, "Voters": 1764, "ConstituencyId": "const-012", "WardId": "ward-012" },
+  { "Id": "vl-013", "Name": "Chelston Ward", "Latitude": -15.3401, "Longitude": 28.3703, "Voters": 940, "ConstituencyId": "const-003", "WardId": "ward-013" },
+  { "Id": "vl-014", "Name": "Kamwala Ward", "Latitude": -15.4167, "Longitude": 28.2780, "Voters": 1175, "ConstituencyId": "const-002", "WardId": "ward-014" },
+  { "Id": "vl-015", "Name": "Silverest Ward", "Latitude": -15.3008, "Longitude": 28.4289, "Voters": 890, "ConstituencyId": "const-003", "WardId": "ward-015" },
+  { "Id": "vl-016", "Name": "Mufulira Ward", "Latitude": -12.5500, "Longitude": 28.2400, "Voters": 1311, "ConstituencyId": "const-006", "WardId": "ward-016" },
+  { "Id": "vl-017", "Name": "Kalomo Ward", "Latitude": -16.3200, "Longitude": 26.4761, "Voters": 1010, "ConstituencyId": "const-008", "WardId": "ward-017" },
+  { "Id": "vl-018", "Name": "Kasama Ward", "Latitude": -10.2195, "Longitude": 31.1943, "Voters": 1192, "ConstituencyId": "const-009", "WardId": "ward-018" },
+  { "Id": "vl-019", "Name": "Mansa Ward", "Latitude": -11.1988, "Longitude": 28.8949, "Voters": 1028, "ConstituencyId": "const-010", "WardId": "ward-019" },
+  { "Id": "vl-020", "Name": "Kaoma Ward", "Latitude": -14.8022, "Longitude": 24.8033, "Voters": 963, "ConstituencyId": "const-011", "WardId": "ward-020" }
+]

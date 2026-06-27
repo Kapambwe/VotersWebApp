@@ -1,0 +1,15 @@
+[
+  {
+    "Id": "1",
+    "ContactId": "contact-1",
+    "ContactName": "Sarah Johnson",
+    "PhoneNumber": "+1234567890",
+    "LastMessage": "Thanks for the information about the town hall meeting!",
+    "LastMessageTime": "2 min ago",
+    "UnreadCount": 0,
+    "Status": "Active",
+    "Tags": "Volunteer",
+    "CreatedAt": "2026-03-22T00:00:00",
+    "UpdatedAt": "2026-05-21T11:58:00"
+  }
+]

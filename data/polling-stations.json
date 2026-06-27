@@ -1,0 +1,6 @@
+[
+  { "pollingStationId": 1, "name": "Kalingalinga Primary School", "province": "Lusaka", "district": "Lusaka Central", "registeredVoters": 2500, "latitude": -15.4167, "longitude": 28.2833 },
+  { "pollingStationId": 2, "name": "Chilenje Secondary School", "province": "Lusaka", "district": "Kabwata", "registeredVoters": 3200, "latitude": -15.4333, "longitude": 28.3000 },
+  { "pollingStationId": 3, "name": "Nkana High School", "province": "Copperbelt", "district": "Kitwe", "registeredVoters": 2800, "latitude": -12.8022, "longitude": 28.2164 },
+  { "pollingStationId": 4, "name": "Maramba Primary School", "province": "Southern", "district": "Livingstone", "registeredVoters": 3100, "latitude": -17.8419, "longitude": 25.8544 }
+]

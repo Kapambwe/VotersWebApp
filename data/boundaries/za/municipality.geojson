@@ -1,0 +1,44 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "City of Johannesburg",
+        "regionKey": "municipality:cityofjohannesburg",
+        "levelKey": "municipality",
+        "countryCode": "ZA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[27.75, -26.40], [28.25, -26.40], [28.25, -26.00], [27.75, -26.00], [27.75, -26.40]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "City of Cape Town",
+        "regionKey": "municipality:cityofcapetown",
+        "levelKey": "municipality",
+        "countryCode": "ZA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[18.30, -34.10], [18.90, -34.10], [18.90, -33.70], [18.30, -33.70], [18.30, -34.10]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "eThekwini",
+        "regionKey": "municipality:ethekwini",
+        "levelKey": "municipality",
+        "countryCode": "ZA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[30.70, -29.95], [31.20, -29.95], [31.20, -29.45], [30.70, -29.45], [30.70, -29.95]]]
+      }
+    }
+  ]
+}

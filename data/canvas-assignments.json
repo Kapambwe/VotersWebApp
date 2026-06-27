@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "ca-001",
+    "CampaignId": 2,
+    "CampaignName": "Kanyama Member Parliament Campaign",
+    "SessionId": "cs-001",
+    "SessionName": "Lusaka Central Campaign",
+    "VolunteerId": "vol-001",
+    "VolunteerName": "John Banda",
+    "VolunteerPhone": "+260 97 1234567",
+    "AssignedArea": "Kabwata Main",
+    "StreetName": "Independence Avenue",
+    "HouseholdCount": 45,
+    "ContactedCount": 38,
+    "AssignedDate": "2026-05-07T00:00:00",
+    "Status": "In Progress"
+  }
+]

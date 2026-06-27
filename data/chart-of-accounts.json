@@ -1,0 +1,6 @@
+[
+  { "AccountId": "550e8400-e29b-41d4-a716-446655440000", "AccountCode": "1000", "AccountName": "Cash - National HQ", "AccountType": 0, "Category": 1, "Balance": 850000.0, "IsActive": true },
+  { "AccountId": "660e8400-e29b-41d4-a716-446655440001", "AccountCode": "1010", "AccountName": "Cash - Provincial Offices", "AccountType": 0, "Category": 1, "Balance": 450000.0, "IsActive": true },
+  { "AccountId": "770e8400-e29b-41d4-a716-446655440002", "AccountCode": "2000", "AccountName": "Accounts Payable", "AccountType": 1, "Category": 4, "Balance": 120000.0, "IsActive": true },
+  { "AccountId": "880e8400-e29b-41d4-a716-446655440003", "AccountCode": "4000", "AccountName": "Individual Donations", "AccountType": 2, "Category": 8, "Balance": 1250000.0, "IsActive": true }
+]

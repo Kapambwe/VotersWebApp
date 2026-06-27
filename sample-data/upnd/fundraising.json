@@ -1,0 +1,38 @@
+[
+  {
+    "Id": "fund-001",
+    "CampaignName": "2026 Election Campaign Fund",
+    "Description": "Main fundraising campaign for 2026 general elections",
+    "TargetAmount": 500000.00,
+    "RaisedAmount": 287500.00,
+    "StartDate": "2024-01-01T00:00:00",
+    "EndDate": "2026-08-12T00:00:00",
+    "Status": "Active",
+    "CreatedBy": "Campaign Manager",
+    "CreatedDate": "2024-01-01T00:00:00"
+  },
+  {
+    "Id": "fund-002",
+    "CampaignName": "Youth Development Fund",
+    "Description": "Special fund for youth programs and initiatives",
+    "TargetAmount": 100000.00,
+    "RaisedAmount": 45000.00,
+    "StartDate": "2024-06-01T00:00:00",
+    "EndDate": "2025-12-31T00:00:00",
+    "Status": "Active",
+    "CreatedBy": "Youth Coordinator",
+    "CreatedDate": "2024-06-01T00:00:00"
+  },
+  {
+    "Id": "fund-003",
+    "CampaignName": "Women's Empowerment Fund",
+    "Description": "Supporting women's participation in politics",
+    "TargetAmount": 75000.00,
+    "RaisedAmount": 32000.00,
+    "StartDate": "2024-03-08T00:00:00",
+    "EndDate": "2025-03-08T00:00:00",
+    "Status": "Active",
+    "CreatedBy": "Women's League",
+    "CreatedDate": "2024-03-08T00:00:00"
+  }
+]

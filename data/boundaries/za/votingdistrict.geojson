@@ -1,0 +1,44 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Voting District 1",
+        "regionKey": "votingdistrict:1",
+        "levelKey": "votingDistrict",
+        "countryCode": "ZA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[27.86, -26.34], [27.91, -26.34], [27.91, -26.29], [27.86, -26.29], [27.86, -26.34]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Voting District 2",
+        "regionKey": "votingdistrict:2",
+        "levelKey": "votingDistrict",
+        "countryCode": "ZA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[18.45, -34.02], [18.50, -34.02], [18.50, -33.97], [18.45, -33.97], [18.45, -34.02]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Voting District 3",
+        "regionKey": "votingdistrict:3",
+        "levelKey": "votingDistrict",
+        "countryCode": "ZA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[30.84, -29.86], [30.89, -29.86], [30.89, -29.81], [30.84, -29.81], [30.84, -29.86]]]
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Matero Route Sections",
+        "regionKey": "territory:4",
+        "levelKey": "territory",
+        "campaignId": 4,
+        "territoryType": "Route",
+        "countryCode": "ZM"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[28.14, -15.37], [28.27, -15.37], [28.27, -15.27], [28.14, -15.27], [28.14, -15.37]]]
+      }
+    }
+  ]
+}

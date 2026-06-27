@@ -1,0 +1,20 @@
+[
+  {
+    "ReportId": "f10e8400-e29b-41d4-a716-446655440020",
+    "ReportName": "Balance Sheet - Q4 2025",
+    "ReportType": 0,
+    "StartDate": "2025-10-01T00:00:00",
+    "EndDate": "2025-12-31T00:00:00",
+    "GeneratedDate": "2026-01-05T00:00:00",
+    "GeneratedBy": "treasurer@party.zm"
+  },
+  {
+    "ReportId": "f20e8400-e29b-41d4-a716-446655440021",
+    "ReportName": "Income Statement - December 2025",
+    "ReportType": 1,
+    "StartDate": "2025-12-01T00:00:00",
+    "EndDate": "2025-12-31T00:00:00",
+    "GeneratedDate": "2026-01-05T00:00:00",
+    "GeneratedBy": "treasurer@party.zm"
+  }
+]

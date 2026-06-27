@@ -1,0 +1,12 @@
+[
+  {
+    "Id": "goal-001",
+    "CampaignId": 1,
+    "Amount": 500000,
+    "CurrentAmount": 0,
+    "Progress": 0,
+    "StartDate": "2026-05-01T00:00:00",
+    "EndDate": "2026-11-01T00:00:00",
+    "Status": "Active"
+  }
+]

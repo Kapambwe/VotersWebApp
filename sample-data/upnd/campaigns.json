@@ -1,0 +1,50 @@
+[
+  {
+    "Id": 1,
+    "Name": "Door to Door Campaign",
+    "Status": "Active",
+    "StartDate": "2024-11-22T00:00:00",
+    "EndDate": "2025-08-12T00:00:00",
+    "Description": "Comprehensive door-to-door canvassing campaign across all constituencies",
+    "TargetVoters": 100000,
+    "ContactedVoters": 25000,
+    "Budget": 500000,
+    "SpentAmount": 125000
+  },
+  {
+    "Id": 2,
+    "Name": "Rally Campaign",
+    "Status": "Active",
+    "StartDate": "2024-12-07T00:00:00",
+    "EndDate": "2025-08-10T00:00:00",
+    "Description": "Series of political rallies across major constituencies",
+    "TargetVoters": 200000,
+    "ContactedVoters": 45000,
+    "Budget": 800000,
+    "SpentAmount": 200000
+  },
+  {
+    "Id": 3,
+    "Name": "Youth Engagement Campaign",
+    "Status": "Planning",
+    "StartDate": "2025-01-15T00:00:00",
+    "EndDate": "2025-07-30T00:00:00",
+    "Description": "Targeted campaign to engage first-time voters and youth",
+    "TargetVoters": 50000,
+    "ContactedVoters": 0,
+    "Budget": 300000,
+    "SpentAmount": 0
+  },
+  {
+    "Id": 4,
+    "Name": "Digital Outreach Campaign",
+    "Status": "Active",
+    "StartDate": "2024-12-01T00:00:00",
+    "EndDate": "2025-08-12T00:00:00",
+    "Description": "Social media and digital platform engagement campaign",
+    "TargetVoters": 150000,
+    "ContactedVoters": 75000,
+    "Budget": 200000,
+    "SpentAmount": 50000
+  }
+]

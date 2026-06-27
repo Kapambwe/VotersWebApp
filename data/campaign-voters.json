@@ -1,0 +1,38 @@
+[
+  {
+    "Id": "cv-001",
+    "VoterId": 1001,
+    "VoterNumber": "ZM-LSK-001",
+    "FirstName": "John",
+    "LastName": "Banda",
+    "Province": "Lusaka",
+    "District": "Lusaka",
+    "Constituency": "Lusaka Central",
+    "Ward": "Kabwata Ward",
+    "CurrentPartySupportId": 1,
+    "CurrentPartySupport": "UPND",
+    "CurrentPartyShortCode": "UPND",
+    "SupportLevel": "Strong",
+    "Status": "Active",
+    "CreatedDate": "2026-04-21T00:00:00",
+    "CampaignId": 1
+  },
+  {
+    "Id": "cv-002",
+    "VoterId": 1002,
+    "VoterNumber": "ZM-LSK-002",
+    "FirstName": "Grace",
+    "LastName": "Mwale",
+    "Province": "Lusaka",
+    "District": "Lusaka",
+    "Constituency": "Lusaka Central",
+    "Ward": "Kabwata Ward",
+    "CurrentPartySupportId": 1,
+    "CurrentPartySupport": "UPND",
+    "CurrentPartyShortCode": "UPND",
+    "SupportLevel": "Leaning",
+    "Status": "Active",
+    "CreatedDate": "2026-05-01T00:00:00",
+    "CampaignId": 1
+  }
+]

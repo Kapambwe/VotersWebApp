@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "campaignId": 1,
+    "volunteerName": "Alicia Banda",
+    "territoryName": "Kanyama North",
+    "assignmentType": "Volunteer",
+    "dueDate": "2026-05-19T00:00:00",
+    "priority": "High",
+    "expectedContactTargets": 150,
+    "notes": "Focus on undecided and low-support households",
+    "status": "In Progress"
+  },
+  {
+    "id": 2,
+    "campaignId": 2,
+    "volunteerName": "Polling Support Team",
+    "territoryName": "Ndola Central Stations",
+    "assignmentType": "Group",
+    "dueDate": "2026-05-27T00:00:00",
+    "priority": "Normal",
+    "expectedContactTargets": 30,
+    "notes": "Station readiness, forms, and escalation contacts",
+    "status": "Pending"
+  },
+  {
+    "id": 3,
+    "campaignId": 3,
+    "volunteerName": "Moses Phiri",
+    "territoryName": "Chipata Village Belt",
+    "assignmentType": "Volunteer",
+    "dueDate": "2026-05-22T00:00:00",
+    "priority": "High",
+    "expectedContactTargets": 90,
+    "notes": "Visit second-time households and record service requests",
+    "status": "In Progress"
+  },
+  {
+    "id": 4,
+    "campaignId": 4,
+    "volunteerName": "Route Supervisor Team",
+    "territoryName": "Matero Route Sections",
+    "assignmentType": "Group",
+    "dueDate": "2026-05-24T00:00:00",
+    "priority": "Normal",
+    "expectedContactTargets": 60,
+    "notes": "Check completion, reassign gaps, and close missing sections",
+    "status": "Pending"
+  }
+]

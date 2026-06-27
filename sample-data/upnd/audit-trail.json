@@ -1,0 +1,124 @@
+[
+  {
+    "Id": "audit-001",
+    "Timestamp": "2024-12-01T10:30:00",
+    "UserId": "user-001",
+    "UserName": "John Banda",
+    "Action": "CREATE",
+    "EntityType": "Voter",
+    "EntityId": "1001",
+    "Description": "Created new voter record for Chanda Mulenga",
+    "IPAddress": "192.168.1.100",
+    "UserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Changes": {
+      "FirstName": "Chanda",
+      "LastName": "Mulenga",
+      "VoterNumber": "ZM2026001234",
+      "Constituency": "Lusaka Central"
+    }
+  },
+  {
+    "Id": "audit-002",
+    "Timestamp": "2024-12-01T11:15:00",
+    "UserId": "user-002",
+    "UserName": "Mary Mwape",
+    "Action": "UPDATE",
+    "EntityType": "Voter",
+    "EntityId": "1002",
+    "Description": "Updated voter contact information",
+    "IPAddress": "192.168.1.101",
+    "UserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Changes": {
+      "PhoneNumber": {
+        "Old": "+260966234567",
+        "New": "+260977234567"
+      },
+      "Email": {
+        "Old": "thandiwe.phiri@email.zm",
+        "New": "thandiwe.phiri@gmail.com"
+      }
+    }
+  },
+  {
+    "Id": "audit-003",
+    "Timestamp": "2024-12-01T14:20:00",
+    "UserId": "user-003",
+    "UserName": "Patrick Phiri",
+    "Action": "CREATE",
+    "EntityType": "CanvasSession",
+    "EntityId": "canvas-001",
+    "Description": "Created new canvas session for Kabwata Ward",
+    "IPAddress": "192.168.1.102",
+    "UserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Changes": {
+      "SessionName": "Kabwata Weekend Canvas",
+      "Ward": "Kabwata Ward 10",
+      "TeamLeader": "John Banda"
+    }
+  },
+  {
+    "Id": "audit-004",
+    "Timestamp": "2024-12-01T16:45:00",
+    "UserId": "user-004",
+    "UserName": "Grace Tembo",
+    "Action": "UPDATE",
+    "EntityType": "Member",
+    "EntityId": "pm-001",
+    "Description": "Updated member position information",
+    "IPAddress": "192.168.1.103",
+    "UserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Changes": {
+      "CurrentPosition": {
+        "Old": "Provincial Chairperson",
+        "New": "National Party President"
+      },
+      "PositionLevel": {
+        "Old": "Provincial",
+        "New": "National"
+      }
+    }
+  },
+  {
+    "Id": "audit-005",
+    "Timestamp": "2024-12-02T09:10:00",
+    "UserId": "user-005",
+    "UserName": "Emmanuel Musonda",
+    "Action": "DELETE",
+    "EntityType": "Event",
+    "EntityId": "evt-999",
+    "Description": "Deleted cancelled event",
+    "IPAddress": "192.168.1.104",
+    "UserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Changes": {
+      "EventName": "Cancelled Rally",
+      "Status": "Cancelled",
+      "Reason": "Weather conditions"
+    }
+  },
+  {
+    "Id": "audit-006",
+    "Timestamp": "2024-12-02T13:30:00",
+    "UserId": "user-001",
+    "UserName": "John Banda",
+    "Action": "LOGIN",
+    "EntityType": "System",
+    "EntityId": null,
+    "Description": "User logged into the system",
+    "IPAddress": "192.168.1.100",
+    "UserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Changes": null
+  },
+  {
+    "Id": "audit-007",
+    "Timestamp": "2024-12-02T17:45:00",
+    "UserId": "user-001",
+    "UserName": "John Banda",
+    "Action": "LOGOUT",
+    "EntityType": "System",
+    "EntityId": null,
+    "Description": "User logged out of the system",
+    "IPAddress": "192.168.1.100",
+    "UserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Changes": null
+  }
+]

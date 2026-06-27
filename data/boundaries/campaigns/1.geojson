@@ -1,0 +1,20 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kanyama North",
+        "regionKey": "territory:1",
+        "levelKey": "territory",
+        "campaignId": 1,
+        "territoryType": "Ward",
+        "countryCode": "ZM"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[28.18, -15.49], [28.31, -15.49], [28.31, -15.39], [28.18, -15.39], [28.18, -15.49]]]
+      }
+    }
+  ]
+}

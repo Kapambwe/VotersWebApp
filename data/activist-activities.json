@@ -1,0 +1,42 @@
+[
+  {
+    "campaignId": 2,
+    "campaignName": "Kanyama Member Parliament Campaign",
+    "title": "Household Visit Completed",
+    "description": "Visited household at 123 Main Road - Strong Support identified",
+    "timestamp": "2026-05-17T14:30:00",
+    "type": "success"
+  },
+  {
+    "campaignId": 2,
+    "campaignName": "Kanyama Member Parliament Campaign",
+    "title": "Transport Request Added",
+    "description": "Added transport request for Grace Mwanza",
+    "timestamp": "2026-05-17T13:45:00",
+    "type": "info"
+  },
+  {
+    "campaignId": 1,
+    "campaignName": "2026 Presidential Campaign",
+    "title": "Assignment Completed",
+    "description": "Completed canvassing assignment for Zone A",
+    "timestamp": "2026-05-16T17:00:00",
+    "type": "success"
+  },
+  {
+    "campaignId": 3,
+    "campaignName": "Chipata Central Member Parliament Campaign",
+    "title": "Voter Issues Reported",
+    "description": "Reported water supply issues in Zone B",
+    "timestamp": "2026-05-16T11:20:00",
+    "type": "warning"
+  },
+  {
+    "campaignId": 4,
+    "campaignName": "Matero Ward Mobilization",
+    "title": "Team Meeting Attended",
+    "description": "Attended weekly strategy meeting",
+    "timestamp": "2026-05-15T15:00:00",
+    "type": "info"
+  }
+]

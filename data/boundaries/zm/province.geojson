@@ -1,0 +1,44 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lusaka",
+        "regionKey": "province:lusaka",
+        "levelKey": "province",
+        "countryCode": "ZM"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[27.30, -15.95], [28.35, -15.95], [28.35, -15.05], [27.30, -15.05], [27.30, -15.95]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Copperbelt",
+        "regionKey": "province:copperbelt",
+        "levelKey": "province",
+        "countryCode": "ZM"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[26.85, -13.45], [29.05, -13.45], [29.05, -12.35], [26.85, -12.35], [26.85, -13.45]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Eastern",
+        "regionKey": "province:eastern",
+        "levelKey": "province",
+        "countryCode": "ZM"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[31.10, -14.20], [33.00, -14.20], [33.00, -12.20], [31.10, -12.20], [31.10, -14.20]]]
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "Id": "1",
+    "Name": "High Engagement Contacts",
+    "Description": "Contacts who opened 3+ emails in last 30 days",
+    "Type": "Behavioral",
+    "ContactCount": 2847,
+    "Criteria": "Email Opens >= 3 AND Last Activity <= 30 days",
+    "IsAutoUpdating": true,
+    "UsedInCampaigns": 5,
+    "LastUpdated": "2026-05-15T10:00:00"
+  },
+  {
+    "Id": "2",
+    "Name": "Recent Signups - Copperbelt",
+    "Description": "New members from Copperbelt province in the last 7 days",
+    "Type": "Geographic",
+    "ContactCount": 142,
+    "Criteria": "Province == Copperbelt AND JoinDate >= Last 7 days",
+    "IsAutoUpdating": true,
+    "UsedInCampaigns": 1,
+    "LastUpdated": "2026-05-16T14:30:00"
+  }
+]

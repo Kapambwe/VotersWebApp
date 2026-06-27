@@ -1,0 +1,20 @@
+[
+  {
+    "Id": "1",
+    "Title": "Party Rally - Central Region",
+    "Description": "Major campaign rally in the capital city",
+    "EventDate": "2024-06-15",
+    "Location": "National Stadium",
+    "ExpectedAttendees": 50000,
+    "Status": "Scheduled"
+  },
+  {
+    "Id": "2",
+    "Title": "Youth Forum",
+    "Description": "Engaging with young voters",
+    "EventDate": "2024-07-20",
+    "Location": "University Hall",
+    "ExpectedAttendees": 2000,
+    "Status": "Scheduled"
+  }
+]

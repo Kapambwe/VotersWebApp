@@ -1,0 +1,15 @@
+[
+  {
+    "Id": 1,
+    "PollAgentId": 1,
+    "AgentName": "John Banda",
+    "PollingStationId": 101,
+    "PollingStationName": "Kabwata Primary School",
+    "ElectionId": 1,
+    "ElectionName": "General Election 2026",
+    "AssignmentDate": "2026-05-05T09:00:00",
+    "DeploymentDate": "2026-08-13T06:00:00",
+    "AssignmentStatus": "Confirmed",
+    "Notes": "Primary agent for Kabwata"
+  }
+]

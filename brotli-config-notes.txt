@@ -1,0 +1,80 @@
+# Web server configuration hints for serving Brotli-compressed files
+# This file helps GitHub Pages and other static hosts serve .br files correctly
+
+# For GitHub Pages, the server automatically serves .br files when:
+# 1. A .br file exists alongside the original file
+# 2. The browser supports Brotli (Accept-Encoding: br)
+# 3. The file is requested
+
+# No additional configuration is needed for GitHub Pages!
+
+# ============================================================================
+# For other hosting providers, you may need to configure your web server:
+# ============================================================================
+
+# NGINX Configuration:
+# --------------------
+# Add to your nginx.conf or site configuration:
+
+# gzip off;  # Disable gzip in favor of brotli
+# brotli on;
+# brotli_comp_level 6;
+# brotli_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript application/wasm;
+# brotli_static on;  # Serve pre-compressed .br files
+
+# Apache Configuration (.htaccess):
+# ----------------------------------
+# <IfModule mod_headers.c>
+#     # Serve brotli compressed CSS files if they exist and client accepts brotli
+#     RewriteCond "%{HTTP:Accept-encoding}" "br"
+#     RewriteCond "%{REQUEST_FILENAME}\.br" -s
+#     RewriteRule "^(.*)\.css" "$1\.css\.br" [QSA]
+#
+#     # Serve brotli compressed JS files if they exist and client accepts brotli
+#     RewriteCond "%{HTTP:Accept-encoding}" "br"
+#     RewriteCond "%{REQUEST_FILENAME}\.br" -s
+#     RewriteRule "^(.*)\.js" "$1\.js\.br" [QSA]
+#
+#     # Serve correct content types and encoding headers
+#     RewriteRule "\.css\.br$" "-" [T=text/css,E=no-gzip:1]
+#     RewriteRule "\.js\.br$" "-" [T=text/javascript,E=no-gzip:1]
+#     
+#     <FilesMatch "\.(js|css)\.br$">
+#         Header append Content-Encoding br
+#         Header append Vary Accept-Encoding
+#     </FilesMatch>
+# </IfModule>
+
+# IIS Configuration (web.config):
+# --------------------------------
+# <configuration>
+#   <system.webServer>
+#     <staticContent>
+#       <remove fileExtension=".br" />
+#       <mimeMap fileExtension=".br" mimeType="application/brotli" />
+#     </staticContent>
+#     <rewrite>
+#       <outboundRules>
+#         <rule name="Add Vary header">
+#           <match serverVariable="RESPONSE_Vary" pattern=".*" />
+#           <action type="Rewrite" value="Accept-Encoding" />
+#         </rule>
+#       </outboundRules>
+#     </rewrite>
+#   </system.webServer>
+# </configuration>
+
+# ============================================================================
+# Verification
+# ============================================================================
+
+# To verify Brotli compression is working:
+# 1. Open browser DevTools (F12)
+# 2. Go to Network tab
+# 3. Load your site
+# 4. Check response headers for "content-encoding: br"
+# 5. Compare "Size" vs "Transferred" columns - should show compression
+
+# Example:
+# Size: 4.7 MB (uncompressed)
+# Transferred: 800 KB (compressed with Brotli)

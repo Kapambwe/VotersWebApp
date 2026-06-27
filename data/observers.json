@@ -1,0 +1,5 @@
+[
+  { "id": 1, "name": "John Smith", "organization": "Transparency International", "accreditationNumber": "ACC-2026-001", "observerType": "International", "status": "Active", "phoneNumber": "+1234567890", "email": "john.smith@ti.org" },
+  { "id": 2, "name": "Mary Banda", "organization": "Local Election Watch", "accreditationNumber": "ACC-2026-002", "observerType": "Local", "status": "Active", "phoneNumber": "+0987654321", "email": "mary.banda@lew.org" },
+  { "id": 3, "name": "David Phiri", "organization": "Civil Society Network", "accreditationNumber": "ACC-2026-003", "observerType": "Local", "status": "Active", "phoneNumber": "+1122334455", "email": "david.phiri@csn.org" }
+]

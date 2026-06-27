@@ -1,0 +1,122 @@
+[
+  {
+    "Id": "prov-001",
+    "Name": "Lusaka Province",
+    "Code": "LS",
+    "Description": "Capital province of Zambia",
+    "DistrictCount": 7,
+    "ConstituencyCount": 33,
+    "RegisteredVoters": 1500000,
+    "IsActive": true,
+    "CreatedDate": "2022-01-01T00:00:00",
+    "CreatedBy": "System"
+  },
+  {
+    "Id": "prov-002",
+    "Name": "Copperbelt Province",
+    "Code": "CB",
+    "Description": "Mining heartland of Zambia",
+    "DistrictCount": 10,
+    "ConstituencyCount": 22,
+    "RegisteredVoters": 1200000,
+    "IsActive": true,
+    "CreatedDate": "2022-01-01T00:00:00",
+    "CreatedBy": "System"
+  },
+  {
+    "Id": "prov-003",
+    "Name": "Central Province",
+    "Code": "CN",
+    "Description": "Agricultural hub",
+    "DistrictCount": 11,
+    "ConstituencyCount": 15,
+    "RegisteredVoters": 800000,
+    "IsActive": true,
+    "CreatedDate": "2022-01-01T00:00:00",
+    "CreatedBy": "System"
+  },
+  {
+    "Id": "prov-004",
+    "Name": "Southern Province",
+    "Code": "SN",
+    "Description": "Tourist and cattle region",
+    "DistrictCount": 13,
+    "ConstituencyCount": 18,
+    "RegisteredVoters": 950000,
+    "IsActive": true,
+    "CreatedDate": "2022-01-01T00:00:00",
+    "CreatedBy": "System"
+  },
+  {
+    "Id": "prov-005",
+    "Name": "Eastern Province",
+    "Code": "ER",
+    "Description": "Borders Malawi and Mozambique",
+    "DistrictCount": 15,
+    "ConstituencyCount": 18,
+    "RegisteredVoters": 900000,
+    "IsActive": true,
+    "CreatedDate": "2022-01-01T00:00:00",
+    "CreatedBy": "System"
+  },
+  {
+    "Id": "prov-006",
+    "Name": "Western Province",
+    "Code": "WN",
+    "Description": "Upper Zambezi region",
+    "DistrictCount": 16,
+    "ConstituencyCount": 19,
+    "RegisteredVoters": 600000,
+    "IsActive": true,
+    "CreatedDate": "2022-01-01T00:00:00",
+    "CreatedBy": "System"
+  },
+  {
+    "Id": "prov-007",
+    "Name": "Northern Province",
+    "Code": "NR",
+    "Description": "Lakes and waterfalls region",
+    "DistrictCount": 12,
+    "ConstituencyCount": 13,
+    "RegisteredVoters": 750000,
+    "IsActive": true,
+    "CreatedDate": "2022-01-01T00:00:00",
+    "CreatedBy": "System"
+  },
+  {
+    "Id": "prov-008",
+    "Name": "Luapula Province",
+    "Code": "LP",
+    "Description": "Fishing and farming region",
+    "DistrictCount": 12,
+    "ConstituencyCount": 15,
+    "RegisteredVoters": 550000,
+    "IsActive": true,
+    "CreatedDate": "2022-01-01T00:00:00",
+    "CreatedBy": "System"
+  },
+  {
+    "Id": "prov-009",
+    "Name": "North-Western Province",
+    "Code": "NW",
+    "Description": "New Copperbelt mining area",
+    "DistrictCount": 11,
+    "ConstituencyCount": 12,
+    "RegisteredVoters": 450000,
+    "IsActive": true,
+    "CreatedDate": "2022-01-01T00:00:00",
+    "CreatedBy": "System"
+  },
+  {
+    "Id": "prov-010",
+    "Name": "Muchinga Province",
+    "Code": "MC",
+    "Description": "Established in 2011 from Northern",
+    "DistrictCount": 8,
+    "ConstituencyCount": 10,
+    "RegisteredVoters": 400000,
+    "IsActive": true,
+    "CreatedDate": "2022-01-01T00:00:00",
+    "CreatedBy": "System"
+  }
+]

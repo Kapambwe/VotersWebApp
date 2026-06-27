@@ -1,0 +1,142 @@
+[
+  {
+    "Id": 1,
+    "Username": "admin",
+    "Email": "admin@party.org",
+    "FirstName": "System",
+    "LastName": "Administrator",
+    "PhoneNumber": "+27 11 123 4567",
+    "IsActive": true,
+    "EmailConfirmed": true,
+    "TwoFactorEnabled": false,
+    "PasswordHash": "hashed_password_here",
+    "CreatedBy": "System"
+  },
+  {
+    "Id": 2,
+    "Username": "jsmith",
+    "Email": "john.smith@party.org",
+    "FirstName": "John",
+    "LastName": "Smith",
+    "PhoneNumber": "+27 21 234 5678",
+    "IsActive": true,
+    "EmailConfirmed": true,
+    "TwoFactorEnabled": true,
+    "CreatedBy": "System"
+  },
+  {
+    "Id": 3,
+    "Username": "mjones",
+    "Email": "mary.jones@party.org",
+    "FirstName": "Mary",
+    "LastName": "Jones",
+    "PhoneNumber": "+27 31 345 6789",
+    "IsActive": true,
+    "EmailConfirmed": true,
+    "CreatedBy": "System"
+  },
+  {
+    "Id": 4,
+    "Username": "rjohnson",
+    "Email": "robert.johnson@party.org",
+    "FirstName": "Robert",
+    "LastName": "Johnson",
+    "IsActive": false,
+    "CreatedBy": "System"
+  },
+  {
+    "Id": 5,
+    "Username": "snkosi",
+    "Email": "sipho.nkosi@party.org",
+    "FirstName": "Sipho",
+    "LastName": "Nkosi",
+    "PhoneNumber": "+27 11 987 6543",
+    "IsActive": true,
+    "EmailConfirmed": true,
+    "TwoFactorEnabled": true,
+    "CreatedBy": "System"
+  },
+  {
+    "Id": 6,
+    "Username": "tmthembu",
+    "Email": "thandi.mthembu@party.org",
+    "FirstName": "Thandi",
+    "LastName": "Mthembu",
+    "PhoneNumber": "+27 21 456 7890",
+    "IsActive": true,
+    "EmailConfirmed": true,
+    "TwoFactorEnabled": true,
+    "CreatedBy": "System"
+  },
+  {
+    "Id": 7,
+    "Username": "pdlamini",
+    "Email": "peter.dlamini@party.org",
+    "FirstName": "Peter",
+    "LastName": "Dlamini",
+    "PhoneNumber": "+27 31 234 5678",
+    "IsActive": true,
+    "EmailConfirmed": true,
+    "CreatedBy": "System"
+  },
+  {
+    "Id": 8,
+    "Username": "lmokoena",
+    "Email": "lerato.mokoena@party.org",
+    "FirstName": "Lerato",
+    "LastName": "Mokoena",
+    "PhoneNumber": "+27 12 345 6789",
+    "IsActive": true,
+    "EmailConfirmed": true,
+    "TwoFactorEnabled": false,
+    "CreatedBy": "System"
+  },
+  {
+    "Id": 9,
+    "Username": "kvdmerwe",
+    "Email": "karen.vdmerwe@party.org",
+    "FirstName": "Karen",
+    "LastName": "van der Merwe",
+    "PhoneNumber": "+27 21 876 5432",
+    "IsActive": true,
+    "EmailConfirmed": true,
+    "TwoFactorEnabled": true,
+    "CreatedBy": "System"
+  },
+  {
+    "Id": 10,
+    "Username": "mmahlangu",
+    "Email": "mandla.mahlangu@party.org",
+    "FirstName": "Mandla",
+    "LastName": "Mahlangu",
+    "PhoneNumber": "+27 11 765 4321",
+    "IsActive": true,
+    "EmailConfirmed": true,
+    "TwoFactorEnabled": false,
+    "CreatedBy": "System"
+  },
+  {
+    "Id": 11,
+    "Username": "ebotha",
+    "Email": "elizabeth.botha@party.org",
+    "FirstName": "Elizabeth",
+    "LastName": "Botha",
+    "PhoneNumber": "+27 31 654 3210",
+    "IsActive": true,
+    "EmailConfirmed": true,
+    "TwoFactorEnabled": true,
+    "CreatedBy": "System"
+  },
+  {
+    "Id": 12,
+    "Username": "amoyo",
+    "Email": "andrew.moyo@party.org",
+    "FirstName": "Andrew",
+    "LastName": "Moyo",
+    "PhoneNumber": "+27 11 543 2109",
+    "IsActive": true,
+    "EmailConfirmed": true,
+    "TwoFactorEnabled": false,
+    "CreatedBy": "System"
+  }
+]

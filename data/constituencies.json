@@ -1,0 +1,5 @@
+[
+  { "Id": 1, "ConstitiencyId": 1, "Name": "Lusaka Central", "Province": "Lusaka" },
+  { "Id": 2, "ConstitiencyId": 2, "Name": "Kabwata", "Province": "Lusaka" },
+  { "Id": 3, "ConstitiencyId": 3, "Name": "Kitwe Central", "Province": "Copperbelt" }
+]

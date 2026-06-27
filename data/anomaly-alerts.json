@@ -1,0 +1,47 @@
+[
+  {
+    "Id": 1,
+    "AlertId": 1,
+    "ResultId": 1,
+    "PollingStationId": 1,
+    "AlertType": "HighTurnout",
+    "Severity": "Medium",
+    "Description": "Turnout of 98% exceeds expected range (60-85%)",
+    "DetectedAt": "2026-05-17T08:00:00Z",
+    "IsResolved": false,
+    "ConfidenceScore": 0.78,
+    "AnomalyScore": 7.5,
+    "RecommendedAction": "Review signed forms and voter roll"
+  },
+  {
+    "Id": 2,
+    "AlertId": 2,
+    "ResultId": 2,
+    "PollingStationId": 2,
+    "AlertType": "GPSMismatch",
+    "Severity": "High",
+    "Description": "Submitted GPS location does not match registered polling station location",
+    "DetectedAt": "2026-05-17T09:30:00Z",
+    "IsResolved": false,
+    "ConfidenceScore": 0.92,
+    "AnomalyScore": 9.2,
+    "RecommendedAction": "Confirm station coordinates with field supervisor"
+  },
+  {
+    "Id": 3,
+    "AlertId": 3,
+    "ResultId": 3,
+    "PollingStationId": 3,
+    "AlertType": "LateSubmission",
+    "Severity": "Low",
+    "Description": "Results submitted 3 hours after polling station closing time",
+    "DetectedAt": "2026-05-17T09:45:00Z",
+    "IsResolved": true,
+    "ResolvedBy": 102,
+    "ResolvedAt": "2026-05-17T09:55:00Z",
+    "ResolutionNotes": "Verified with station supervisor - delayed due to transport issues",
+    "ConfidenceScore": 0.4,
+    "AnomalyScore": 4.0,
+    "RecommendedAction": "Monitor for late deliveries"
+  }
+]

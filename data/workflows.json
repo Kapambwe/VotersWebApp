@@ -1,0 +1,28 @@
+[
+  {
+    "Id": "wf-001",
+    "Name": "Voter Registration",
+    "Description": "Automated workflow for new voter registration follow-ups",
+    "Status": "Active",
+    "Category": "Mobilization",
+    "ActiveContacts": 1250,
+    "CompletedContacts": 800,
+    "CompletionRate": 64.0,
+    "GoalRate": 80.0,
+    "LastModified": "2026-05-15T10:00:00",
+    "CreatedDate": "2026-01-01T08:00:00"
+  },
+  {
+    "Id": "wf-002",
+    "Name": "Campaign Canvassing",
+    "Description": "Follow-up for canvassing volunteers",
+    "Status": "Paused",
+    "Category": "Field Ops",
+    "ActiveContacts": 450,
+    "CompletedContacts": 100,
+    "CompletionRate": 22.0,
+    "GoalRate": 50.0,
+    "LastModified": "2026-05-16T14:30:00",
+    "CreatedDate": "2026-02-15T09:00:00"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  { "Id": "const-001", "Name": "Lusaka Central", "Code": "LUS-C", "DistrictId": "dist-001", "ProvinceId": "prov-001", "RegisteredVoters": 85000, "MPName": "Mulambo Haimbe", "IsActive": true },
+  { "Id": "const-002", "Name": "Kabwata", "Code": "KAB-C", "DistrictId": "dist-001", "ProvinceId": "prov-001", "RegisteredVoters": 72000, "MPName": "Andrew Tayengwa", "IsActive": true },
+  { "Id": "const-003", "Name": "Munali", "Code": "MUN-C", "DistrictId": "dist-001", "ProvinceId": "prov-001", "RegisteredVoters": 98000, "MPName": "Mike Mposha", "IsActive": true },
+  { "Id": "const-004", "Name": "Matero", "Code": "MAT-C", "DistrictId": "dist-001", "ProvinceId": "prov-001", "RegisteredVoters": 105000, "MPName": "Miles Sampa", "IsActive": true },
+  { "Id": "const-005", "Name": "Ndola Central", "Code": "NDO-C", "DistrictId": "dist-003", "ProvinceId": "prov-002", "RegisteredVoters": 65000, "MPName": "Frank Tayali", "IsActive": true },
+  { "Id": "const-006", "Name": "Nkana", "Code": "NKA-C", "DistrictId": "dist-004", "ProvinceId": "prov-002", "RegisteredVoters": 58000, "MPName": "Binwell Mpundu", "IsActive": true },
+  { "Id": "const-007", "Name": "Livingstone", "Code": "LIV-C", "DistrictId": "dist-006", "ProvinceId": "prov-004", "RegisteredVoters": 82000, "MPName": "Rodney Sikumba", "IsActive": true },
+  { "Id": "const-008", "Name": "Choma Central", "Code": "CHO-C", "DistrictId": "dist-007", "ProvinceId": "prov-004", "RegisteredVoters": 75000, "MPName": "Cornelius Mweetwa", "IsActive": true },
+  { "Id": "const-009", "Name": "Chipata Central", "Code": "CPT-C", "DistrictId": "dist-008", "ProvinceId": "prov-005", "RegisteredVoters": 68000, "MPName": "Reuben Mtolo Phiri", "IsActive": true },
+  { "Id": "const-010", "Name": "Solwezi Central", "Code": "SOL-C", "DistrictId": "dist-012", "ProvinceId": "prov-009", "RegisteredVoters": 72000, "MPName": "Stafford Mulusa", "IsActive": true },
+  { "Id": "const-011", "Name": "Mongu Central", "Code": "MON-C", "DistrictId": "dist-009", "ProvinceId": "prov-006", "RegisteredVoters": 55000, "MPName": "Oliver Amutike", "IsActive": true },
+  { "Id": "const-012", "Name": "Kabwe Central", "Code": "KAB-W", "DistrictId": "dist-005", "ProvinceId": "prov-003", "RegisteredVoters": 78000, "MPName": "Chushi Kasanda", "IsActive": true }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "campaignId": 1,
+    "order": 1,
+    "questionText": "Are you aware of the campaign?",
+    "questionType": "yes/no",
+    "isRequired": true,
+    "branchingRule": "If no, show introduction",
+    "followUpQuestion": "What issue matters most?",
+    "options": []
+  },
+  {
+    "id": 2,
+    "campaignId": 1,
+    "order": 2,
+    "questionText": "What issue matters most?",
+    "questionType": "single choice",
+    "isRequired": false,
+    "branchingRule": "Route low-support answers to follow-up",
+    "followUpQuestion": "Would you like a follow-up visit?",
+    "options": [
+      { "id": 1, "questionId": 2, "text": "Jobs", "value": "jobs", "nextQuestion": "Follow-up" },
+      { "id": 2, "questionId": 2, "text": "Water", "value": "water", "nextQuestion": "Follow-up" },
+      { "id": 3, "questionId": 2, "text": "Roads", "value": "roads", "nextQuestion": "Close" }
+    ]
+  },
+  {
+    "id": 3,
+    "campaignId": 3,
+    "order": 1,
+    "questionText": "Is this the first time you have heard from our team this month?",
+    "questionType": "yes/no",
+    "isRequired": true,
+    "branchingRule": "If no, skip introduction",
+    "followUpQuestion": "Which issue needs follow-up?",
+    "options": []
+  }
+]

@@ -1,0 +1,5 @@
+[
+  { "id": 1, "observerId": 1, "observerName": "John Smith", "regionName": "Lusaka", "pollingStationName": "Civic Centre", "status": "Active" },
+  { "id": 2, "observerId": 2, "observerName": "Mary Banda", "regionName": "Copperbelt", "pollingStationName": "Main Mall", "status": "Active" },
+  { "id": 3, "observerId": 3, "observerName": "David Phiri", "regionName": "Central", "pollingStationName": "Town Hall", "status": "Active" }
+]

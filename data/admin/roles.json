@@ -1,0 +1,23 @@
+[
+  {
+    "Id": 1,
+    "RoleName": "Administrator",
+    "Description": "Full system access",
+    "IsSystemRole": true,
+    "IsActive": true
+  },
+  {
+    "Id": 2,
+    "RoleName": "Campaign Manager",
+    "Description": "Manage campaigns and field ops",
+    "IsSystemRole": false,
+    "IsActive": true
+  },
+  {
+    "Id": 3,
+    "RoleName": "Canvasser",
+    "Description": "Perform canvassing tasks",
+    "IsSystemRole": false,
+    "IsActive": true
+  }
+]

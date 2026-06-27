@@ -1,0 +1,14 @@
+[
+  { "Id": "ward-001", "Name": "Kabwata Ward", "Code": "KBW-W", "ConstituencyId": "const-002", "RegisteredVoters": 12000, "CouncillorName": "John J. Banda", "IsActive": true },
+  { "Id": "ward-002", "Name": "Kamwala Ward", "Code": "KAM-W", "ConstituencyId": "const-002", "RegisteredVoters": 10500, "CouncillorName": "S. Mulenga", "IsActive": true },
+  { "Id": "ward-003", "Name": "Libala Ward", "Code": "LIB-W", "ConstituencyId": "const-002", "RegisteredVoters": 11000, "CouncillorName": "M. Phiri", "IsActive": true },
+  { "Id": "ward-004", "Name": "Chainda Ward", "Code": "CHA-W", "ConstituencyId": "const-003", "RegisteredVoters": 15000, "CouncillorName": "C. Zulu", "IsActive": true },
+  { "Id": "ward-005", "Name": "Munali Ward", "Code": "MUN-W", "ConstituencyId": "const-003", "RegisteredVoters": 18000, "CouncillorName": "T. Mwewa", "IsActive": true },
+  { "Id": "ward-006", "Name": "Kanyama Ward", "Code": "KAN-W", "ConstituencyId": "const-001", "RegisteredVoters": 25000, "CouncillorName": "R. Mwanza", "IsActive": true },
+  { "Id": "ward-007", "Name": "Lubuto Ward", "Code": "LUB-W", "ConstituencyId": "const-005", "RegisteredVoters": 9500, "CouncillorName": "L. Kabwe", "IsActive": true },
+  { "Id": "ward-008", "Name": "Nkana Ward", "Code": "NKA-W", "ConstituencyId": "const-006", "RegisteredVoters": 10200, "CouncillorName": "B. Chama", "IsActive": true },
+  { "Id": "ward-009", "Name": "Mosi-O-Tunya Ward", "Code": "MOS-W", "ConstituencyId": "const-007", "RegisteredVoters": 12500, "CouncillorName": "G. Simate", "IsActive": true },
+  { "Id": "ward-010", "Name": "Solwezi Central Ward", "Code": "SOL-W", "ConstituencyId": "const-010", "RegisteredVoters": 14000, "CouncillorName": "P. Kyandila", "IsActive": true },
+  { "Id": "ward-011", "Name": "Mongu Ward", "Code": "MON-W", "ConstituencyId": "const-011", "RegisteredVoters": 8000, "CouncillorName": "F. Libingi", "IsActive": true },
+  { "Id": "ward-012", "Name": "Chilenje Ward", "Code": "CHI-W", "ConstituencyId": "const-002", "RegisteredVoters": 13500, "CouncillorName": "A. Simukoko", "IsActive": true }
+]

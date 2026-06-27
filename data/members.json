@@ -1,0 +1,20 @@
+[
+  {
+    "Id": "pm-001",
+    "MembershipNumber": "PARTY-2020-001",
+    "FirstName": "Mwansa",
+    "LastName": "Kapambwe",
+    "Email": "mkapambwe@party.zm",
+    "Phone": "+260 97 1234567",
+    "Province": "Lusaka",
+    "District": "Lusaka",
+    "Constituency": "Lusaka Central",
+    "JoinDate": "2020-01-15T00:00:00",
+    "MembershipStatus": "Active",
+    "CurrentPosition": "National Party President",
+    "PositionLevel": "National",
+    "Gender": "Male",
+    "MembershipType": "Ordinary",
+    "CreatedDate": "2020-01-15T00:00:00"
+  }
+]

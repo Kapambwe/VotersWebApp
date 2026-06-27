@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "campaignId": 1,
+    "campaignName": "Lusaka Ward Mobilization",
+    "packageName": "Campaign v3 field bundle",
+    "version": 3,
+    "approvalStatus": "Approved",
+    "publishStatus": "Published",
+    "isSynced": true,
+    "lastSyncStatus": "OK",
+    "retryCount": 0,
+    "lastPublishedAt": "2026-05-16T09:00:00"
+  },
+  {
+    "id": 2,
+    "campaignId": 2,
+    "campaignName": "Polling Day Readiness",
+    "packageName": "Polling readiness bundle",
+    "version": 1,
+    "approvalStatus": "Draft",
+    "publishStatus": "Not Published",
+    "isSynced": false,
+    "lastSyncStatus": "Pending approval",
+    "retryCount": 0
+  },
+  {
+    "id": 3,
+    "campaignId": 3,
+    "campaignName": "Village Outreach Sprint",
+    "packageName": "Village outreach package",
+    "version": 2,
+    "approvalStatus": "In Review",
+    "publishStatus": "Queued",
+    "isSynced": false,
+    "lastSyncStatus": "Awaiting approval",
+    "retryCount": 1,
+    "lastPublishedAt": "2026-05-10T15:30:00"
+  },
+  {
+    "id": 4,
+    "campaignId": 4,
+    "campaignName": "Route Coverage Review",
+    "packageName": "Route review package",
+    "version": 2,
+    "approvalStatus": "Approved",
+    "publishStatus": "Published",
+    "isSynced": true,
+    "lastSyncStatus": "OK",
+    "retryCount": 0,
+    "lastPublishedAt": "2026-05-15T11:00:00"
+  }
+]

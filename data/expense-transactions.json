@@ -1,0 +1,11 @@
+[
+  {
+    "TransactionId": "b10e8400-e29b-41d4-a716-446655440006",
+    "TransactionDate": "2025-12-19T00:00:00",
+    "ReferenceNumber": "EXP-20251220-0001",
+    "Category": 2,
+    "Vendor": "Lusaka Event Center",
+    "Amount": 125000.0,
+    "Description": "Campaign rally venue rental - Lusaka"
+  }
+]

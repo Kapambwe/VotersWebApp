@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "Kalingalinga Primary School",
+    "partyName": "UPND",
+    "agentName": "John Banda",
+    "votesForCandidate": 1850,
+    "validVotes": 2300,
+    "registeredVoters": 2500,
+    "rejectedVotes": 45,
+    "pollingStationId": 1,
+    "constituencyId": 1,
+    "wonCandidate": "UPND Candidate",
+    "signedFormUrl": "/assets/forms/LU-KAL-001.pdf",
+    "countingVideoUrl": "/assets/videos/LU-KAL-001.mp4",
+    "submittedAt": "2026-05-17T10:00:00",
+    "gpsLocation": "-15.4167,28.2833",
+    "otherPartiesResultViewModel": [
+      { "partyName": "PF", "votesForCandidate": 380, "percentage": 16.52 },
+      { "partyName": "Independent", "votesForCandidate": 70, "percentage": 3.04 }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Chilenje Secondary School",
+    "partyName": "PF",
+    "agentName": "Mary Mwape",
+    "votesForCandidate": 1200,
+    "validVotes": 2800,
+    "registeredVoters": 3200,
+    "rejectedVotes": 52,
+    "pollingStationId": 2,
+    "constituencyId": 2,
+    "wonCandidate": "PF Candidate",
+    "signedFormUrl": "/assets/forms/LU-CHI-002.pdf",
+    "countingVideoUrl": "/assets/videos/LU-CHI-002.mp4",
+    "submittedAt": "2026-05-17T11:00:00",
+    "gpsLocation": "-15.4333,28.3000",
+    "otherPartiesResultViewModel": [
+      { "partyName": "UPND", "votesForCandidate": 1050, "percentage": 37.5 },
+      { "partyName": "UPP", "votesForCandidate": 550, "percentage": 19.64 }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Nkana High School",
+    "partyName": "PF",
+    "agentName": "Bwalya Musonda",
+    "votesForCandidate": 2100,
+    "validVotes": 2650,
+    "registeredVoters": 2800,
+    "rejectedVotes": 38,
+    "pollingStationId": 3,
+    "constituencyId": 3,
+    "wonCandidate": "PF Candidate",
+    "signedFormUrl": "/assets/forms/CB-NKA-001.pdf",
+    "countingVideoUrl": "/assets/videos/CB-NKA-001.mp4",
+    "submittedAt": "2026-05-17T12:00:00",
+    "gpsLocation": "-12.8022,28.2164",
+    "otherPartiesResultViewModel": [
+      { "partyName": "UPND", "votesForCandidate": 480, "percentage": 18.11 },
+      { "partyName": "Independent", "votesForCandidate": 70, "percentage": 2.64 }
+    ]
+  }
+]

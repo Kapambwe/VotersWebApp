@@ -1,0 +1,21 @@
+[
+  {
+    "Id": "branch-001",
+    "Name": "Olympia Branch",
+    "Code": "OLY-BR",
+    "ConstituencyId": "const-001",
+    "ConstituencyName": "Lusaka Central",
+    "WardId": "ward-001",
+    "WardName": "Kabwata Ward 1",
+    "ResidentialAreaId": "area-001",
+    "ResidentialAreaName": "Olympia",
+    "Address": "Plot 123, Freedom Way",
+    "ContactPerson": "James Tembo",
+    "ContactPhone": "+260 977 123456",
+    "MemberCount": 245,
+    "BranchChairperson": "Susan Phiri",
+    "IsActive": true,
+    "CreatedDate": "2026-02-01T00:00:00",
+    "CreatedBy": "Admin"
+  }
+]

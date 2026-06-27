@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "area-001",
+    "Name": "Olympia",
+    "Code": "OLY",
+    "WardId": "ward-001",
+    "WardName": "Kabwata Ward 1",
+    "ConstituencyId": "const-001",
+    "ConstituencyName": "Lusaka Central",
+    "AreaType": "Urban",
+    "EstimatedPopulation": 8000,
+    "RegisteredVoters": 5500,
+    "StreetCount": 12,
+    "IsActive": true,
+    "CreatedDate": "2026-01-01T00:00:00",
+    "CreatedBy": "Admin"
+  }
+]

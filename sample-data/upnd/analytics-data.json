@@ -1,0 +1,36 @@
+{
+  "metricsByRange": {
+    "Last 7 Days": { "contacts": 4123, "growth": 8, "conversion": 24, "coverage": 48, "teams": 12 },
+    "Last 30 Days": { "contacts": 15247, "growth": 12, "conversion": 29, "coverage": 73, "teams": 24 },
+    "Last 90 Days": { "contacts": 39210, "growth": 18, "conversion": 34, "coverage": 85, "teams": 36 },
+    "This Year": { "contacts": 127480, "growth": 22, "conversion": 31, "coverage": 92, "teams": 48 }
+  },
+  "funnelStages": [
+    { "name": "Initial Contact", "count": 15247, "percentage": 100 },
+    { "name": "Engaged Response", "count": 10873, "percentage": 71 },
+    { "name": "Follow-up Scheduled", "count": 7621, "percentage": 50 },
+    { "name": "Converted", "count": 4421, "percentage": 29 }
+  ],
+  "territoryPerformance": [
+    { "territory": "Downtown", "contacts": 2847, "conversions": 1823, "rate": 64 },
+    { "territory": "East Side", "contacts": 3124, "conversions": 1906, "rate": 61 },
+    { "territory": "South", "contacts": 2654, "conversions": 1594, "rate": 60 },
+    { "territory": "West Hills", "contacts": 1987, "conversions": 1133, "rate": 57 },
+    { "territory": "North", "contacts": 2456, "conversions": 1379, "rate": 56 },
+    { "territory": "Suburban", "contacts": 2179, "conversions": 1008, "rate": 46 }
+  ],
+  "teamPerformance": [
+    { "teamMember": "Sarah Chen", "interactions": 487, "conversions": 312, "hours": 38 },
+    { "teamMember": "Mike Johnson", "interactions": 456, "conversions": 289, "hours": 36 },
+    { "teamMember": "Emily Davis", "interactions": 423, "conversions": 267, "hours": 34 },
+    { "teamMember": "David Wilson", "interactions": 401, "conversions": 245, "hours": 32 },
+    { "teamMember": "Jamie Turner", "interactions": 378, "conversions": 223, "hours": 30 }
+  ],
+  "recentActivities": [
+    { "title": "Route Completed", "description": "Sarah Chen completed Downtown Route with 45 contacts", "time": "10 min ago" },
+    { "title": "New Campaign Started", "description": "East Side GOTV Campaign launched with 500 targets", "time": "1 hour ago" },
+    { "title": "Team Milestone", "description": "10,000 contacts reached this month", "time": "2 hours ago" },
+    { "title": "Route Assigned", "description": "Mike Johnson assigned to South Lamar Circuit", "time": "3 hours ago" },
+    { "title": "Conversion Recorded", "description": "Emily Davis recorded 15 new conversions", "time": "4 hours ago" }
+  ]
+}

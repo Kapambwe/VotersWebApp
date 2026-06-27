@@ -1,0 +1,11 @@
+[
+  {
+    "TransactionId": "a10e8400-e29b-41d4-a716-446655440005",
+    "TransactionDate": "2025-12-18T00:00:00",
+    "ReferenceNumber": "INC-20251219-0001",
+    "Source": 1,
+    "DonorName": "Sarah Mwansa",
+    "Amount": 50000.0,
+    "Description": "Monthly donation - December 2025"
+  }
+]

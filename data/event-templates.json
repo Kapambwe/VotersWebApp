@@ -1,0 +1,13 @@
+[
+  { "Id": "tpl-evt-001", "Name": "Town Hall", "Icon": "forum", "Description": "Community meeting with Q&A", "Type": "Town Hall", "DefaultDurationHours": 2, "DefaultCapacity": 200, "Mode": 0 },
+  { "Id": "tpl-evt-002", "Name": "Campaign Rally", "Icon": "campaign", "Description": "Large gathering with speakers", "Type": "Rally", "DefaultDurationHours": 3, "DefaultCapacity": 500, "Mode": 0 },
+  { "Id": "tpl-evt-003", "Name": "Canvass Launch", "Icon": "door_front", "Description": "Door-to-door kickoff event", "Type": "Canvassing", "DefaultDurationHours": 4, "DefaultCapacity": 50, "Mode": 0 },
+  { "Id": "tpl-evt-004", "Name": "Fundraising Event", "Icon": "attach_money", "Description": "Fundraising dinner or gala", "Type": "Fundraiser", "DefaultDurationHours": 3, "DefaultCapacity": 300, "Mode": 0 },
+  { "Id": "tpl-evt-005", "Name": "Volunteer Training", "Icon": "school", "Description": "Training session for volunteers", "Type": "Training", "DefaultDurationHours": 3, "DefaultCapacity": 30, "Mode": 0 },
+  { "Id": "tpl-evt-006", "Name": "Virtual Town Hall", "Icon": "videocam", "Description": "Online town hall meeting", "Type": "Virtual", "DefaultDurationHours": 1.5, "DefaultCapacity": 500, "Mode": 0 },
+  { "Id": "tpl-evt-007", "Name": "Product Demo", "Icon": "present_to_all", "Description": "Live product demonstration", "Type": "Demo", "DefaultDurationHours": 1, "DefaultCapacity": 50, "Mode": 1 },
+  { "Id": "tpl-evt-008", "Name": "Sales Kickoff", "Icon": "rocket_launch", "Description": "Team launch meeting", "Type": "Kickoff", "DefaultDurationHours": 4, "DefaultCapacity": 100, "Mode": 1 },
+  { "Id": "tpl-evt-009", "Name": "Customer Meetup", "Icon": "groups", "Description": "Networking and social event", "Type": "Meetup", "DefaultDurationHours": 2, "DefaultCapacity": 75, "Mode": 1 },
+  { "Id": "tpl-evt-010", "Name": "Training Session", "Icon": "school", "Description": "Product training for customers", "Type": "Training", "DefaultDurationHours": 2, "DefaultCapacity": 30, "Mode": 1 },
+  { "Id": "tpl-evt-011", "Name": "Trade Show", "Icon": "store", "Description": "Industry trade show booth", "Type": "Trade Show", "DefaultDurationHours": 8, "DefaultCapacity": 200, "Mode": 1 }
+]

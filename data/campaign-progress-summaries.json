@@ -1,0 +1,36 @@
+[
+  {
+    "campaignId": 1,
+    "campaignName": "Lusaka Central Door-to-Door",
+    "readinessScore": 90,
+    "territoryProgress": 65,
+    "assignmentCompletionPercentage": 42,
+    "branchCompletionCount": 2,
+    "syncHealth": "Synced",
+    "messageCount": 1,
+    "questionCount": 3,
+    "territoryCount": 2,
+    "volunteerCount": 2,
+    "followUpCount": 1,
+    "undecidedCount": 84,
+    "publishStatus": "Published",
+    "lastSyncAt": "2026-05-19T00:00:00"
+  },
+  {
+    "campaignId": 2,
+    "campaignName": "Copperbelt Youth Mobilization",
+    "readinessScore": 70,
+    "territoryProgress": 35,
+    "assignmentCompletionPercentage": 20,
+    "branchCompletionCount": 1,
+    "syncHealth": "Pending",
+    "messageCount": 1,
+    "questionCount": 2,
+    "territoryCount": 1,
+    "volunteerCount": 1,
+    "followUpCount": 1,
+    "undecidedCount": 12,
+    "publishStatus": "Not Published",
+    "lastSyncAt": null
+  }
+]

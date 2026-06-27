@@ -1,0 +1,6 @@
+[
+  { "Id": 1, "TypeName": "Presidential Election" },
+  { "Id": 2, "TypeName": "Parliamentary Election" },
+  { "Id": 3, "TypeName": "Local Government Election" },
+  { "Id": 4, "TypeName": "By-Election" }
+]

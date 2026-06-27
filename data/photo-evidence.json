@@ -1,0 +1,49 @@
+[
+  {
+    "Id": 1,
+    "PhotoId": 1,
+    "ResultId": 1,
+    "PhotoType": "ResultsForm",
+    "PhotoUrl": "/api/photos/results-form-001.jpg",
+    "ContentType": "image/jpeg",
+    "FileSizeBytes": 245760,
+    "UploadedAt": "2026-05-20T13:00:00",
+    "CapturedAt": "2026-05-20T12:58:00",
+    "GpsLocation": "-15.4167, 28.2833",
+    "PhotoHash": "hash_form_001",
+    "IsVerified": true,
+    "VerifiedAt": "2026-05-20T14:00:00",
+    "VerificationNotes": "Form clearly visible and matches submitted data",
+    "VerifiedBy": 102
+  },
+  {
+    "Id": 2,
+    "PhotoId": 2,
+    "ResultId": 1,
+    "PhotoType": "PollingStation",
+    "PhotoUrl": "/api/photos/station-001.jpg",
+    "ContentType": "image/jpeg",
+    "FileSizeBytes": 198500,
+    "UploadedAt": "2026-05-20T13:05:00",
+    "CapturedAt": "2026-05-20T12:55:00",
+    "GpsLocation": "-15.4167, 28.2833",
+    "PhotoHash": "hash_station_001",
+    "IsVerified": true,
+    "VerifiedAt": "2026-05-20T14:00:00",
+    "VerifiedBy": 102
+  },
+  {
+    "Id": 3,
+    "PhotoId": 3,
+    "ResultId": 2,
+    "PhotoType": "ResultsForm",
+    "PhotoUrl": "/api/photos/results-form-002.jpg",
+    "ContentType": "image/jpeg",
+    "FileSizeBytes": 232000,
+    "UploadedAt": "2026-05-21T10:15:00",
+    "CapturedAt": "2026-05-21T10:10:00",
+    "GpsLocation": "-12.9644, 28.6368",
+    "PhotoHash": "hash_form_002",
+    "IsVerified": false
+  }
+]

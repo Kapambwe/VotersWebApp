@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0.3" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#grad1)" opacity="0.1"/>
+  
+  <!-- Workflow nodes -->
+  <g opacity="0.6">
+    <!-- Node 1 -->
+    <circle cx="80" cy="60" r="25" fill="#667eea" opacity="0.3"/>
+    <path d="M 67 60 L 75 68 L 93 50" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+    
+    <!-- Connector 1-2 -->
+    <line x1="105" y1="60" x2="145" y2="60" stroke="#667eea" stroke-width="2" opacity="0.3"/>
+    <path d="M 145 60 L 138 57 L 138 63 Z" fill="#667eea" opacity="0.3"/>
+    
+    <!-- Node 2 -->
+    <circle cx="170" cy="60" r="25" fill="#764ba2" opacity="0.3"/>
+    <text x="170" y="68" text-anchor="middle" fill="white" font-size="24" font-family="Arial">✉</text>
+    
+    <!-- Connector 2-3 -->
+    <line x1="195" y1="60" x2="235" y2="60" stroke="#764ba2" stroke-width="2" opacity="0.3"/>
+    <path d="M 235 60 L 228 57 L 228 63 Z" fill="#764ba2" opacity="0.3"/>
+    
+    <!-- Node 3 -->
+    <circle cx="260" cy="60" r="25" fill="#667eea" opacity="0.3"/>
+    <path d="M 250 55 L 260 70 L 270 55" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+    
+    <!-- Connector 3-4 -->
+    <line x1="260" y1="85" x2="260" y2="125" stroke="#667eea" stroke-width="2" opacity="0.3"/>
+    <path d="M 260 125 L 257 118 L 263 118 Z" fill="#667eea" opacity="0.3"/>
+    
+    <!-- Node 4 -->
+    <circle cx="260" cy="150" r="25" fill="#764ba2" opacity="0.3"/>
+    <text x="260" y="158" text-anchor="middle" fill="white" font-size="20" font-family="Arial">⏰</text>
+    
+    <!-- Connector 4-5 -->
+    <line x1="235" y1="150" x2="195" y2="150" stroke="#764ba2" stroke-width="2" opacity="0.3"/>
+    <path d="M 195 150 L 202 147 L 202 153 Z" fill="#764ba2" opacity="0.3"/>
+    
+    <!-- Node 5 -->
+    <circle cx="170" cy="150" r="25" fill="#667eea" opacity="0.3"/>
+    <text x="170" y="158" text-anchor="middle" fill="white" font-size="24" font-family="Arial">📱</text>
+    
+    <!-- Connector 5-6 -->
+    <line x1="170" y1="175" x2="170" y2="215" stroke="#667eea" stroke-width="2" opacity="0.3"/>
+    <path d="M 170 215 L 167 208 L 173 208 Z" fill="#667eea" opacity="0.3"/>
+    
+    <!-- Node 6 -->
+    <circle cx="170" cy="240" r="25" fill="#764ba2" opacity="0.3"/>
+    <path d="M 165 240 L 175 240 M 170 235 L 170 245" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="200" y="290" text-anchor="middle" fill="#667eea" font-size="16" font-family="Arial" opacity="0.4">
+    Workflow Automation
+  </text>
+</svg>

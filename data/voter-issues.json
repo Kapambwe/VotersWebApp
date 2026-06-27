@@ -1,0 +1,42 @@
+[
+  {
+    "VoterNumber": "VOT-001",
+    "FirstName": "John",
+    "LastName": "Smith",
+    "PollingStationName": "Central Primary",
+    "Address": "123 Main St",
+    "PersonMobile": "0811234567",
+    "VoterIssuesViewModel": [
+      {
+        "AgentName": "Alice Field",
+        "TrackDateTime": "2026-05-15T10:00:00",
+        "DisplayTime": "2 days ago",
+        "CanvasType": "Door-to-door",
+        "Reception": "Positive",
+        "RegisteredVoter": "Yes",
+        "PartyAffiliation": "None",
+        "IssueDiscription": "Voter concerns about local water supply."
+      }
+    ]
+  },
+  {
+    "VoterNumber": "VOT-002",
+    "FirstName": "Jane",
+    "LastName": "Doe",
+    "PollingStationName": "North Secondary",
+    "Address": "456 Oak Ave",
+    "PersonMobile": "0829876543",
+    "VoterIssuesViewModel": [
+      {
+        "AgentName": "Bob Canvas",
+        "TrackDateTime": "2026-05-16T14:30:00",
+        "DisplayTime": "1 day ago",
+        "CanvasType": "Telephone",
+        "Reception": "Neutral",
+        "RegisteredVoter": "Yes",
+        "PartyAffiliation": "Other",
+        "IssueDiscription": "Inquiry regarding polling station location."
+      }
+    ]
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "rec-001",
+    "DonorName": "John Doe",
+    "Amount": 1500000.0,
+    "Frequency": "Monthly",
+    "Status": "Active",
+    "NextPaymentDate": "2026-06-01T00:00:00"
+  },
+  {
+    "Id": "rec-002",
+    "DonorName": "Alice Smith",
+    "Amount": 75000.0,
+    "Frequency": "Quarterly",
+    "Status": "Active",
+    "NextPaymentDate": "2026-07-01T00:00:00"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "Id": 1,
+    "PollAgentId": 1,
+    "AgentName": "John Banda",
+    "TrainingType": "Basic",
+    "TrainingDate": "2026-05-01T09:00:00",
+    "Venue": "Lusaka Training Center",
+    "Trainer": "Election Team Lead",
+    "Completed": true,
+    "Score": 88,
+    "Passed": true,
+    "CertificateNumber": "CERT-001",
+    "Notes": "Completed core polling station procedures"
+  }
+]

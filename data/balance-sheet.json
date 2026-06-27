@@ -1,0 +1,15 @@
+{
+  "Assets": [
+    { "AccountCode": "1000", "AccountName": "Cash - National HQ", "Balance": 850000 },
+    { "AccountCode": "1010", "AccountName": "Cash - Provincial Offices", "Balance": 450000 },
+    { "AccountCode": "1100", "AccountName": "Office Equipment", "Balance": 350000 },
+    { "AccountCode": "1200", "AccountName": "Vehicles", "Balance": 800000 }
+  ],
+  "Liabilities": [
+    { "AccountCode": "2000", "AccountName": "Accounts Payable", "Balance": 120000 },
+    { "AccountCode": "2100", "AccountName": "Campaign Loans", "Balance": 300000 }
+  ],
+  "Equity": [
+    { "AccountCode": "3000", "AccountName": "Party Equity", "Balance": 2030000 }
+  ]
+}

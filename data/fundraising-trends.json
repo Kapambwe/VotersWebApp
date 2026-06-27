@@ -1,0 +1,14 @@
+[
+  { "CampaignId": null, "Month": "Jan", "Amount": 95000, "DonationCount": 210 },
+  { "CampaignId": null, "Month": "Feb", "Amount": 112000, "DonationCount": 248 },
+  { "CampaignId": null, "Month": "Mar", "Amount": 128000, "DonationCount": 283 },
+  { "CampaignId": null, "Month": "Apr", "Amount": 145000, "DonationCount": 321 },
+  { "CampaignId": null, "Month": "May", "Amount": 167000, "DonationCount": 370 },
+  { "CampaignId": null, "Month": "Jun", "Amount": 189000, "DonationCount": 418 },
+  { "CampaignId": null, "Month": "Jul", "Amount": 203000, "DonationCount": 449 },
+  { "CampaignId": null, "Month": "Aug", "Amount": 178000, "DonationCount": 393 },
+  { "CampaignId": null, "Month": "Sep", "Amount": 195000, "DonationCount": 431 },
+  { "CampaignId": null, "Month": "Oct", "Amount": 221000, "DonationCount": 489 },
+  { "CampaignId": null, "Month": "Nov", "Amount": 245000, "DonationCount": 542 },
+  { "CampaignId": null, "Month": "Dec", "Amount": 267000, "DonationCount": 590 }
+]

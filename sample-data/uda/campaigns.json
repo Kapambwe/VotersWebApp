@@ -1,0 +1,12 @@
+[
+  {
+    "Id": "1",
+    "Name": "2024 General Election Campaign",
+    "StartDate": "2024-01-01",
+    "EndDate": "2024-12-31",
+    "Budget": 5000000,
+    "Status": "Active",
+    "Campaign Manager": "Campaign Director",
+    "TargetVoters": 100000
+  }
+]

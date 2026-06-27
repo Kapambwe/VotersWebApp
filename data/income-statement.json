@@ -1,0 +1,13 @@
+{
+  "Revenue": [
+    { "AccountCode": "4000", "AccountName": "Individual Donations", "Balance": 1250000 },
+    { "AccountCode": "4100", "AccountName": "Membership Fees", "Balance": 450000 },
+    { "AccountCode": "4200", "AccountName": "Fundraising Events", "Balance": 320000 }
+  ],
+  "Expenses": [
+    { "AccountCode": "5000", "AccountName": "Campaign Advertising", "Balance": 650000 },
+    { "AccountCode": "5100", "AccountName": "Campaign Materials", "Balance": 380000 },
+    { "AccountCode": "5200", "AccountName": "Events & Rallies", "Balance": 290000 },
+    { "AccountCode": "5300", "AccountName": "Staff Salaries", "Balance": 420000 }
+  ]
+}

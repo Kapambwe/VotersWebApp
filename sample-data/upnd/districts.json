@@ -1,0 +1,14 @@
+[
+  { "Id": "dist-001", "Name": "Lusaka District", "Code": "LUS-D", "ProvinceId": "prov-001", "ProvinceName": "Lusaka Province", "ConstituencyCount": 7, "RegisteredVoters": 800000, "IsActive": true },
+  { "Id": "dist-002", "Name": "Chilanga District", "Code": "CHI-D", "ProvinceId": "prov-001", "ProvinceName": "Lusaka Province", "ConstituencyCount": 1, "RegisteredVoters": 120000, "IsActive": true },
+  { "Id": "dist-003", "Name": "Ndola District", "Code": "NDO-D", "ProvinceId": "prov-002", "ProvinceName": "Copperbelt Province", "ConstituencyCount": 4, "RegisteredVoters": 350000, "IsActive": true },
+  { "Id": "dist-004", "Name": "Kitwe District", "Code": "KIT-D", "ProvinceId": "prov-002", "ProvinceName": "Copperbelt Province", "ConstituencyCount": 5, "RegisteredVoters": 400000, "IsActive": true },
+  { "Id": "dist-005", "Name": "Kabwe District", "Code": "KAB-D", "ProvinceId": "prov-003", "ProvinceName": "Central Province", "ConstituencyCount": 2, "RegisteredVoters": 180000, "IsActive": true },
+  { "Id": "dist-006", "Name": "Livingstone District", "Code": "LIV-D", "ProvinceId": "prov-004", "ProvinceName": "Southern Province", "ConstituencyCount": 1, "RegisteredVoters": 150000, "IsActive": true },
+  { "Id": "dist-007", "Name": "Choma District", "Code": "CHO-D", "ProvinceId": "prov-004", "ProvinceName": "Southern Province", "ConstituencyCount": 1, "RegisteredVoters": 110000, "IsActive": true },
+  { "Id": "dist-008", "Name": "Chipata District", "Code": "CPT-D", "ProvinceId": "prov-005", "ProvinceName": "Eastern Province", "ConstituencyCount": 2, "RegisteredVoters": 160000, "IsActive": true },
+  { "Id": "dist-009", "Name": "Mongu District", "Code": "MON-D", "ProvinceId": "prov-006", "ProvinceName": "Western Province", "ConstituencyCount": 2, "RegisteredVoters": 95000, "IsActive": true },
+  { "Id": "dist-010", "Name": "Kasama District", "Code": "KAS-D", "ProvinceId": "prov-007", "ProvinceName": "Northern Province", "ConstituencyCount": 2, "RegisteredVoters": 120000, "IsActive": true },
+  { "Id": "dist-011", "Name": "Mansa District", "Code": "MAN-D", "ProvinceId": "prov-008", "ProvinceName": "Luapula Province", "ConstituencyCount": 2, "RegisteredVoters": 105000, "IsActive": true },
+  { "Id": "dist-012", "Name": "Solwezi District", "Code": "SOL-D", "ProvinceId": "prov-009", "ProvinceName": "North-Western Province", "ConstituencyCount": 3, "RegisteredVoters": 140000, "IsActive": true }
+]

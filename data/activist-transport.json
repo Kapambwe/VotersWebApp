@@ -1,0 +1,40 @@
+[
+  {
+    "id": "1",
+    "voterName": "Grace Mwanza",
+    "pickupAddress": "123 Main Road, Kamwala",
+    "pollingStation": "Kamwala Primary School",
+    "pickupTime": "2026-05-17T08:00:00",
+    "status": "Pending",
+    "voterPhone": "+260 977 123456"
+  },
+  {
+    "id": "2",
+    "voterName": "Joseph Phiri",
+    "pickupAddress": "45 Church Street, Kamwala",
+    "pollingStation": "Kamwala Primary School",
+    "pickupTime": "2026-05-17T10:00:00",
+    "status": "Assigned",
+    "voterPhone": "+260 977 234567",
+    "assignedDriver": "Peter Zulu"
+  },
+  {
+    "id": "3",
+    "voterName": "Mary Lungu",
+    "pickupAddress": "Plot 88, Independence Ave",
+    "pollingStation": "Kabwata School",
+    "pickupTime": "2026-05-17T11:30:00",
+    "status": "Pending",
+    "voterPhone": "+260 966 345678"
+  },
+  {
+    "id": "4",
+    "voterName": "Samuel Banda",
+    "pickupAddress": "House 12, Chilimbulu Rd",
+    "pollingStation": "Libala Clinic",
+    "pickupTime": "2026-05-17T09:15:00",
+    "status": "Completed",
+    "voterPhone": "+260 955 456789",
+    "assignedDriver": "John Banda"
+  }
+]

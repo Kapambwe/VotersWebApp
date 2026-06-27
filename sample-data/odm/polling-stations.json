@@ -1,0 +1,20 @@
+[
+  {
+    "Id": "1",
+    "Name": "Central Primary School",
+    "Code": "PS001",
+    "Constituency": "Central Constituency",
+    "Address": "123 School Road",
+    "RegisteredVoters": 1800,
+    "PresidingOfficer": "Officer Name"
+  },
+  {
+    "Id": "2",
+    "Name": "East Community Center",
+    "Code": "PS002",
+    "Constituency": "East Constituency",
+    "Address": "456 Community Avenue",
+    "RegisteredVoters": 1500,
+    "PresidingOfficer": "Another Officer"
+  }
+]

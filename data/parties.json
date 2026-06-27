@@ -1,0 +1,8 @@
+[
+  { "Id": 1, "PartyName": "United Party for National Development", "ShortCode": "UPND", "Color": "#1f7a3d", "Name": "UPND" },
+  { "Id": 2, "PartyName": "Patriotic Front", "ShortCode": "PF", "Color": "#1d4ed8", "Name": "PF" },
+  { "Id": 3, "PartyName": "United Prosperous and Peaceful Zambia", "ShortCode": "UPPZ", "Color": "#f59e0b", "Name": "UPPZ" },
+  { "Id": 4, "PartyName": "Forum for Democracy and Development", "ShortCode": "FDD", "Color": "#7c3aed", "Name": "FDD" },
+  { "Id": 5, "PartyName": "Movement for Multi-Party Democracy", "ShortCode": "MMD", "Color": "#dc2626", "Name": "MMD" },
+  { "Id": 6, "PartyName": "Independent", "ShortCode": "IND", "Color": "#6b7280", "Name": "Independent" }
+]

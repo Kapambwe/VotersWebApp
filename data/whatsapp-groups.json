@@ -1,0 +1,31 @@
+[
+  {
+    "id": "g-001",
+    "name": "Lusaka Central Youth Mobilizers",
+    "description": "Coordination group for youth volunteers in Lusaka Central",
+    "participantCount": 125,
+    "inviteLink": "https://chat.whatsapp.com/LskCentralYouth",
+    "adminIds": ["vol-001", "vol-005"],
+    "createdAt": "2026-01-15T10:00:00",
+    "status": "Active",
+    "ward": "Ward 5",
+    "constituency": "Lusaka Central",
+    "members": [
+      { "contactId": "vol-001", "name": "John Banda", "phoneNumber": "+260 97 1234567", "role": "Admin", "joinedAt": "2026-01-15T10:00:00" },
+      { "contactId": "vol-002", "name": "Sarah Phiri", "phoneNumber": "+260 97 2345678", "role": "Member", "joinedAt": "2026-01-16T11:30:00" }
+    ]
+  },
+  {
+    "id": "g-002",
+    "name": "Kabwata Women's Wing",
+    "description": "Official communication group for Kabwata women supporters",
+    "participantCount": 240,
+    "inviteLink": "https://chat.whatsapp.com/KabwataWomen",
+    "adminIds": ["vol-002"],
+    "createdAt": "2026-02-01T09:00:00",
+    "status": "Active",
+    "ward": "Kabwata Ward",
+    "constituency": "Lusaka Central",
+    "members": []
+  }
+]

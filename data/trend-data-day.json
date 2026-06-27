@@ -1,0 +1,8 @@
+[
+  { "date": "08:00", "contacts": 120, "conversions": 45 },
+  { "date": "10:00", "contacts": 350, "conversions": 120 },
+  { "date": "12:00", "contacts": 480, "conversions": 180 },
+  { "date": "14:00", "contacts": 520, "conversions": 210 },
+  { "date": "16:00", "contacts": 410, "conversions": 150 },
+  { "date": "18:00", "contacts": 280, "conversions": 90 }
+]

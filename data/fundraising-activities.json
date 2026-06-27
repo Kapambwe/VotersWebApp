@@ -1,0 +1,47 @@
+[
+  {
+    "Id": "act-001",
+    "CampaignId": 1,
+    "Type": "donation",
+    "Title": "New Donation",
+    "Description": "K5,000 from Mwansa Phiri",
+    "Timestamp": "2026-05-21T08:00:00",
+    "RelatedId": "don-001"
+  },
+  {
+    "Id": "act-002",
+    "CampaignId": 1,
+    "Type": "goal",
+    "Title": "Goal Milestone",
+    "Description": "Reached 60% of fundraising goal",
+    "Timestamp": "2026-05-21T05:00:00",
+    "RelatedId": ""
+  },
+  {
+    "Id": "act-003",
+    "CampaignId": 1,
+    "Type": "donation",
+    "Title": "Recurring Donation",
+    "Description": "K2,500 monthly from Musonda Katongo",
+    "Timestamp": "2026-05-21T02:00:00",
+    "RelatedId": "don-003"
+  },
+  {
+    "Id": "act-004",
+    "CampaignId": 1,
+    "Type": "event",
+    "Title": "Fundraiser Event",
+    "Description": "Lusaka Gala raised K45,000",
+    "Timestamp": "2026-05-20T12:00:00",
+    "RelatedId": ""
+  },
+  {
+    "Id": "act-005",
+    "CampaignId": 1,
+    "Type": "donation",
+    "Title": "Large Donation",
+    "Description": "K3,500 from Chilufya Banda",
+    "Timestamp": "2026-05-20T10:00:00",
+    "RelatedId": "don-002"
+  }
+]

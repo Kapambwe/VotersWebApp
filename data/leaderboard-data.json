@@ -1,0 +1,12 @@
+[
+  { "name": "John Banda", "role": "Provincial Coordinator", "initials": "JB", "avatarColor": "#ef4444", "hours": 165, "attempts": 3420, "answers": 1850, "conversionRate": 54 },
+  { "name": "Sarah Phiri", "role": "District Lead", "initials": "SP", "avatarColor": "#3b82f6", "hours": 158, "attempts": 3150, "answers": 1620, "conversionRate": 51 },
+  { "name": "Mike Mulenga", "role": "Ward Mobilizer", "initials": "MM", "avatarColor": "#10b981", "hours": 142, "attempts": 2840, "answers": 1390, "conversionRate": 49 },
+  { "name": "Grace Mwale", "role": "Field Agent", "initials": "GM", "avatarColor": "#f59e0b", "hours": 135, "attempts": 2600, "answers": 1250, "conversionRate": 48 },
+  { "name": "Patrick Tembo", "role": "Volunteer", "initials": "PT", "avatarColor": "#8b5cf6", "hours": 120, "attempts": 2400, "answers": 1080, "conversionRate": 45 },
+  { "name": "Mary Lungu", "role": "Coordinator", "initials": "ML", "avatarColor": "#ec4899", "hours": 115, "attempts": 2250, "answers": 980, "conversionRate": 44 },
+  { "name": "James Banda", "role": "Mobilizer", "initials": "JB", "avatarColor": "#6366f1", "hours": 108, "attempts": 2100, "answers": 890, "conversionRate": 42 },
+  { "name": "Agnes Chilufya", "role": "Team Lead", "initials": "AC", "avatarColor": "#14b8a6", "hours": 95, "attempts": 1850, "answers": 760, "conversionRate": 41 },
+  { "name": "Peter Mulenga", "role": "Field Supervisor", "initials": "PM", "avatarColor": "#f97316", "hours": 88, "attempts": 1720, "answers": 680, "conversionRate": 40 },
+  { "name": "Emily Zulu", "role": "Area Agent", "initials": "EZ", "avatarColor": "#84cc16", "hours": 75, "attempts": 1500, "answers": 580, "conversionRate": 39 }
+]

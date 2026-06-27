@@ -1,0 +1,47 @@
+[
+  {
+    "code": "door-to-door",
+    "label": "Door-to-door",
+    "description": "Household-by-household campaign movement.",
+    "suggestedContactMethod": "Field visit",
+    "isDefault": true,
+    "sortOrder": 1,
+    "publishedVersion": 1
+  },
+  {
+    "code": "village-to-village",
+    "label": "Village-to-village",
+    "description": "Village meeting and settlement coverage.",
+    "suggestedContactMethod": "Community visit",
+    "isDefault": false,
+    "sortOrder": 2,
+    "publishedVersion": 1
+  },
+  {
+    "code": "street-by-street",
+    "label": "Street-by-street",
+    "description": "Street or block based urban coverage.",
+    "suggestedContactMethod": "Street walk",
+    "isDefault": false,
+    "sortOrder": 3,
+    "publishedVersion": 1
+  },
+  {
+    "code": "route-based",
+    "label": "Route-based",
+    "description": "Predefined route coverage for volunteers.",
+    "suggestedContactMethod": "Route visit",
+    "isDefault": false,
+    "sortOrder": 4,
+    "publishedVersion": 1
+  },
+  {
+    "code": "polling-area",
+    "label": "Polling-area based",
+    "description": "Polling-station or polling-area coverage.",
+    "suggestedContactMethod": "Station visit",
+    "isDefault": false,
+    "sortOrder": 5,
+    "publishedVersion": 1
+  }
+]

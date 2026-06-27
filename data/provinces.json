@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "prov-001",
+    "Name": "Lusaka Province",
+    "Code": "LS",
+    "Description": "Capital province",
+    "DistrictCount": 7,
+    "ConstituencyCount": 25,
+    "RegisteredVoters": 1500000,
+    "IsActive": true,
+    "CreatedDate": "2024-05-01T00:00:00",
+    "CreatedBy": "System"
+  },
+  {
+    "Id": "prov-002",
+    "Name": "Copperbelt Province",
+    "Code": "CP",
+    "Description": "Mining province",
+    "DistrictCount": 10,
+    "ConstituencyCount": 30,
+    "RegisteredVoters": 1200000,
+    "IsActive": true,
+    "CreatedDate": "2024-05-01T00:00:00",
+    "CreatedBy": "System"
+  }
+]

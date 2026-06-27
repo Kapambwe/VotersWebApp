@@ -1,0 +1,14 @@
+[
+  { "Id": "area-001", "Name": "Olympia Extension", "Code": "OLY-1", "WardId": "ward-005", "ConstituencyId": "const-003", "AreaType": "Urban", "EstimatedPopulation": 5000, "IsActive": true },
+  { "Id": "area-002", "Name": "Silverest", "Code": "SIL-1", "WardId": "ward-005", "ConstituencyId": "const-003", "AreaType": "Peri-Urban", "EstimatedPopulation": 3500, "IsActive": true },
+  { "Id": "area-003", "Name": "Kabwata Site & Service", "Code": "KBT-SS", "WardId": "ward-001", "ConstituencyId": "const-002", "AreaType": "Urban", "EstimatedPopulation": 8000, "IsActive": true },
+  { "Id": "area-004", "Name": "Chilenje South", "Code": "CHI-S", "WardId": "ward-012", "ConstituencyId": "const-002", "AreaType": "Urban", "EstimatedPopulation": 12000, "IsActive": true },
+  { "Id": "area-005", "Name": "Libala Stage 1", "Code": "LIB-S1", "WardId": "ward-003", "ConstituencyId": "const-002", "AreaType": "Urban", "EstimatedPopulation": 4500, "IsActive": true },
+  { "Id": "area-006", "Name": "Lubuto West", "Code": "LUB-W", "WardId": "ward-007", "ConstituencyId": "const-005", "AreaType": "Urban", "EstimatedPopulation": 6000, "IsActive": true },
+  { "Id": "area-007", "Name": "Nkana West", "Code": "NKA-W", "WardId": "ward-008", "ConstituencyId": "const-006", "AreaType": "Urban", "EstimatedPopulation": 7500, "IsActive": true },
+  { "Id": "area-008", "Name": "Maramba", "Code": "MAR-1", "WardId": "ward-009", "ConstituencyId": "const-007", "AreaType": "Urban", "EstimatedPopulation": 9000, "IsActive": true },
+  { "Id": "area-009", "Name": "Kazomba", "Code": "KAZ-1", "WardId": "ward-010", "ConstituencyId": "const-010", "AreaType": "Peri-Urban", "EstimatedPopulation": 4000, "IsActive": true },
+  { "Id": "area-010", "Name": "Imwiko", "Code": "IMW-1", "WardId": "ward-011", "ConstituencyId": "const-011", "AreaType": "Urban", "EstimatedPopulation": 5500, "IsActive": true },
+  { "Id": "area-011", "Name": "Chelston", "Code": "CHE-1", "WardId": "ward-005", "ConstituencyId": "const-003", "AreaType": "Urban", "EstimatedPopulation": 15000, "IsActive": true },
+  { "Id": "area-012", "Name": "Kamwala South", "Code": "KAM-S", "WardId": "ward-002", "ConstituencyId": "const-002", "AreaType": "Urban", "EstimatedPopulation": 11000, "IsActive": true }
+]

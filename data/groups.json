@@ -1,0 +1,5 @@
+[
+  { "id": 1, "groupId": 101, "name": "Kabwata Youth Team", "teamName": "Youth Volunteers", "description": "Young volunteers for door-to-door canvassing in Kabwata", "memberCount": 15, "numberOfVoters": 15, "leader": "Joseph Phiri", "createdDate": "2026-04-15T10:00:00", "province": "Lusaka", "district": "Lusaka", "constituency": "Lusaka Central", "ward": "Kabwata Ward" },
+  { "id": 2, "groupId": 102, "name": "Kanyama Community Leaders", "teamName": "Community Organizers", "description": "Community leaders organizing voter education in Kanyama", "memberCount": 12, "numberOfVoters": 12, "leader": "Agnes Chilufya", "createdDate": "2026-04-20T10:00:00", "province": "Lusaka", "district": "Lusaka", "constituency": "Lusaka", "ward": "Kanyama Ward" },
+  { "id": 3, "groupId": 103, "name": "Matero Weekend Warriors", "teamName": "Weekend Volunteers", "description": "Weekend canvassing team for Matero area", "memberCount": 10, "numberOfVoters": 10, "leader": "Peter Mulenga", "createdDate": "2026-04-25T10:00:00", "province": "Lusaka", "district": "Lusaka", "constituency": "Lusaka", "ward": "Matero Ward" }
+]

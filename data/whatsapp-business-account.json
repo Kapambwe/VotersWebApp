@@ -1,0 +1,19 @@
+[
+  {
+    "Id": "wa-business-001",
+    "BusinessName": "VoterApp Zambia",
+    "PhoneNumber": "+260977000000",
+    "Status": "Verified",
+    "IsConnected": true,
+    "LastSync": "2026-05-21T08:00:00",
+    "ApiVersion": "v20.0",
+    "Permissions": [ "messages", "contacts", "templates" ],
+    "Quota": {
+      "DailyLimit": 1000,
+      "DailyUsed": 235,
+      "MonthlyLimit": 25000,
+      "MonthlyUsed": 4100,
+      "ResetDate": "2026-06-01T00:00:00"
+    }
+  }
+]

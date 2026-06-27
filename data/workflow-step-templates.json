@@ -1,0 +1,149 @@
+[
+  {
+    "Id": "email-welcome",
+    "Category": "Communication",
+    "Name": "Welcome Email",
+    "Type": "Email",
+    "Description": "Send a personalized welcome email to new contacts",
+    "Icon": "email",
+    "Color": "#3b82f6",
+    "ConfiguredFields": "Template: Welcome Message, Delay: None",
+    "PreConfiguredData": {
+      "template": "Welcome to our community! We're excited to have you join us.",
+      "subject": "Welcome!",
+      "delay": 0
+    }
+  },
+  {
+    "Id": "sms-reminder",
+    "Category": "Communication",
+    "Name": "Event Reminder SMS",
+    "Type": "SMS",
+    "Description": "Send SMS reminder about upcoming events",
+    "Icon": "sms",
+    "Color": "#10b981",
+    "ConfiguredFields": "Template: Event Reminder, Timing: 1 day before",
+    "PreConfiguredData": {
+      "template": "Don't forget about our event tomorrow at 7 PM! See you there.",
+      "delay": 1
+    }
+  },
+  {
+    "Id": "call-followup",
+    "Category": "Communication",
+    "Name": "Follow-up Call",
+    "Type": "Call",
+    "Description": "Schedule a follow-up call with interested contacts",
+    "Icon": "phone",
+    "Color": "#06b6d4",
+    "ConfiguredFields": "Script: Follow-up, Priority: High",
+    "PreConfiguredData": {
+      "script": "Thank you for your interest. Let's discuss how we can help you further.",
+      "priority": "High"
+    }
+  },
+  {
+    "Id": "delay-3days",
+    "Category": "Logic & Timing",
+    "Name": "3-Day Wait",
+    "Type": "Delay",
+    "Description": "Wait 3 days before continuing to next step",
+    "Icon": "schedule",
+    "Color": "#f59e0b",
+    "ConfiguredFields": "Duration: 3 days",
+    "PreConfiguredData": { "days": 3 }
+  },
+  {
+    "Id": "delay-1week",
+    "Category": "Logic & Timing",
+    "Name": "1-Week Wait",
+    "Type": "Delay",
+    "Description": "Wait 1 week before continuing to next step",
+    "Icon": "schedule",
+    "Color": "#f59e0b",
+    "ConfiguredFields": "Duration: 7 days",
+    "PreConfiguredData": { "days": 7 }
+  },
+  {
+    "Id": "condition-email-opened",
+    "Category": "Logic & Timing",
+    "Name": "Email Opened Check",
+    "Type": "Condition",
+    "Description": "Check if contact opened the previous email",
+    "Icon": "alt_route",
+    "Color": "#8b5cf6",
+    "ConfiguredFields": "Field: Email Opened, Operator: Equals, Value: Yes",
+    "PreConfiguredData": {
+      "field": "Email Opened",
+      "operator": "equals",
+      "value": "Yes"
+    }
+  },
+  {
+    "Id": "condition-donation-amount",
+    "Category": "Logic & Timing",
+    "Name": "Donation Amount Check",
+    "Type": "Condition",
+    "Description": "Check if donation amount meets threshold",
+    "Icon": "alt_route",
+    "Color": "#8b5cf6",
+    "ConfiguredFields": "Field: Donation Amount, Operator: Greater than, Value: $50",
+    "PreConfiguredData": {
+      "field": "Donation Amount",
+      "operator": "greater than",
+      "value": "50"
+    }
+  },
+  {
+    "Id": "tag-supporter",
+    "Category": "Actions",
+    "Name": "Tag as Supporter",
+    "Type": "AddTag",
+    "Description": "Add 'Supporter' tag to engaged contacts",
+    "Icon": "label",
+    "Color": "#f59e0b",
+    "ConfiguredFields": "Tag: Supporter",
+    "PreConfiguredData": { "tag": "Supporter" }
+  },
+  {
+    "Id": "tag-volunteer",
+    "Category": "Actions",
+    "Name": "Tag as Volunteer",
+    "Type": "AddTag",
+    "Description": "Add 'Volunteer' tag to interested contacts",
+    "Icon": "label",
+    "Color": "#f59e0b",
+    "ConfiguredFields": "Tag: Volunteer",
+    "PreConfiguredData": { "tag": "Volunteer" }
+  },
+  {
+    "Id": "update-lead-score",
+    "Category": "Actions",
+    "Name": "Increase Lead Score",
+    "Type": "UpdateField",
+    "Description": "Increase lead score for engaged contacts",
+    "Icon": "edit",
+    "Color": "#06b6d4",
+    "ConfiguredFields": "Field: Lead Score, Action: Increase by 10",
+    "PreConfiguredData": {
+      "field": "Lead Score",
+      "action": "increase",
+      "value": "10"
+    }
+  },
+  {
+    "Id": "task-follow-up",
+    "Category": "Actions",
+    "Name": "Create Follow-up Task",
+    "Type": "Task",
+    "Description": "Create a task for team member to follow up",
+    "Icon": "task",
+    "Color": "#ef4444",
+    "ConfiguredFields": "Task: Personal follow-up call, Assignee: Team Lead",
+    "PreConfiguredData": {
+      "task": "Personal follow-up call required",
+      "assignee": "Team Lead",
+      "priority": "Medium"
+    }
+  }
+]

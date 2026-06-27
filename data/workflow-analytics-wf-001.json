@@ -1,0 +1,34 @@
+{
+  "workflowId": "wf-001",
+  "workflowName": "Lusaka Voter Registration Drive 2026",
+  "totalEnrolled": 15000,
+  "currentlyActive": 4500,
+  "completed": 10500,
+  "goalAchieved": 7800,
+  "completionRate": 70.0,
+  "goalRate": 52.0,
+  "enrollmentTrends": [
+    { "date": "Week 1", "enrolled": 2000, "completed": 1200 },
+    { "date": "Week 2", "enrolled": 3500, "completed": 2100 },
+    { "date": "Week 3", "enrolled": 4200, "completed": 3000 },
+    { "date": "Week 4", "enrolled": 2800, "completed": 2500 },
+    { "date": "Week 5", "enrolled": 2500, "completed": 1700 }
+  ],
+  "contactStatuses": [
+    { "status": "Active", "count": 4500 },
+    { "status": "Completed", "count": 10500 },
+    { "status": "Dropped", "count": 750 }
+  ],
+  "stepPerformances": [
+    { "order": 1, "name": "Initial SMS", "type": "SMS", "entered": 15000, "completed": 14200, "completionRate": 94.7, "avgTimeInStep": "2 hours", "dropOffRate": 5.3 },
+    { "order": 2, "name": "Phone Call", "type": "Task", "entered": 14200, "completed": 11500, "completionRate": 81.0, "avgTimeInStep": "24 hours", "dropOffRate": 19.0 },
+    { "order": 3, "name": "Home Visit", "type": "Task", "entered": 11500, "completed": 10500, "completionRate": 91.3, "avgTimeInStep": "3 days", "dropOffRate": 8.7 }
+  ],
+  "goalAchievements": [
+    { "date": "Week 1", "goalsReached": 800 },
+    { "date": "Week 2", "goalsReached": 1500 },
+    { "date": "Week 3", "goalsReached": 2200 },
+    { "date": "Week 4", "goalsReached": 1800 },
+    { "date": "Week 5", "goalsReached": 1500 }
+  ]
+}

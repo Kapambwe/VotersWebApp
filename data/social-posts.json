@@ -1,0 +1,19 @@
+[
+  {
+    "Id": "post-001",
+    "Content": "Excited to launch our new voter registration drive! #Zambia2026",
+    "Status": "Posted",
+    "TargetPlatforms": [0, 1],
+    "CreatedAt": "2026-05-19T10:00:00",
+    "Metrics": { "Reach": 12500, "Engagements": 840, "Likes": 520, "Shares": 125, "Comments": 0, "Clicks": 0, "Impressions": 0 }
+  },
+  {
+    "Id": "post-002",
+    "Content": "Join us tomorrow at the Kabwata Market for a community discussion.",
+    "Status": "Scheduled",
+    "ScheduledDate": "2026-05-22T09:00:00",
+    "TargetPlatforms": [0, 4],
+    "CreatedAt": "2026-05-21T05:00:00",
+    "Metrics": { "Reach": 0, "Engagements": 0, "Likes": 0, "Shares": 0, "Comments": 0, "Clicks": 0, "Impressions": 0 }
+  }
+]

@@ -1,0 +1,3 @@
+[
+  { "ReconciliationId": "710e8400-e29b-41d4-a716-446655440010", "BankAccountId": "d10e8400-e29b-41d4-a716-446655440008", "StatementDate": "2025-12-31T00:00:00", "StatementBalance": 1200000.0, "BookBalance": 1150000.0, "IsReconciled": true }
+]

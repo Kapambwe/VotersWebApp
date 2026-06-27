@@ -1,0 +1,44 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Gauteng",
+        "regionKey": "province:gauteng",
+        "levelKey": "province",
+        "countryCode": "ZA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[27.35, -26.45], [29.10, -26.45], [29.10, -25.05], [27.35, -25.05], [27.35, -26.45]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Western Cape",
+        "regionKey": "province:westerncape",
+        "levelKey": "province",
+        "countryCode": "ZA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[17.70, -35.20], [20.25, -35.20], [20.25, -32.40], [17.70, -32.40], [17.70, -35.20]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KwaZulu-Natal",
+        "regionKey": "province:kwazulunatal",
+        "levelKey": "province",
+        "countryCode": "ZA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[29.20, -31.30], [32.35, -31.30], [32.35, -27.00], [29.20, -27.00], [29.20, -31.30]]]
+      }
+    }
+  ]
+}

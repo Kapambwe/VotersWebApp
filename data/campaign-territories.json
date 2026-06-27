@@ -1,0 +1,61 @@
+[
+  {
+    "id": 1,
+    "campaignId": 1,
+    "name": "Kanyama North",
+    "territoryType": "Ward",
+    "province": "Lusaka",
+    "district": "Lusaka",
+    "constituency": "Kanyama",
+    "ward": "Kanyama",
+    "targetHouseholds": 1200,
+    "assignedVolunteers": 8,
+    "completionPercentage": 72,
+    "status": "In Progress"
+  },
+  {
+    "id": 2,
+    "campaignId": 2,
+    "name": "Ndola Central Stations",
+    "territoryType": "Polling-area",
+    "province": "Copperbelt",
+    "district": "Ndola",
+    "constituency": "Ndola Central",
+    "ward": "Central",
+    "targetHouseholds": 200,
+    "assignedVolunteers": 4,
+    "completionPercentage": 15,
+    "status": "Planned"
+  },
+  {
+    "id": 3,
+    "campaignId": 3,
+    "name": "Chipata Village Belt",
+    "territoryType": "Village",
+    "province": "Eastern",
+    "district": "Chipata",
+    "constituency": "Chipata Central",
+    "ward": "Mchini",
+    "village": "Chilubula",
+    "area": "Cluster A",
+    "targetHouseholds": 860,
+    "assignedVolunteers": 12,
+    "completionPercentage": 48,
+    "status": "In Progress"
+  },
+  {
+    "id": 4,
+    "campaignId": 4,
+    "name": "Matero Route Sections",
+    "territoryType": "Route",
+    "province": "Lusaka",
+    "district": "Lusaka",
+    "constituency": "Matero",
+    "ward": "Matero",
+    "area": "Section 1",
+    "targetHouseholds": 540,
+    "assignedVolunteers": 6,
+    "completionPercentage": 88,
+    "status": "In Progress"
+  }
+]

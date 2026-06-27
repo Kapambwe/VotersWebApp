@@ -1,0 +1,14 @@
+[
+  { "Id": "ps-001", "Name": "Olympia Primary School", "Latitude": -15.4078, "Longitude": 28.3231, "RegisteredVoters": 1200, "ConstituencyId": "const-003", "WardId": "ward-005", "Status": "Completed", "Turnout": 74.2 },
+  { "Id": "ps-002", "Name": "Silverest Secondary", "Latitude": -15.3298, "Longitude": 28.4025, "RegisteredVoters": 950, "ConstituencyId": "const-003", "WardId": "ward-015", "Status": "InProgress", "Turnout": 58.7 },
+  { "Id": "ps-003", "Name": "Kabwata Community Hall", "Latitude": -15.4266, "Longitude": 28.2868, "RegisteredVoters": 1500, "ConstituencyId": "const-002", "WardId": "ward-002", "Status": "Completed", "Turnout": 69.5 },
+  { "Id": "ps-004", "Name": "Chilenje South Market", "Latitude": -15.4392, "Longitude": 28.3045, "RegisteredVoters": 2100, "ConstituencyId": "const-002", "WardId": "ward-012", "Status": "Issue", "Turnout": 41.8 },
+  { "Id": "ps-005", "Name": "Libala Basic School", "Latitude": -15.4460, "Longitude": 28.3264, "RegisteredVoters": 1800, "ConstituencyId": "const-002", "WardId": "ward-003", "Status": "Completed", "Turnout": 77.1 },
+  { "Id": "ps-006", "Name": "Chelston Clinic", "Latitude": -15.3463, "Longitude": 28.3716, "RegisteredVoters": 1400, "ConstituencyId": "const-003", "WardId": "ward-005", "Status": "Pending", "Turnout": 22.4 },
+  { "Id": "ps-007", "Name": "Kamwala South Hall", "Latitude": -15.4198, "Longitude": 28.2752, "RegisteredVoters": 1250, "ConstituencyId": "const-002", "WardId": "ward-014", "Status": "Completed", "Turnout": 81.0 },
+  { "Id": "ps-008", "Name": "Mongu Central School", "Latitude": -15.2418, "Longitude": 23.1277, "RegisteredVoters": 1050, "ConstituencyId": "const-011", "WardId": "ward-011", "Status": "InProgress", "Turnout": 55.0 },
+  { "Id": "ps-009", "Name": "Solwezi Town Hall", "Latitude": -12.1832, "Longitude": 26.3913, "RegisteredVoters": 1100, "ConstituencyId": "const-010", "WardId": "ward-010", "Status": "Completed", "Turnout": 66.3 },
+  { "Id": "ps-010", "Name": "Livingstone Market", "Latitude": -17.8447, "Longitude": 25.8481, "RegisteredVoters": 1300, "ConstituencyId": "const-007", "WardId": "ward-007", "Status": "Issue", "Turnout": 38.9 },
+  { "Id": "ps-011", "Name": "Chipata Civic Centre", "Latitude": -13.6361, "Longitude": 32.6370, "RegisteredVoters": 1510, "ConstituencyId": "const-009", "WardId": "ward-009", "Status": "Completed", "Turnout": 72.8 },
+  { "Id": "ps-012", "Name": "Kabwe Civic Hall", "Latitude": -14.4447, "Longitude": 28.4460, "RegisteredVoters": 1670, "ConstituencyId": "const-012", "WardId": "ward-012", "Status": "Pending", "Turnout": 19.7 }
+]

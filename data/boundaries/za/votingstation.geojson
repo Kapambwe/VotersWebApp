@@ -1,0 +1,44 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Voting Station 1",
+        "regionKey": "votingstation:1",
+        "levelKey": "votingStation",
+        "countryCode": "ZA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[27.87, -26.33], [27.89, -26.33], [27.89, -26.31], [27.87, -26.31], [27.87, -26.33]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Voting Station 2",
+        "regionKey": "votingstation:2",
+        "levelKey": "votingStation",
+        "countryCode": "ZA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[18.46, -34.01], [18.48, -34.01], [18.48, -33.99], [18.46, -33.99], [18.46, -34.01]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Voting Station 3",
+        "regionKey": "votingstation:3",
+        "levelKey": "votingStation",
+        "countryCode": "ZA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[30.85, -29.85], [30.87, -29.85], [30.87, -29.83], [30.85, -29.83], [30.85, -29.85]]]
+      }
+    }
+  ]
+}
