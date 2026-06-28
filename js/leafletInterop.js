@@ -9,6 +9,7 @@ let mapInstances = {};
 let activeMapId = null;
 let layerControl = null;
 let legendControl = null;
+let baseTileLayer = null;
 
 /**
  * Returns true when the Leaflet global `L` is available.
@@ -49,6 +50,10 @@ function _ensureMapContextCollections(context) {
         context.legendControl = null;
     }
 
+    if (!Object.prototype.hasOwnProperty.call(context, 'baseTileLayer')) {
+        context.baseTileLayer = null;
+    }
+
     return context;
 }
 
@@ -58,7 +63,7 @@ function _getMapContext() {
     }
 
     if (map) {
-        return _ensureMapContextCollections({ map, layerGroups, markers, polygons, markerClusterGroup, clusteringEnabled, layerControl, legendControl });
+        return _ensureMapContextCollections({ map, layerGroups, markers, polygons, markerClusterGroup, clusteringEnabled, layerControl, legendControl, baseTileLayer });
     }
 
     return null;
@@ -82,7 +87,14 @@ export function initializeMap(mapElementId, latitude, longitude, zoom) {
 
     const existing = mapInstances[mapElementId];
     if (existing?.map) {
-        existing.map.remove();
+        try {
+            const container = existing.map.getContainer?.();
+            if (container?.parentNode) {
+                existing.map.remove();
+            }
+        } catch (error) {
+            console.warn(`Leaflet map cleanup skipped for ${mapElementId}:`, error);
+        }
     }
 
     map = L.map(mapElementId, {
@@ -91,11 +103,7 @@ export function initializeMap(mapElementId, latitude, longitude, zoom) {
         zoomControl: false
     });
 
-    // Add OpenStreetMap layer
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors',
-        maxZoom: 19
-    }).addTo(map);
+    setMapType('street');
 
     // Initialize layer groups
     layerGroups['pollingStations'] = L.layerGroup().addTo(map);
@@ -110,7 +118,8 @@ export function initializeMap(mapElementId, latitude, longitude, zoom) {
         markerClusterGroup: null,
         clusteringEnabled: false,
         layerControl: null,
-        legendControl: null
+        legendControl: null,
+        baseTileLayer: null
     };
     _setActiveMap(mapElementId);
 
@@ -500,6 +509,35 @@ export function addLegend(legendData, position) {
     return true;
 }
 
+export function setMapType(mapType) {
+    const context = _getMapContext();
+    if (!_leafletAvailable() || !context?.map) return false;
+
+    if (context.baseTileLayer) {
+        try {
+            context.map.removeLayer(context.baseTileLayer);
+        } catch (error) {
+            console.warn('Leaflet base tile removal skipped:', error);
+        }
+        context.baseTileLayer = null;
+    }
+
+    const type = (mapType || 'street').toLowerCase();
+    let url = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+    let attribution = '&copy; OpenStreetMap contributors';
+
+    if (type === 'satellite') {
+        url = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
+        attribution = 'Tiles &copy; Esri';
+    } else if (type === 'terrain') {
+        url = 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png';
+        attribution = 'Map data: &copy; OpenStreetMap contributors, SRTM | Map style: &copy; OpenTopoMap';
+    }
+
+    context.baseTileLayer = L.tileLayer(url, { attribution, maxZoom: 19 }).addTo(context.map);
+    return true;
+}
+
 export function clearMarkers() {
     const context = _getMapContext();
     if (!context) return;
@@ -524,21 +562,46 @@ export function clearAll() {
     if (!context) return;
 
     Object.values(context.layerGroups).forEach(group => {
-        group.clearLayers();
+        try {
+            group?.clearLayers();
+        } catch (error) {
+            console.warn('Leaflet layer group clear skipped:', error);
+        }
     });
 
     if (context.layerControl) {
-        context.map.removeControl(context.layerControl);
+        try {
+            context.map?.removeControl(context.layerControl);
+        } catch (error) {
+            console.warn('Leaflet layer control removal skipped:', error);
+        }
         context.layerControl = null;
     }
 
     if (context.legendControl) {
-        context.map.removeControl(context.legendControl);
+        try {
+            context.map?.removeControl(context.legendControl);
+        } catch (error) {
+            console.warn('Leaflet legend control removal skipped:', error);
+        }
         context.legendControl = null;
     }
 
+    if (context.baseTileLayer) {
+        try {
+            context.map?.removeLayer(context.baseTileLayer);
+        } catch (error) {
+            console.warn('Leaflet base tile removal skipped:', error);
+        }
+        context.baseTileLayer = null;
+    }
+
     if (context.markerClusterGroup) {
-        context.map.removeLayer(context.markerClusterGroup);
+        try {
+            context.map?.removeLayer(context.markerClusterGroup);
+        } catch (error) {
+            console.warn('Leaflet marker cluster removal skipped:', error);
+        }
         context.markerClusterGroup = null;
         context.clusteringEnabled = false;
     }
@@ -549,6 +612,20 @@ export function setView(latitude, longitude, zoom) {
     if (!context?.map) return false;
     context.map.setView([latitude, longitude], zoom);
     return true;
+}
+
+export function getMapState() {
+    const context = _getMapContext();
+    if (!context?.map) {
+        return null;
+    }
+
+    const center = context.map.getCenter();
+    return {
+        latitude: center?.lat ?? 0,
+        longitude: center?.lng ?? 0,
+        zoom: context.map.getZoom?.() ?? 0
+    };
 }
 
 export function fitBounds(coordinates) {
