@@ -1,0 +1,86 @@
+[
+  {
+    "id": 301,
+    "name": "Lusaka Central",
+    "partyName": "PF",
+    "agentName": "John Phiri",
+    "votesForCandidate": 41210,
+    "validVotes": 69420,
+    "registeredVoters": 103800,
+    "rejectedVotes": 1188,
+    "pollingStationId": 101,
+    "constituencyId": 1,
+    "wonCandidate": "PF Candidate",
+    "signedFormUrl": "/assets/forms/2021/LK-001.pdf",
+    "countingVideoUrl": "/assets/videos/2021/LK-001.mp4",
+    "submittedAt": "2021-08-13T18:20:00",
+    "gpsLocation": "-15.3875,28.3228",
+    "otherPartiesResultViewModel": [
+      { "partyName": "UPND", "votesForCandidate": 23910, "percentage": 34.44 },
+      { "partyName": "Independent", "votesForCandidate": 4200, "percentage": 6.05 }
+    ]
+  },
+  {
+    "id": 302,
+    "name": "Kabwata",
+    "partyName": "PF",
+    "agentName": "Mary Mwape",
+    "votesForCandidate": 35240,
+    "validVotes": 61220,
+    "registeredVoters": 98220,
+    "rejectedVotes": 1010,
+    "pollingStationId": 102,
+    "constituencyId": 2,
+    "wonCandidate": "PF Candidate",
+    "signedFormUrl": "/assets/forms/2021/LK-002.pdf",
+    "countingVideoUrl": "/assets/videos/2021/LK-002.mp4",
+    "submittedAt": "2021-08-13T18:45:00",
+    "gpsLocation": "-15.4121,28.2886",
+    "otherPartiesResultViewModel": [
+      { "partyName": "UPND", "votesForCandidate": 19450, "percentage": 31.8 },
+      { "partyName": "FDD", "votesForCandidate": 3780, "percentage": 6.18 }
+    ]
+  },
+  {
+    "id": 303,
+    "name": "Munali",
+    "partyName": "PF",
+    "agentName": "Lilian Mwape",
+    "votesForCandidate": 45680,
+    "validVotes": 67410,
+    "registeredVoters": 107500,
+    "rejectedVotes": 1150,
+    "pollingStationId": 103,
+    "constituencyId": 3,
+    "wonCandidate": "PF Candidate",
+    "signedFormUrl": "/assets/forms/2021/LK-003.pdf",
+    "countingVideoUrl": "/assets/videos/2021/LK-003.mp4",
+    "submittedAt": "2021-08-13T19:15:00",
+    "gpsLocation": "-15.3552,28.3492",
+    "otherPartiesResultViewModel": [
+      { "partyName": "UPND", "votesForCandidate": 20100, "percentage": 29.81 },
+      { "partyName": "Independent", "votesForCandidate": 5630, "percentage": 8.35 }
+    ]
+  },
+  {
+    "id": 304,
+    "name": "Matero",
+    "partyName": "PF",
+    "agentName": "Joseph Phiri",
+    "votesForCandidate": 49820,
+    "validVotes": 79210,
+    "registeredVoters": 130200,
+    "rejectedVotes": 1390,
+    "pollingStationId": 104,
+    "constituencyId": 4,
+    "wonCandidate": "PF Candidate",
+    "signedFormUrl": "/assets/forms/2021/LK-004.pdf",
+    "countingVideoUrl": "/assets/videos/2021/LK-004.mp4",
+    "submittedAt": "2021-08-13T19:40:00",
+    "gpsLocation": "-15.3816,28.2954",
+    "otherPartiesResultViewModel": [
+      { "partyName": "UPND", "votesForCandidate": 33210, "percentage": 41.93 },
+      { "partyName": "Independent", "votesForCandidate": 4180, "percentage": 5.28 }
+    ]
+  }
+]
