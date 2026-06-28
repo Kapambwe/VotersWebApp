@@ -122,8 +122,18 @@ export function initializeMap(mapElementId, latitude, longitude, zoom) {
         baseTileLayer: null
     };
     _setActiveMap(mapElementId);
+    _styleLeafletControlChrome(mapInstances[mapElementId]);
 
     return true;
+}
+
+function _styleLeafletControlChrome(context) {
+    const container = context?.map?.getContainer?.();
+    if (!container) {
+        return;
+    }
+
+    container.classList.add('leaflet-google-lite');
 }
 
 function _getLayerGroup(layerName) {
@@ -442,7 +452,7 @@ export function addScaleControl(position) {
     if (!_leafletAvailable() || !context?.map) return false;
     
     L.control.scale({
-        position: position || 'bottomleft',
+        position: position || 'topleft',
         imperial: false,
         metric: true
     }).addTo(context.map);
@@ -479,27 +489,35 @@ export function addLegend(legendData, position) {
                 .filter(([key]) => key !== 'title' && key !== 'items')
                 .map(([label, color]) => ({ label, color }));
     
-    const legend = L.control({ position: position || 'bottomright' });
+    const legend = L.control({ position: position || 'topleft' });
     
     legend.onAdd = function(map) {
-        const div = L.DomUtil.create('div', 'info legend');
-        div.style.background = 'white';
-        div.style.padding = '10px';
-        div.style.borderRadius = '5px';
-        div.style.boxShadow = '0 2px 4px rgba(0,0,0,0.3)';
-        
-        div.innerHTML = `<h4 style="margin: 0 0 8px 0;">${title}</h4>`;
+        const div = L.DomUtil.create('div', 'info legend map-legend');
+        div.innerHTML = `
+            <div class="map-legend-header">
+                <h4 class="map-legend-title">${title}</h4>
+                <button type="button" class="map-legend-toggle" aria-label="Toggle legend">−</button>
+            </div>
+            <div class="map-legend-items"></div>
+        `;
+        const itemsContainer = div.querySelector('.map-legend-items');
+        const toggleButton = div.querySelector('.map-legend-toggle');
         
         for (const item of items) {
             const label = item?.label || '';
             const color = item?.color || '#64748b';
-            div.innerHTML += `
-                <div style="margin: 4px 0;">
-                    <span style="display: inline-block; width: 20px; height: 20px; background: ${color}; margin-right: 8px; border-radius: 3px;"></span>
-                    <span>${label}</span>
+            itemsContainer.innerHTML += `
+                <div class="map-legend-item">
+                    <span class="map-legend-swatch" style="background: ${color};"></span>
+                    <span class="map-legend-label">${label}</span>
                 </div>
             `;
         }
+
+        toggleButton?.addEventListener('click', () => {
+            const collapsed = div.classList.toggle('is-collapsed');
+            toggleButton.textContent = collapsed ? '+' : '−';
+        });
         
         return div;
     };
@@ -523,8 +541,8 @@ export function setMapType(mapType) {
     }
 
     const type = (mapType || 'street').toLowerCase();
-    let url = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-    let attribution = '&copy; OpenStreetMap contributors';
+    let url = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}';
+    let attribution = 'Tiles &copy; Esri';
 
     if (type === 'satellite') {
         url = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
@@ -532,6 +550,9 @@ export function setMapType(mapType) {
     } else if (type === 'terrain') {
         url = 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png';
         attribution = 'Map data: &copy; OpenStreetMap contributors, SRTM | Map style: &copy; OpenTopoMap';
+    } else if (type === 'street' || type === 'google' || type === 'roadmap') {
+        url = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}';
+        attribution = 'Tiles &copy; Esri';
     }
 
     context.baseTileLayer = L.tileLayer(url, { attribution, maxZoom: 19 }).addTo(context.map);
