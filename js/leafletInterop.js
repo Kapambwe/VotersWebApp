@@ -79,9 +79,28 @@ function _setActiveMap(mapElementId) {
     return context;
 }
 
-export function initializeMap(mapElementId, latitude, longitude, zoom) {
+async function _waitForMapContainer(mapElementId, retries = 20, delayMs = 25) {
+    for (let attempt = 0; attempt < retries; attempt++) {
+        const container = document.getElementById(mapElementId);
+        if (container?.isConnected) {
+            return container;
+        }
+
+        await new Promise(resolve => setTimeout(resolve, delayMs));
+    }
+
+    return document.getElementById(mapElementId);
+}
+
+export async function initializeMap(mapElementId, latitude, longitude, zoom) {
     if (!_leafletAvailable()) {
         console.warn('Leaflet library not loaded – map initialization skipped.');
+        return false;
+    }
+
+    const container = await _waitForMapContainer(mapElementId);
+    if (!container) {
+        console.warn(`Leaflet map container not found for ${mapElementId}.`);
         return false;
     }
 
@@ -97,22 +116,15 @@ export function initializeMap(mapElementId, latitude, longitude, zoom) {
         }
     }
 
-    map = L.map(mapElementId, {
+    map = L.map(container, {
         center: [latitude || -13.1339, longitude || 27.8493], // Zambia center
         zoom: zoom || 6,
         zoomControl: false
     });
 
-    setMapType('street');
-
-    // Initialize layer groups
-    layerGroups['pollingStations'] = L.layerGroup().addTo(map);
-    layerGroups['agents'] = L.layerGroup().addTo(map);
-    layerGroups['constituencies'] = L.layerGroup().addTo(map);
-    layerGroups['results'] = L.layerGroup().addTo(map);
     mapInstances[mapElementId] = {
         map,
-        layerGroups,
+        layerGroups: {},
         markers: [],
         polygons: [],
         markerClusterGroup: null,
@@ -123,6 +135,18 @@ export function initializeMap(mapElementId, latitude, longitude, zoom) {
     };
     _setActiveMap(mapElementId);
     _styleLeafletControlChrome(mapInstances[mapElementId]);
+
+    layerGroups = mapInstances[mapElementId].layerGroups;
+    layerGroups['pollingStations'] = L.layerGroup().addTo(map);
+    layerGroups['agents'] = L.layerGroup().addTo(map);
+    layerGroups['constituencies'] = L.layerGroup().addTo(map);
+    layerGroups['results'] = L.layerGroup().addTo(map);
+
+    map.whenReady(() => {
+        if (mapInstances[mapElementId]?.map === map) {
+            setMapType('street');
+        }
+    });
 
     return true;
 }
@@ -490,36 +514,47 @@ export function addLegend(legendData, position) {
             : Object.entries(legendData || {})
                 .filter(([key]) => key !== 'title' && key !== 'items')
                 .map(([label, color]) => ({ label, color }));
+    const gradient = Array.isArray(legendData?.gradient) ? legendData.gradient : null;
     
     const legend = L.control({ position: position || 'topleft' });
     
     legend.onAdd = function(map) {
         const div = L.DomUtil.create('div', 'info legend map-legend');
-        div.innerHTML = `
+        const useGradient = !!gradient?.length;
+        div.innerHTML = useGradient
+            ? `
             <div class="map-legend-header">
                 <h4 class="map-legend-title">${title}</h4>
-                <button type="button" class="map-legend-toggle" aria-label="Toggle legend">−</button>
+            </div>
+            <div class="map-legend-gradient-wrap">
+                <div class="map-legend-gradient">
+                    ${gradient.map(item => `<span style="background:${item?.color || '#64748b'}"></span>`).join('')}
+                </div>
+                <div class="map-legend-gradient-labels">
+                    ${gradient.map(item => `<span>${item?.label || ''}</span>`).join('')}
+                </div>
+            </div>
+        `
+            : `
+            <div class="map-legend-header">
+                <h4 class="map-legend-title">${title}</h4>
             </div>
             <div class="map-legend-items"></div>
         `;
-        const itemsContainer = div.querySelector('.map-legend-items');
-        const toggleButton = div.querySelector('.map-legend-toggle');
-        
-        for (const item of items) {
-            const label = item?.label || '';
-            const color = item?.color || '#64748b';
-            itemsContainer.innerHTML += `
-                <div class="map-legend-item">
-                    <span class="map-legend-swatch" style="background: ${color};"></span>
-                    <span class="map-legend-label">${label}</span>
-                </div>
-            `;
-        }
 
-        toggleButton?.addEventListener('click', () => {
-            const collapsed = div.classList.toggle('is-collapsed');
-            toggleButton.textContent = collapsed ? '+' : '−';
-        });
+        if (!useGradient) {
+            const itemsContainer = div.querySelector('.map-legend-items');
+            for (const item of items) {
+                const label = item?.label || '';
+                const color = item?.color || '#64748b';
+                itemsContainer.innerHTML += `
+                    <div class="map-legend-item">
+                        <span class="map-legend-swatch" style="background: ${color};"></span>
+                        <span class="map-legend-label">${label}</span>
+                    </div>
+                `;
+            }
+        }
         
         return div;
     };
@@ -532,6 +567,11 @@ export function addLegend(legendData, position) {
 export function setMapType(mapType) {
     const context = _getMapContext();
     if (!_leafletAvailable() || !context?.map) return false;
+
+    const container = context.map.getContainer?.();
+    if (!container || !container.parentNode) {
+        return false;
+    }
 
     if (context.baseTileLayer) {
         try {
