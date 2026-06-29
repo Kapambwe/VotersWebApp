@@ -292,7 +292,9 @@ export function addGeoJsonLayer(layerName, geoJson, styleOptions, hoverOptions) 
                     const target = e.target;
                     target.setStyle({
                         weight: (styleOptions?.hoverWeight || 3),
-                        fillOpacity: (styleOptions?.hoverFillOpacity ?? 0.55)
+                        color: '#333',
+                        dashArray: '',
+                        fillOpacity: (styleOptions?.hoverFillOpacity ?? 0.68)
                     });
                     target.bringToFront();
                 },
