@@ -299,6 +299,15 @@ function _styleLeafletControlChrome(context) {
     container.classList.add('leaflet-google-lite');
 }
 
+function _setOfflineBackdropActive(context, isActive) {
+    const container = context?.map?.getContainer?.();
+    if (!container) {
+        return;
+    }
+
+    container.classList.toggle('offline-backdrop-active', !!isActive);
+}
+
 function _removeOfflineBackdropDecorations(context) {
     if (!context?.map) {
         return;
@@ -332,6 +341,8 @@ function _removeOfflineBackdropDecorations(context) {
         }
         context.offlineBackdropZoomHandler = null;
     }
+
+    _setOfflineBackdropActive(context, false);
 }
 
 function _createOfflineBackdropDecorations(context, geoJson) {
@@ -911,6 +922,8 @@ export function setMapType(mapType) {
         context.offlineBackdropLayer = null;
     }
 
+    _setOfflineBackdropActive(context, false);
+
     const type = (mapType || 'street').toLowerCase();
     const providers = BASE_TILE_PROVIDERS[type] || BASE_TILE_PROVIDERS.street;
 
@@ -981,6 +994,7 @@ export function setMapType(mapType) {
                     }
                     context.offlineBackdropLayer = null;
                 }
+                _setOfflineBackdropActive(context, false);
             });
             return true;
         } catch (error) {
@@ -1018,6 +1032,7 @@ export function setOfflineBackdrop(geoJsonUrl) {
     }
 
     _removeOfflineBackdropDecorations(context);
+    _setOfflineBackdropActive(context, true);
 
     if (context.offlineBackdropLoadPromise) {
         return true;
@@ -1055,17 +1070,27 @@ export function setOfflineBackdrop(geoJsonUrl) {
             }
 
             const backdropGroup = L.layerGroup();
+            const landHalo = L.rectangle(combinedBounds.pad(0.18), {
+                pane: paneName,
+                interactive: false,
+                color: '#c7d2fe',
+                weight: 0.4,
+                opacity: 0.18,
+                fillColor: '#f8fafc',
+                fillOpacity: 0.75
+            });
+            backdropGroup.addLayer(landHalo);
 
             successful.forEach(({ url, geoJson }, index) => {
                 const layer = L.geoJSON(geoJson, {
                     pane: paneName,
                     interactive: false,
                     style: feature => ({
-                        color: feature?.properties?.borderColor || (index === 0 ? '#64748b' : index === 1 ? '#94a3b8' : '#cbd5e1'),
-                        weight: index === 0 ? 1.4 : index === 1 ? 1.1 : 0.9,
-                        opacity: index === 0 ? 0.78 : 0.68,
-                        fillColor: feature?.properties?.fillColor || (index === 0 ? '#e2e8f0' : index === 1 ? '#eef2ff' : '#f8fafc'),
-                        fillOpacity: index === 0 ? 0.22 : 0.14
+                        color: feature?.properties?.borderColor || (index === 0 ? '#475569' : index === 1 ? '#64748b' : '#94a3b8'),
+                        weight: context.map.getZoom?.() >= 9 ? 1.1 : context.map.getZoom?.() >= 7 ? 1.0 : 0.8,
+                        opacity: context.map.getZoom?.() >= 9 ? 0.82 : 0.72,
+                        fillColor: feature?.properties?.fillColor || (index === 0 ? '#edf2f7' : index === 1 ? '#f1f5f9' : '#f8fafc'),
+                        fillOpacity: index === 0 ? 0.18 : index === 1 ? 0.12 : 0.08
                     })
                 });
 

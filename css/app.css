@@ -139,18 +139,29 @@ code {
     border: 0;
 }
 
+.leaflet-google-lite.offline-backdrop-active {
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.55), transparent 32%),
+        radial-gradient(circle at 78% 18%, rgba(219, 234, 254, 0.9), transparent 28%),
+        linear-gradient(180deg, #dbeafe 0%, #eaf2ff 38%, #f6fafc 100%);
+}
+
+.leaflet-google-lite.offline-backdrop-active .leaflet-pane {
+    filter: saturate(0.94) contrast(0.98);
+}
+
 .offline-map-label {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 0.18rem 0.45rem;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(255, 255, 255, 0.92);
     color: #0f172a;
-    border: 1px solid rgba(148, 163, 184, 0.42);
-    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.12);
-    font-size: 0.72rem;
-    font-weight: 700;
+    border: 1px solid rgba(148, 163, 184, 0.36);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.10);
+    font-size: 0.7rem;
+    font-weight: 650;
     letter-spacing: 0.02em;
     text-transform: uppercase;
     white-space: nowrap;
