@@ -1,0 +1,4 @@
+ElectionLevel,Province,Constituency,Ward,CandidateSource,Status,PublishedVersion,CandidateName,PartyCode,DisplayColor,BallotOrder,IsWithdrawn
+Parliamentary,Lusaka,Lusaka Central,,Nomination Form,Draft,1,Example Candidate,UPND,#16a34a,1,false
+Mayoral,Lusaka,Lusaka City,,Nomination Form,Draft,1,Example Mayor Candidate,UPND,#16a34a,1,false
+Councillor,Lusaka,,Ward 1,Nomination Form,Draft,1,Example Councillor Candidate,PF,#1d4ed8,1,false

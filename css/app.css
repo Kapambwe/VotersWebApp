@@ -4,6 +4,18 @@ html, body {
     font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+html,
+body,
+#app {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+}
+
 /* Inter font-face declarations.
    For full self-hosting, download the woff2 files from Google Fonts and add:
      src: url('fonts/inter-300.woff2') format('woff2'), ... etc.
@@ -120,6 +132,30 @@ a, .btn-link {
 
 code {
     color: #c02d76;
+}
+
+.offline-map-label-marker {
+    background: transparent;
+    border: 0;
+}
+
+.offline-map-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.18rem 0.45rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.88);
+    color: #0f172a;
+    border: 1px solid rgba(148, 163, 184, 0.42);
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.12);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {

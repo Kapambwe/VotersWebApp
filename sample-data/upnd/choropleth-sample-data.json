@@ -1,0 +1,27 @@
+[
+  { "RegionKey": "prov-001", "RegionName": "Lusaka", "LevelKey": "province", "ProvinceId": "prov-001", "DistrictId": "", "ConstituencyId": "", "WardId": "", "Turnout": 68.2, "WinningParty": "UPND", "Margin": 11.2 },
+  { "RegionKey": "prov-002", "RegionName": "Copperbelt", "LevelKey": "province", "ProvinceId": "prov-002", "DistrictId": "", "ConstituencyId": "", "WardId": "", "Turnout": 56.4, "WinningParty": "PF", "Margin": 3.8 },
+  { "RegionKey": "prov-003", "RegionName": "Central", "LevelKey": "province", "ProvinceId": "prov-003", "DistrictId": "", "ConstituencyId": "", "WardId": "", "Turnout": 60.1, "WinningParty": "UPND", "Margin": 6.2 },
+  { "RegionKey": "prov-004", "RegionName": "Southern", "LevelKey": "province", "ProvinceId": "prov-004", "DistrictId": "", "ConstituencyId": "", "WardId": "", "Turnout": 63.7, "WinningParty": "UPND", "Margin": 9.2 },
+  { "RegionKey": "prov-005", "RegionName": "Eastern", "LevelKey": "province", "ProvinceId": "prov-005", "DistrictId": "", "ConstituencyId": "", "WardId": "", "Turnout": 65.0, "WinningParty": "UPND", "Margin": 10.5 },
+  { "RegionKey": "prov-006", "RegionName": "Western", "LevelKey": "province", "ProvinceId": "prov-006", "DistrictId": "", "ConstituencyId": "", "WardId": "", "Turnout": 53.4, "WinningParty": "UPND", "Margin": 4.9 },
+  { "RegionKey": "prov-009", "RegionName": "North Western", "LevelKey": "province", "ProvinceId": "prov-009", "DistrictId": "", "ConstituencyId": "", "WardId": "", "Turnout": 57.6, "WinningParty": "UPND", "Margin": 5.8 },
+
+  { "RegionKey": "const-001", "RegionName": "Lusaka Central", "LevelKey": "constituency", "ProvinceId": "prov-001", "DistrictId": "dist-001", "ConstituencyId": "const-001", "WardId": "", "Turnout": 67.4, "WinningParty": "UPND", "Margin": 11.2 },
+  { "RegionKey": "const-002", "RegionName": "Kabwata", "LevelKey": "constituency", "ProvinceId": "prov-001", "DistrictId": "dist-001", "ConstituencyId": "const-002", "WardId": "", "Turnout": 63.1, "WinningParty": "UPND", "Margin": 8.7 },
+  { "RegionKey": "const-003", "RegionName": "Munali", "LevelKey": "constituency", "ProvinceId": "prov-001", "DistrictId": "dist-001", "ConstituencyId": "const-003", "WardId": "", "Turnout": 71.8, "WinningParty": "UPND", "Margin": 14.6 },
+  { "RegionKey": "const-004", "RegionName": "Matero", "LevelKey": "constituency", "ProvinceId": "prov-001", "DistrictId": "dist-001", "ConstituencyId": "const-004", "WardId": "", "Turnout": 58.9, "WinningParty": "PF", "Margin": 3.8 },
+  { "RegionKey": "const-005", "RegionName": "Ndola Central", "LevelKey": "constituency", "ProvinceId": "prov-002", "DistrictId": "dist-003", "ConstituencyId": "const-005", "WardId": "", "Turnout": 55.2, "WinningParty": "UPND", "Margin": 6.4 },
+  { "RegionKey": "const-006", "RegionName": "Nkana", "LevelKey": "constituency", "ProvinceId": "prov-002", "DistrictId": "dist-004", "ConstituencyId": "const-006", "WardId": "", "Turnout": 51.7, "WinningParty": "PF", "Margin": 2.9 },
+  { "RegionKey": "const-007", "RegionName": "Livingstone", "LevelKey": "constituency", "ProvinceId": "prov-004", "DistrictId": "dist-006", "ConstituencyId": "const-007", "WardId": "", "Turnout": 59.8, "WinningParty": "UPND", "Margin": 7.1 },
+  { "RegionKey": "const-008", "RegionName": "Choma Central", "LevelKey": "constituency", "ProvinceId": "prov-004", "DistrictId": "dist-007", "ConstituencyId": "const-008", "WardId": "", "Turnout": 61.3, "WinningParty": "UPND", "Margin": 9.2 },
+  { "RegionKey": "const-009", "RegionName": "Chipata Central", "LevelKey": "constituency", "ProvinceId": "prov-005", "DistrictId": "dist-008", "ConstituencyId": "const-009", "WardId": "", "Turnout": 64.9, "WinningParty": "UPND", "Margin": 10.5 },
+  { "RegionKey": "const-010", "RegionName": "Solwezi Central", "LevelKey": "constituency", "ProvinceId": "prov-009", "DistrictId": "dist-012", "ConstituencyId": "const-010", "WardId": "", "Turnout": 57.6, "WinningParty": "UPND", "Margin": 5.8 },
+  { "RegionKey": "const-011", "RegionName": "Mongu Central", "LevelKey": "constituency", "ProvinceId": "prov-006", "DistrictId": "dist-009", "ConstituencyId": "const-011", "WardId": "", "Turnout": 53.4, "WinningParty": "UPND", "Margin": 4.9 },
+  { "RegionKey": "const-012", "RegionName": "Kabwe Central", "LevelKey": "constituency", "ProvinceId": "prov-003", "DistrictId": "dist-005", "ConstituencyId": "const-012", "WardId": "", "Turnout": 60.1, "WinningParty": "UPND", "Margin": 6.2 },
+
+  { "RegionKey": "ward-001", "RegionName": "Ward 1", "LevelKey": "ward", "ProvinceId": "prov-001", "DistrictId": "dist-001", "ConstituencyId": "const-001", "WardId": "ward-001", "Turnout": 69.8, "WinningParty": "UPND", "Margin": 7.4 },
+  { "RegionKey": "ward-002", "RegionName": "Ward 2", "LevelKey": "ward", "ProvinceId": "prov-001", "DistrictId": "dist-001", "ConstituencyId": "const-002", "WardId": "ward-002", "Turnout": 62.4, "WinningParty": "UPND", "Margin": 6.1 },
+  { "RegionKey": "ward-003", "RegionName": "Ward 3", "LevelKey": "ward", "ProvinceId": "prov-001", "DistrictId": "dist-001", "ConstituencyId": "const-003", "WardId": "ward-003", "Turnout": 74.2, "WinningParty": "UPND", "Margin": 9.9 },
+  { "RegionKey": "ward-004", "RegionName": "Ward 4", "LevelKey": "ward", "ProvinceId": "prov-001", "DistrictId": "dist-001", "ConstituencyId": "const-004", "WardId": "ward-004", "Turnout": 57.3, "WinningParty": "PF", "Margin": 2.8 }
+]

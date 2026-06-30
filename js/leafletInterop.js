@@ -10,6 +10,105 @@ let activeMapId = null;
 let layerControl = null;
 let legendControl = null;
 let baseTileLayer = null;
+let baseTileLayerFallbackTimer = null;
+let offlineBackdropLayer = null;
+let offlineBackdropLoadPromise = null;
+let offlineBackdropGridLayer = null;
+let offlineBackdropLabelLayer = null;
+let offlineBackdropSourceLayers = [];
+let offlineBackdropZoomHandler = null;
+
+const OFFLINE_BACKDROP_SOURCES = [
+    'data/boundaries/zm/province.geojson',
+    'data/boundaries/zm/district.geojson',
+    'data/boundaries/zm/constituency.geojson'
+];
+
+const BASE_TILE_PROVIDERS = {
+    street: [
+        {
+            name: 'Esri Street',
+            url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',
+            options: {
+                attribution: 'Tiles &copy; Esri',
+                maxZoom: 19
+            }
+        },
+        {
+            name: 'OpenStreetMap',
+            url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            options: {
+                attribution: '&copy; OpenStreetMap contributors',
+                maxZoom: 19,
+                subdomains: ['a', 'b', 'c']
+            }
+        },
+        {
+            name: 'Carto Light',
+            url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+            options: {
+                attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+                maxZoom: 20,
+                subdomains: ['a', 'b', 'c', 'd']
+            }
+        }
+    ],
+    satellite: [
+        {
+            name: 'Esri Imagery',
+            url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+            options: {
+                attribution: 'Tiles &copy; Esri',
+                maxZoom: 19
+            }
+        },
+        {
+            name: 'Esri Street',
+            url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',
+            options: {
+                attribution: 'Tiles &copy; Esri',
+                maxZoom: 19
+            }
+        },
+        {
+            name: 'OpenStreetMap',
+            url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            options: {
+                attribution: '&copy; OpenStreetMap contributors',
+                maxZoom: 19,
+                subdomains: ['a', 'b', 'c']
+            }
+        }
+    ],
+    terrain: [
+        {
+            name: 'OpenTopoMap',
+            url: 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+            options: {
+                attribution: 'Map data: &copy; OpenStreetMap contributors, SRTM | Map style: &copy; OpenTopoMap',
+                maxZoom: 17,
+                subdomains: ['a', 'b', 'c']
+            }
+        },
+        {
+            name: 'Esri Street',
+            url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',
+            options: {
+                attribution: 'Tiles &copy; Esri',
+                maxZoom: 19
+            }
+        },
+        {
+            name: 'OpenStreetMap',
+            url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            options: {
+                attribution: '&copy; OpenStreetMap contributors',
+                maxZoom: 19,
+                subdomains: ['a', 'b', 'c']
+            }
+        }
+    ]
+};
 
 /**
  * Returns true when the Leaflet global `L` is available.
@@ -54,6 +153,34 @@ function _ensureMapContextCollections(context) {
         context.baseTileLayer = null;
     }
 
+    if (!Object.prototype.hasOwnProperty.call(context, 'baseTileLayerFallbackTimer')) {
+        context.baseTileLayerFallbackTimer = null;
+    }
+
+    if (!Object.prototype.hasOwnProperty.call(context, 'offlineBackdropLayer')) {
+        context.offlineBackdropLayer = null;
+    }
+
+    if (!Object.prototype.hasOwnProperty.call(context, 'offlineBackdropLoadPromise')) {
+        context.offlineBackdropLoadPromise = null;
+    }
+
+    if (!Object.prototype.hasOwnProperty.call(context, 'offlineBackdropGridLayer')) {
+        context.offlineBackdropGridLayer = null;
+    }
+
+    if (!Object.prototype.hasOwnProperty.call(context, 'offlineBackdropLabelLayer')) {
+        context.offlineBackdropLabelLayer = null;
+    }
+
+    if (!Object.prototype.hasOwnProperty.call(context, 'offlineBackdropSourceLayers')) {
+        context.offlineBackdropSourceLayers = [];
+    }
+
+    if (!Object.prototype.hasOwnProperty.call(context, 'offlineBackdropZoomHandler')) {
+        context.offlineBackdropZoomHandler = null;
+    }
+
     return context;
 }
 
@@ -63,7 +190,7 @@ function _getMapContext() {
     }
 
     if (map) {
-        return _ensureMapContextCollections({ map, layerGroups, markers, polygons, markerClusterGroup, clusteringEnabled, layerControl, legendControl, baseTileLayer });
+        return _ensureMapContextCollections({ map, layerGroups, markers, polygons, markerClusterGroup, clusteringEnabled, layerControl, legendControl, baseTileLayer, baseTileLayerFallbackTimer, offlineBackdropLayer, offlineBackdropLoadPromise, offlineBackdropGridLayer, offlineBackdropLabelLayer, offlineBackdropSourceLayers, offlineBackdropZoomHandler });
     }
 
     return null;
@@ -131,7 +258,14 @@ export async function initializeMap(mapElementId, latitude, longitude, zoom) {
         clusteringEnabled: false,
         layerControl: null,
         legendControl: null,
-        baseTileLayer: null
+        baseTileLayer: null,
+        baseTileLayerFallbackTimer: null,
+        offlineBackdropLayer: null,
+        offlineBackdropLoadPromise: null,
+        offlineBackdropGridLayer: null,
+        offlineBackdropLabelLayer: null,
+        offlineBackdropSourceLayers: [],
+        offlineBackdropZoomHandler: null
     };
     _setActiveMap(mapElementId);
     _styleLeafletControlChrome(mapInstances[mapElementId]);
@@ -145,6 +279,11 @@ export async function initializeMap(mapElementId, latitude, longitude, zoom) {
     map.whenReady(() => {
         if (mapInstances[mapElementId]?.map === map) {
             setMapType('street');
+            requestAnimationFrame(() => {
+                if (mapInstances[mapElementId]?.map === map) {
+                    map.invalidateSize();
+                }
+            });
         }
     });
 
@@ -158,6 +297,182 @@ function _styleLeafletControlChrome(context) {
     }
 
     container.classList.add('leaflet-google-lite');
+}
+
+function _removeOfflineBackdropDecorations(context) {
+    if (!context?.map) {
+        return;
+    }
+
+    if (context.offlineBackdropGridLayer) {
+        try {
+            context.map.removeLayer(context.offlineBackdropGridLayer);
+        } catch (error) {
+            console.warn('Leaflet offline grid removal skipped:', error);
+        }
+        context.offlineBackdropGridLayer = null;
+    }
+
+    if (context.offlineBackdropLabelLayer) {
+        try {
+            context.map.removeLayer(context.offlineBackdropLabelLayer);
+        } catch (error) {
+            console.warn('Leaflet offline label removal skipped:', error);
+        }
+        context.offlineBackdropLabelLayer = null;
+    }
+
+    context.offlineBackdropSourceLayers = [];
+
+    if (context.offlineBackdropZoomHandler) {
+        try {
+            context.map.off('zoomend', context.offlineBackdropZoomHandler);
+        } catch (error) {
+            console.warn('Leaflet offline zoom handler removal skipped:', error);
+        }
+        context.offlineBackdropZoomHandler = null;
+    }
+}
+
+function _createOfflineBackdropDecorations(context, geoJson) {
+    if (!_leafletAvailable() || !context?.map || !geoJson?.features?.length) {
+        return false;
+    }
+
+    const featureLayer = L.geoJSON(geoJson);
+    const bounds = featureLayer.getBounds?.();
+    if (!bounds?.isValid?.()) {
+        return false;
+    }
+    const geoJsonIndex = context.offlineBackdropSourceLayers.findIndex(entry => entry?.url === geoJson?.url);
+    const sourceRecord = geoJsonIndex >= 0 ? context.offlineBackdropSourceLayers[geoJsonIndex] : { url: geoJson?.url || null, geoJson };
+    if (geoJsonIndex < 0) {
+        context.offlineBackdropSourceLayers.push(sourceRecord);
+    } else {
+        context.offlineBackdropSourceLayers[geoJsonIndex] = sourceRecord;
+    }
+
+    const refreshDecorations = () => {
+        _renderOfflineBackdropDecorations(context);
+    };
+
+    if (!context.offlineBackdropZoomHandler) {
+        context.offlineBackdropZoomHandler = refreshDecorations;
+        context.map.on('zoomend', context.offlineBackdropZoomHandler);
+    }
+
+    _renderOfflineBackdropDecorations(context);
+    return true;
+}
+
+function _renderOfflineBackdropDecorations(context) {
+    if (!_leafletAvailable() || !context?.map) {
+        return false;
+    }
+
+    _removeLayerOnly(context, 'offlineBackdropGridLayer');
+    _removeLayerOnly(context, 'offlineBackdropLabelLayer');
+
+    const zoom = context.map.getZoom?.() ?? 0;
+    const sources = (context.offlineBackdropSourceLayers || []).filter(entry => entry?.geoJson?.features?.length);
+    if (sources.length === 0) {
+        return false;
+    }
+
+    const combinedBounds = L.latLngBounds([]);
+    sources.forEach(source => {
+        const layer = L.geoJSON(source.geoJson);
+        const bounds = layer.getBounds?.();
+        if (bounds?.isValid?.()) {
+            combinedBounds.extend(bounds);
+        }
+    });
+
+    if (!combinedBounds.isValid?.()) {
+        return false;
+    }
+
+    const paddedBounds = combinedBounds.pad(0.1);
+    const south = Math.floor(paddedBounds.getSouth());
+    const north = Math.ceil(paddedBounds.getNorth());
+    const west = Math.floor(paddedBounds.getWest());
+    const east = Math.ceil(paddedBounds.getEast());
+
+    const gridLayer = L.layerGroup();
+    const gridStyle = {
+        color: '#94a3b8',
+        weight: 0.8,
+        opacity: 0.28,
+        dashArray: '6 8',
+        interactive: false
+    };
+
+    for (let lat = south; lat <= north; lat += 1) {
+        gridLayer.addLayer(L.polyline([[lat, west], [lat, east]], gridStyle));
+    }
+
+    for (let lng = west; lng <= east; lng += 1) {
+        gridLayer.addLayer(L.polyline([[south, lng], [north, lng]], gridStyle));
+    }
+
+    const labelLayer = L.layerGroup();
+    const labelBudget = zoom >= 9 ? 18 : zoom >= 7 ? 12 : 6;
+    const labelSources = zoom >= 9
+        ? sources
+        : zoom >= 7
+            ? sources.filter(source => source.geoJson.features.some(feature => (feature?.properties?.levelKey || '').toLowerCase() !== 'constituency'))
+            : sources.filter(source => source.geoJson.features.some(feature => (feature?.properties?.levelKey || '').toLowerCase() === 'province'));
+
+    labelSources.forEach(source => {
+        source.geoJson.features.slice(0, labelBudget).forEach((feature, index) => {
+            const levelKey = (feature?.properties?.levelKey || '').toLowerCase();
+            if ((zoom < 9 && levelKey === 'constituency') || (zoom < 7 && levelKey !== 'province')) {
+                return;
+            }
+
+            const name = feature?.properties?.name || feature?.properties?.NAME || feature?.properties?.regionName || `Region ${index + 1}`;
+            const geometryLayer = L.geoJSON(feature);
+            const center = geometryLayer.getBounds?.().getCenter?.();
+            if (!center) {
+                return;
+            }
+
+            const label = L.marker(center, {
+                interactive: false,
+                keyboard: false,
+                opacity: 1,
+                icon: L.divIcon({
+                    className: 'offline-map-label-marker',
+                    html: `<span class="offline-map-label">${name}</span>`,
+                    iconSize: [0, 0],
+                    iconAnchor: [0, 0]
+                })
+            });
+
+            labelLayer.addLayer(label);
+        });
+    });
+
+    gridLayer.addTo(context.map);
+    labelLayer.addTo(context.map);
+    context.offlineBackdropGridLayer = gridLayer;
+    context.offlineBackdropLabelLayer = labelLayer;
+    return true;
+}
+
+function _removeLayerOnly(context, propertyName) {
+    const layer = context?.[propertyName];
+    if (!layer || !context?.map) {
+        return;
+    }
+
+    try {
+        context.map.removeLayer(layer);
+    } catch (error) {
+        console.warn(`Leaflet ${propertyName} removal skipped:`, error);
+    }
+
+    context[propertyName] = null;
 }
 
 function _getLayerGroup(layerName) {
@@ -582,22 +897,195 @@ export function setMapType(mapType) {
         context.baseTileLayer = null;
     }
 
-    const type = (mapType || 'street').toLowerCase();
-    let url = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}';
-    let attribution = 'Tiles &copy; Esri';
-
-    if (type === 'satellite') {
-        url = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
-        attribution = 'Tiles &copy; Esri';
-    } else if (type === 'terrain') {
-        url = 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png';
-        attribution = 'Map data: &copy; OpenStreetMap contributors, SRTM | Map style: &copy; OpenTopoMap';
-    } else if (type === 'street' || type === 'google' || type === 'roadmap') {
-        url = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}';
-        attribution = 'Tiles &copy; Esri';
+    if (context.baseTileLayerFallbackTimer) {
+        clearTimeout(context.baseTileLayerFallbackTimer);
+        context.baseTileLayerFallbackTimer = null;
     }
 
-    context.baseTileLayer = L.tileLayer(url, { attribution, maxZoom: 19 }).addTo(context.map);
+    if (context.offlineBackdropLayer) {
+        try {
+            context.map.removeLayer(context.offlineBackdropLayer);
+        } catch (error) {
+            console.warn('Leaflet offline backdrop removal skipped:', error);
+        }
+        context.offlineBackdropLayer = null;
+    }
+
+    const type = (mapType || 'street').toLowerCase();
+    const providers = BASE_TILE_PROVIDERS[type] || BASE_TILE_PROVIDERS.street;
+
+    const activateProvider = (providerIndex) => {
+        const provider = providers[providerIndex];
+        if (!provider) {
+            console.warn(`No working Leaflet tile provider available for map type "${type}".`);
+            context.baseTileLayer = null;
+            return false;
+        }
+
+        let layer = null;
+        try {
+            layer = L.tileLayer(provider.url, {
+                ...(provider.options || {}),
+                crossOrigin: true,
+                updateWhenIdle: true,
+                keepBuffer: 2
+            });
+            let isLoaded = false;
+            const offlineTimeoutMs = 2200;
+            const offlineTimer = setTimeout(() => {
+                if (!isLoaded && context.baseTileLayer === layer && !context.offlineBackdropLayer) {
+                    setOfflineBackdrop();
+                }
+            }, offlineTimeoutMs);
+
+            layer.on('tileerror', () => {
+                if (context.baseTileLayer !== layer) {
+                    return;
+                }
+
+                if (context.baseTileLayerFallbackTimer) {
+                    clearTimeout(context.baseTileLayerFallbackTimer);
+                }
+
+                context.baseTileLayerFallbackTimer = setTimeout(() => {
+                    if (context.baseTileLayer === layer) {
+                        if (providerIndex + 1 < providers.length) {
+                            try {
+                                context.map.removeLayer(layer);
+                            } catch (error) {
+                                console.warn(`Leaflet tile layer removal skipped for ${provider.name}:`, error);
+                            }
+
+                            context.baseTileLayer = null;
+                            context.baseTileLayerFallbackTimer = null;
+                            activateProvider(providerIndex + 1);
+                            return;
+                        }
+
+                        context.baseTileLayer = null;
+                        context.baseTileLayerFallbackTimer = null;
+                        setOfflineBackdrop();
+                    }
+                }, 0);
+            });
+            layer.addTo(context.map);
+            context.baseTileLayer = layer;
+            layer.once('load', () => {
+                isLoaded = true;
+                clearTimeout(offlineTimer);
+                if (context.offlineBackdropLayer) {
+                    try {
+                        context.map.removeLayer(context.offlineBackdropLayer);
+                    } catch (error) {
+                        console.warn('Leaflet offline backdrop cleanup skipped:', error);
+                    }
+                    context.offlineBackdropLayer = null;
+                }
+            });
+            return true;
+        } catch (error) {
+            console.warn(`Leaflet tile provider "${provider.name}" failed:`, error);
+            if (providerIndex + 1 < providers.length) {
+                return activateProvider(providerIndex + 1);
+            }
+
+            context.baseTileLayer = null;
+            setOfflineBackdrop();
+            return false;
+        }
+    };
+
+    activateProvider(0);
+    return true;
+}
+
+export function setOfflineBackdrop(geoJsonUrl) {
+    const context = _getMapContext();
+    if (!_leafletAvailable() || !context?.map) return false;
+
+    const resolvedUrls = Array.isArray(geoJsonUrl)
+        ? geoJsonUrl
+        : (geoJsonUrl ? [geoJsonUrl] : OFFLINE_BACKDROP_SOURCES);
+    const absoluteUrls = resolvedUrls.map(url => new URL(url, document.baseURI).toString());
+
+    if (context.offlineBackdropLayer) {
+        try {
+            context.map.removeLayer(context.offlineBackdropLayer);
+        } catch (error) {
+            console.warn('Leaflet offline backdrop reset skipped:', error);
+        }
+        context.offlineBackdropLayer = null;
+    }
+
+    _removeOfflineBackdropDecorations(context);
+
+    if (context.offlineBackdropLoadPromise) {
+        return true;
+    }
+
+    const paneName = 'offline-backdrop-pane';
+    if (!context.map.getPane(paneName)) {
+        const pane = context.map.createPane(paneName);
+        pane.style.zIndex = '150';
+        pane.style.pointerEvents = 'none';
+    }
+
+    context.offlineBackdropLoadPromise = Promise.allSettled(absoluteUrls.map(url =>
+        fetch(url, { cache: 'force-cache' })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status} while loading ${url}`);
+                }
+
+                return response.json();
+            })
+            .then(geoJson => ({ url, geoJson }))
+    ))
+        .then(results => {
+            if (!context?.map || context.baseTileLayer) {
+                return false;
+            }
+
+            const successful = results
+                .filter(result => result.status === 'fulfilled' && result.value?.geoJson?.features?.length)
+                .map(result => result.value);
+
+            if (successful.length === 0) {
+                return false;
+            }
+
+            const backdropGroup = L.layerGroup();
+
+            successful.forEach(({ url, geoJson }, index) => {
+                const layer = L.geoJSON(geoJson, {
+                    pane: paneName,
+                    interactive: false,
+                    style: feature => ({
+                        color: feature?.properties?.borderColor || (index === 0 ? '#64748b' : index === 1 ? '#94a3b8' : '#cbd5e1'),
+                        weight: index === 0 ? 1.4 : index === 1 ? 1.1 : 0.9,
+                        opacity: index === 0 ? 0.78 : 0.68,
+                        fillColor: feature?.properties?.fillColor || (index === 0 ? '#e2e8f0' : index === 1 ? '#eef2ff' : '#f8fafc'),
+                        fillOpacity: index === 0 ? 0.22 : 0.14
+                    })
+                });
+
+                backdropGroup.addLayer(layer);
+                _createOfflineBackdropDecorations(context, { ...geoJson, url });
+            });
+
+            backdropGroup.addTo(context.map);
+            context.offlineBackdropLayer = backdropGroup;
+
+            return true;
+        })
+        .catch(error => {
+            console.warn('Leaflet offline backdrop failed:', error);
+            return false;
+        })
+        .finally(() => {
+            context.offlineBackdropLoadPromise = null;
+        });
+
     return true;
 }
 
@@ -650,15 +1138,6 @@ export function clearAll() {
         context.legendControl = null;
     }
 
-    if (context.baseTileLayer) {
-        try {
-            context.map?.removeLayer(context.baseTileLayer);
-        } catch (error) {
-            console.warn('Leaflet base tile removal skipped:', error);
-        }
-        context.baseTileLayer = null;
-    }
-
     if (context.markerClusterGroup) {
         try {
             context.map?.removeLayer(context.markerClusterGroup);
@@ -668,6 +1147,17 @@ export function clearAll() {
         context.markerClusterGroup = null;
         context.clusteringEnabled = false;
     }
+
+    if (context.offlineBackdropLayer) {
+        try {
+            context.map?.removeLayer(context.offlineBackdropLayer);
+        } catch (error) {
+            console.warn('Leaflet offline backdrop clear skipped:', error);
+        }
+        context.offlineBackdropLayer = null;
+    }
+
+    _removeOfflineBackdropDecorations(context);
 }
 
 export function setView(latitude, longitude, zoom) {

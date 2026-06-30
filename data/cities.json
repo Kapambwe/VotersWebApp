@@ -1,0 +1,38 @@
+[
+  {
+    "Id": "city-001",
+    "Name": "Lusaka",
+    "ProvinceId": "prov-001",
+    "ProvinceName": "Lusaka"
+  },
+  {
+    "Id": "city-002",
+    "Name": "Ndola",
+    "ProvinceId": "prov-002",
+    "ProvinceName": "Copperbelt"
+  },
+  {
+    "Id": "city-003",
+    "Name": "Kitwe",
+    "ProvinceId": "prov-002",
+    "ProvinceName": "Copperbelt"
+  },
+  {
+    "Id": "city-004",
+    "Name": "Kabwe",
+    "ProvinceId": "prov-003",
+    "ProvinceName": "Central"
+  },
+  {
+    "Id": "city-005",
+    "Name": "Livingstone",
+    "ProvinceId": "prov-004",
+    "ProvinceName": "Southern"
+  },
+  {
+    "Id": "city-006",
+    "Name": "Chipata",
+    "ProvinceId": "prov-005",
+    "ProvinceName": "Eastern"
+  }
+]
