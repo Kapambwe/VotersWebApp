@@ -719,6 +719,17 @@ export function setupMapClick(dotNetReference) {
     return true;
 }
 
+export function setupMapZoom(dotNetReference) {
+    const context = _getMapContext();
+    if (!_leafletAvailable() || !context?.map || !dotNetReference) return false;
+
+    context.map.on('zoomend', function() {
+        dotNetReference.invokeMethodAsync('OnMapZoomChangedEvent', context.map.getZoom?.() ?? 0);
+    });
+
+    return true;
+}
+
 // Drawing tools for voter grouping
 let drawnItems = null;
 let drawControl = null;
