@@ -24,6 +24,49 @@ const OFFLINE_BACKDROP_SOURCES = [
     'data/boundaries/zm/constituency.geojson'
 ];
 
+const OFFLINE_THEMES = {
+    street: {
+        water: '#dbeafe',
+        land: '#f8fafc',
+        halo: '#c7d2fe',
+        boundaryColors: ['#475569', '#64748b', '#94a3b8'],
+        boundaryFills: ['#edf2f7', '#f1f5f9', '#f8fafc'],
+        labelColor: '#0f172a'
+    },
+    satellite: {
+        water: '#dbeafe',
+        land: '#f8fafc',
+        halo: '#93c5fd',
+        boundaryColors: ['#334155', '#475569', '#64748b'],
+        boundaryFills: ['#f8fafc', '#eef2ff', '#f8fafc'],
+        labelColor: '#0f172a'
+    },
+    terrain: {
+        water: '#dbeafe',
+        land: '#f7fbf5',
+        halo: '#bbf7d0',
+        boundaryColors: ['#365314', '#4d7c0f', '#65a30d'],
+        boundaryFills: ['#eff6ff', '#f8fafc', '#f7fee7'],
+        labelColor: '#14532d'
+    },
+    choropleth: {
+        water: '#dbeafe',
+        land: '#f8fafc',
+        halo: '#bae6fd',
+        boundaryColors: ['#1d4ed8', '#2563eb', '#3b82f6'],
+        boundaryFills: ['#dbeafe', '#eff6ff', '#f8fafc'],
+        labelColor: '#0f172a'
+    },
+    default: {
+        water: '#dbeafe',
+        land: '#f8fafc',
+        halo: '#c7d2fe',
+        boundaryColors: ['#475569', '#64748b', '#94a3b8'],
+        boundaryFills: ['#edf2f7', '#f1f5f9', '#f8fafc'],
+        labelColor: '#0f172a'
+    }
+};
+
 const BASE_TILE_PROVIDERS = {
     street: [
         {
@@ -251,6 +294,7 @@ export async function initializeMap(mapElementId, latitude, longitude, zoom) {
 
     mapInstances[mapElementId] = {
         map,
+        mapType: 'street',
         layerGroups: {},
         markers: [],
         polygons: [],
@@ -308,6 +352,15 @@ function _setOfflineBackdropActive(context, isActive) {
     container.classList.toggle('offline-backdrop-active', !!isActive);
 }
 
+function _resolveOfflineTheme(mapType) {
+    const key = (mapType || 'default').toLowerCase();
+    if (OFFLINE_THEMES[key]) {
+        return OFFLINE_THEMES[key];
+    }
+
+    return OFFLINE_THEMES.default;
+}
+
 function _removeOfflineBackdropDecorations(context) {
     if (!context?.map) {
         return;
@@ -350,11 +403,6 @@ function _createOfflineBackdropDecorations(context, geoJson) {
         return false;
     }
 
-    const featureLayer = L.geoJSON(geoJson);
-    const bounds = featureLayer.getBounds?.();
-    if (!bounds?.isValid?.()) {
-        return false;
-    }
     const geoJsonIndex = context.offlineBackdropSourceLayers.findIndex(entry => entry?.url === geoJson?.url);
     const sourceRecord = geoJsonIndex >= 0 ? context.offlineBackdropSourceLayers[geoJsonIndex] : { url: geoJson?.url || null, geoJson };
     if (geoJsonIndex < 0) {
@@ -385,6 +433,7 @@ function _renderOfflineBackdropDecorations(context) {
     _removeLayerOnly(context, 'offlineBackdropLabelLayer');
 
     const zoom = context.map.getZoom?.() ?? 0;
+    const theme = _resolveOfflineTheme(context.mapType);
     const sources = (context.offlineBackdropSourceLayers || []).filter(entry => entry?.geoJson?.features?.length);
     if (sources.length === 0) {
         return false;
@@ -411,9 +460,9 @@ function _renderOfflineBackdropDecorations(context) {
 
     const gridLayer = L.layerGroup();
     const gridStyle = {
-        color: '#94a3b8',
-        weight: 0.8,
-        opacity: 0.28,
+        color: theme.boundaryColors[2],
+        weight: 0.7,
+        opacity: zoom >= 8 ? 0.2 : 0.14,
         dashArray: '6 8',
         interactive: false
     };
@@ -427,6 +476,7 @@ function _renderOfflineBackdropDecorations(context) {
     }
 
     const labelLayer = L.layerGroup();
+    const occupiedBounds = [];
     const labelBudget = zoom >= 9 ? 18 : zoom >= 7 ? 12 : 6;
     const labelSources = zoom >= 9
         ? sources
@@ -448,13 +498,25 @@ function _renderOfflineBackdropDecorations(context) {
                 return;
             }
 
+            const labelSize = Math.max(48, Math.min(132, 22 + (name.length * 6)));
+            const labelPoint = context.map.latLngToContainerPoint(center);
+            const labelBounds = L.bounds(
+                [labelPoint.x - labelSize / 2, labelPoint.y - 10],
+                [labelPoint.x + labelSize / 2, labelPoint.y + 14]
+            );
+            const collides = occupiedBounds.some(bounds => bounds.intersects(labelBounds));
+            if (collides) {
+                return;
+            }
+            occupiedBounds.push(labelBounds);
+
             const label = L.marker(center, {
                 interactive: false,
                 keyboard: false,
                 opacity: 1,
                 icon: L.divIcon({
                     className: 'offline-map-label-marker',
-                    html: `<span class="offline-map-label">${name}</span>`,
+                    html: `<span class="offline-map-label" style="color:${theme.labelColor};">${name}</span>`,
                     iconSize: [0, 0],
                     iconAnchor: [0, 0]
                 })
@@ -926,6 +988,7 @@ export function setMapType(mapType) {
 
     const type = (mapType || 'street').toLowerCase();
     const providers = BASE_TILE_PROVIDERS[type] || BASE_TILE_PROVIDERS.street;
+    context.mapType = type;
 
     const activateProvider = (providerIndex) => {
         const provider = providers[providerIndex];
@@ -947,7 +1010,7 @@ export function setMapType(mapType) {
             const offlineTimeoutMs = 2200;
             const offlineTimer = setTimeout(() => {
                 if (!isLoaded && context.baseTileLayer === layer && !context.offlineBackdropLayer) {
-                    setOfflineBackdrop();
+                    setOfflineBackdrop(type);
                 }
             }, offlineTimeoutMs);
 
@@ -977,7 +1040,7 @@ export function setMapType(mapType) {
 
                         context.baseTileLayer = null;
                         context.baseTileLayerFallbackTimer = null;
-                        setOfflineBackdrop();
+                        setOfflineBackdrop(type);
                     }
                 }, 0);
             });
@@ -1004,7 +1067,7 @@ export function setMapType(mapType) {
             }
 
             context.baseTileLayer = null;
-            setOfflineBackdrop();
+            setOfflineBackdrop(type);
             return false;
         }
     };
@@ -1013,13 +1076,16 @@ export function setMapType(mapType) {
     return true;
 }
 
-export function setOfflineBackdrop(geoJsonUrl) {
+export function setOfflineBackdrop(mapTypeOrGeoJsonUrl, geoJsonUrl) {
     const context = _getMapContext();
     if (!_leafletAvailable() || !context?.map) return false;
 
-    const resolvedUrls = Array.isArray(geoJsonUrl)
-        ? geoJsonUrl
-        : (geoJsonUrl ? [geoJsonUrl] : OFFLINE_BACKDROP_SOURCES);
+    const isThemeKey = typeof mapTypeOrGeoJsonUrl === 'string' && Object.prototype.hasOwnProperty.call(OFFLINE_THEMES, mapTypeOrGeoJsonUrl.toLowerCase());
+    const activeThemeKey = isThemeKey ? mapTypeOrGeoJsonUrl.toLowerCase() : (context.mapType || 'default');
+    const sourceArg = isThemeKey ? geoJsonUrl : mapTypeOrGeoJsonUrl;
+    const resolvedUrls = Array.isArray(sourceArg)
+        ? sourceArg
+        : (sourceArg ? [sourceArg] : OFFLINE_BACKDROP_SOURCES);
     const absoluteUrls = resolvedUrls.map(url => new URL(url, document.baseURI).toString());
 
     if (context.offlineBackdropLayer) {
@@ -1069,14 +1135,29 @@ export function setOfflineBackdrop(geoJsonUrl) {
                 return false;
             }
 
+            const theme = _resolveOfflineTheme(activeThemeKey);
             const backdropGroup = L.layerGroup();
+            const combinedBounds = L.latLngBounds([]);
+
+            successful.forEach(({ geoJson }) => {
+                const layer = L.geoJSON(geoJson);
+                const bounds = layer.getBounds?.();
+                if (bounds?.isValid?.()) {
+                    combinedBounds.extend(bounds);
+                }
+            });
+
+            if (!combinedBounds.isValid?.()) {
+                return false;
+            }
+
             const landHalo = L.rectangle(combinedBounds.pad(0.18), {
                 pane: paneName,
                 interactive: false,
-                color: '#c7d2fe',
+                color: theme.halo,
                 weight: 0.4,
                 opacity: 0.18,
-                fillColor: '#f8fafc',
+                fillColor: theme.land,
                 fillOpacity: 0.75
             });
             backdropGroup.addLayer(landHalo);
@@ -1086,10 +1167,10 @@ export function setOfflineBackdrop(geoJsonUrl) {
                     pane: paneName,
                     interactive: false,
                     style: feature => ({
-                        color: feature?.properties?.borderColor || (index === 0 ? '#475569' : index === 1 ? '#64748b' : '#94a3b8'),
-                        weight: context.map.getZoom?.() >= 9 ? 1.1 : context.map.getZoom?.() >= 7 ? 1.0 : 0.8,
-                        opacity: context.map.getZoom?.() >= 9 ? 0.82 : 0.72,
-                        fillColor: feature?.properties?.fillColor || (index === 0 ? '#edf2f7' : index === 1 ? '#f1f5f9' : '#f8fafc'),
+                        color: feature?.properties?.borderColor || theme.boundaryColors[Math.min(index, theme.boundaryColors.length - 1)],
+                        weight: context.map.getZoom?.() >= 9 ? 1.15 : context.map.getZoom?.() >= 7 ? 1.0 : 0.82,
+                        opacity: context.map.getZoom?.() >= 9 ? 0.82 : 0.7,
+                        fillColor: feature?.properties?.fillColor || theme.boundaryFills[Math.min(index, theme.boundaryFills.length - 1)],
                         fillOpacity: index === 0 ? 0.18 : index === 1 ? 0.12 : 0.08
                     })
                 });
@@ -1100,6 +1181,7 @@ export function setOfflineBackdrop(geoJsonUrl) {
 
             backdropGroup.addTo(context.map);
             context.offlineBackdropLayer = backdropGroup;
+            _setOfflineBackdropActive(context, true);
 
             return true;
         })
