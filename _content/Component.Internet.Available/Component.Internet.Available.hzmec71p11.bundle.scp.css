@@ -1,0 +1,123 @@
+/* _content/Component.Internet.Available/Component1.razor.rz.scp.css */
+.my-component[b-jzqc9uq9rn] {
+    border: 2px dashed red;
+    padding: 1em;
+    margin: 1em 0;
+    background-image: url('background.png');
+}
+/* _content/Component.Internet.Available/InternetAvailabilityBanner.razor.rz.scp.css */
+.internet-status-banner[b-9at4c70w01] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 100%;
+}
+
+.internet-status-banner.banner-top[b-9at4c70w01] {
+    top: 0;
+    animation: slideDown-b-9at4c70w01 0.3s ease-out;
+}
+
+.internet-status-banner.banner-bottom[b-9at4c70w01] {
+    bottom: 0;
+    top: auto;
+    animation: slideUp-b-9at4c70w01 0.3s ease-out;
+}
+
+/* Facebook-style Offline Bar (Dark Red/Gray contrast with high legibility) */
+.internet-status-banner.offline[b-9at4c70w01] {
+    background: #3a3b3c;
+    color: #f0f2f5;
+    border-bottom: 2px solid #e41e3f;
+}
+
+/* Facebook-style Online Restored Bar (Emerald Green) */
+.internet-status-banner.online-restored[b-9at4c70w01] {
+    background: #31a24c;
+    color: #ffffff;
+    border-bottom: 2px solid #28843e;
+}
+
+.internet-status-content[b-9at4c70w01] {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.internet-status-icon[b-9at4c70w01] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.internet-status-retry-btn[b-9at4c70w01] {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.internet-status-retry-btn:hover:not(:disabled)[b-9at4c70w01] {
+    background: rgba(255, 255, 255, 0.35);
+    transform: translateY(-1px);
+}
+
+.internet-status-retry-btn:disabled[b-9at4c70w01] {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.spinner[b-9at4c70w01] {
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    border-top-color: #ffffff;
+    animation: spin-b-9at4c70w01 0.8s linear infinite;
+}
+
+@keyframes spin-b-9at4c70w01 {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes slideDown-b-9at4c70w01 {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+@keyframes slideUp-b-9at4c70w01 {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
